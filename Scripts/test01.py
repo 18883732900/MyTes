@@ -60,7 +60,7 @@ class Test_1:
         assert f in '工作人员类别列表'
 
     def teardown_class(self):
-        self.d.page('get_screenshot_as_file', filepath='./结果图png')
+        # self.d.page('get_screenshot_as_file', filepath='./结果图.png')
         time.sleep(5)
 
         # self.driver.quit()
