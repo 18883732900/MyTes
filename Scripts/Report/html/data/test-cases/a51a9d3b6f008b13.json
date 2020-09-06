@@ -1,0 +1,61 @@
+{
+  "uid" : "a51a9d3b6f008b13",
+  "name" : "test02.Test_2.test_003[C:\\\\Users\\\\26765\\\\Desktop\\\\python\\u6d4b\\u8bd5\\\\Ui\\u81ea\\u52a8\\u5316\\\\Data\\\\\\u5fae\\u4fe1\\u622a\\u56fe_20200820115449.png-C:\\\\Users\\\\26765\\\\Desktop\\\\python\\u6d4b\\u8bd5\\\\Ui\\u81ea\\u52a8\\u5316\\\\Data\\\\\\u5fae\\u4fe1\\u622a\\u56fe_20200820115449.png-\\u5176\\u4ed6]",
+  "fullName" : "Scripts.test02.Test_2.test_003[C:\\\\Users\\\\26765\\\\Desktop\\\\python\\u6d4b\\u8bd5\\\\Ui\\u81ea\\u52a8\\u5316\\\\Data\\\\\\u5fae\\u4fe1\\u622a\\u56fe_20200820115449.png-C:\\\\Users\\\\26765\\\\Desktop\\\\python\\u6d4b\\u8bd5\\\\Ui\\u81ea\\u52a8\\u5316\\\\Data\\\\\\u5fae\\u4fe1\\u622a\\u56fe_20200820115449.png-\\u5176\\u4ed6]",
+  "historyId" : "d9e77f7177b0f464644b57edec93961d",
+  "time" : {
+    "start" : 1599232566473,
+    "stop" : 1599232568829,
+    "duration" : 2356
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-VMVNVBP"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "thread",
+    "value" : "15688-MainThread"
+  }, {
+    "name" : "suite",
+    "value" : "Scripts"
+  }, {
+    "name" : "testClass",
+    "value" : "Scripts"
+  }, {
+    "name" : "testMethod",
+    "value" : "test02.Test_2.test_003[C:\\\\Users\\\\26765\\\\Desktop\\\\python\\u6d4b\\u8bd5\\\\Ui\\u81ea\\u52a8\\u5316\\\\Data\\\\\\u5fae\\u4fe1\\u622a\\u56fe_20200820115449.png-C:\\\\Users\\\\26765\\\\Desktop\\\\python\\u6d4b\\u8bd5\\\\Ui\\u81ea\\u52a8\\u5316\\\\Data\\\\\\u5fae\\u4fe1\\u622a\\u56fe_20200820115449.png-\\u5176\\u4ed6]"
+  }, {
+    "name" : "package",
+    "value" : "Scripts"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "a51a9d3b6f008b13.json",
+  "parameterValues" : [ ]
+}

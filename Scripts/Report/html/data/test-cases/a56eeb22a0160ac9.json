@@ -1,0 +1,67 @@
+{
+  "uid" : "a56eeb22a0160ac9",
+  "name" : "test02.Test_2.test_004[C:\\\\Users\\\\26765\\\\Desktop\\\\python\\u6d4b\\u8bd5\\\\Ui\\u81ea\\u52a8\\u5316\\\\Data\\\\\\u8eab\\u4efd\\u8bc1\\u6b63\\u9762\\u7167\\u7247.jpg]",
+  "fullName" : "Scripts.test02.Test_2.test_004[C:\\\\Users\\\\26765\\\\Desktop\\\\python\\u6d4b\\u8bd5\\\\Ui\\u81ea\\u52a8\\u5316\\\\Data\\\\\\u8eab\\u4efd\\u8bc1\\u6b63\\u9762\\u7167\\u7247.jpg]",
+  "historyId" : "b66419dc22e8f6487abb6910518764fb",
+  "time" : {
+    "start" : 1599232578297,
+    "stop" : 1599232581402,
+    "duration" : 3105
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "AssertionError: assert False",
+  "statusTrace" : "self = <Scripts.test02.Test_2 object at 0x04CEFDB0>\nfile_path = 'C:\\\\Users\\\\26765\\\\Desktop\\\\python测试\\\\Ui自动化\\\\Data\\\\身份证正面照片.jpg'\n\n    @pytest.mark.parametrize('file_path', data_test02.file_path1)\n    @pytest.mark.skipif(1 == 2, reason='跳过')\n    def test_004(self, file_path):\n            self.d.up_worker(file_path)\n            time.sleep(3)\n            els = self.d.find_elements(Scripts.element12)\n            x = 0\n            for el in els:\n                s = el.get_attribute('src')\n                if file_path[-9:] in s:\n                    x += 1\n                    return x\n            if x == 1:\n                assert True\n            else:\n>               assert False\nE               assert False\n\ntest02.py:143: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-VMVNVBP"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "thread",
+    "value" : "15688-MainThread"
+  }, {
+    "name" : "suite",
+    "value" : "Scripts"
+  }, {
+    "name" : "testClass",
+    "value" : "Scripts"
+  }, {
+    "name" : "testMethod",
+    "value" : "test02.Test_2.test_004[C:\\\\Users\\\\26765\\\\Desktop\\\\python\\u6d4b\\u8bd5\\\\Ui\\u81ea\\u52a8\\u5316\\\\Data\\\\\\u8eab\\u4efd\\u8bc1\\u6b63\\u9762\\u7167\\u7247.jpg]"
+  }, {
+    "name" : "package",
+    "value" : "Scripts"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "a56eeb22a0160ac9.json",
+  "parameterValues" : [ ]
+}

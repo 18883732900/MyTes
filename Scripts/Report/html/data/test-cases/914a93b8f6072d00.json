@@ -1,0 +1,61 @@
+{
+  "uid" : "914a93b8f6072d00",
+  "name" : "test02.Test_2.test_01[\\u6768\\u56db-330000199808077818-18865005303-8424-C:\\\\Users\\\\26765\\\\Desktop\\\\python\\u6d4b\\u8bd5\\\\Ui\\u81ea\\u52a8\\u5316\\\\Data\\\\\\u8eab\\u4efd\\u8bc1\\u6b63\\u9762\\u7167\\u7247.jpg-C:\\\\Users\\\\26765\\\\Desktop\\\\python\\u6d4b\\u8bd5\\\\Ui\\u81ea\\u52a8\\u5316\\\\Data\\\\\\u8eab\\u4efd\\u8bc1\\u53cd\\u9762\\u7167\\u7247.jpg-file30-2]",
+  "fullName" : "Scripts.test02.Test_2.test_01[\\u6768\\u56db-330000199808077818-18865005303-8424-C:\\\\Users\\\\26765\\\\Desktop\\\\python\\u6d4b\\u8bd5\\\\Ui\\u81ea\\u52a8\\u5316\\\\Data\\\\\\u8eab\\u4efd\\u8bc1\\u6b63\\u9762\\u7167\\u7247.jpg-C:\\\\Users\\\\26765\\\\Desktop\\\\python\\u6d4b\\u8bd5\\\\Ui\\u81ea\\u52a8\\u5316\\\\Data\\\\\\u8eab\\u4efd\\u8bc1\\u53cd\\u9762\\u7167\\u7247.jpg-file30-2]",
+  "historyId" : "c5060b69a62c57a87e1f1523f77c4787",
+  "time" : {
+    "start" : 1599232531222,
+    "stop" : 1599232547481,
+    "duration" : 16259
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-VMVNVBP"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "thread",
+    "value" : "15688-MainThread"
+  }, {
+    "name" : "suite",
+    "value" : "Scripts"
+  }, {
+    "name" : "testClass",
+    "value" : "Scripts"
+  }, {
+    "name" : "testMethod",
+    "value" : "test02.Test_2.test_01[\\u6768\\u56db-330000199808077818-18865005303-8424-C:\\\\Users\\\\26765\\\\Desktop\\\\python\\u6d4b\\u8bd5\\\\Ui\\u81ea\\u52a8\\u5316\\\\Data\\\\\\u8eab\\u4efd\\u8bc1\\u6b63\\u9762\\u7167\\u7247.jpg-C:\\\\Users\\\\26765\\\\Desktop\\\\python\\u6d4b\\u8bd5\\\\Ui\\u81ea\\u52a8\\u5316\\\\Data\\\\\\u8eab\\u4efd\\u8bc1\\u53cd\\u9762\\u7167\\u7247.jpg-file30-2]"
+  }, {
+    "name" : "package",
+    "value" : "Scripts"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "914a93b8f6072d00.json",
+  "parameterValues" : [ ]
+}

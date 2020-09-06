@@ -1,0 +1,61 @@
+{
+  "uid" : "b99bc73e2d294f1a",
+  "name" : "test02.Test_2.test_login[123-123456]",
+  "fullName" : "Scripts.test02.Test_2.test_login[123-123456]",
+  "historyId" : "a766465da1b160981be7ee8ff15b8cb4",
+  "time" : {
+    "start" : 1599232497718,
+    "stop" : 1599232516640,
+    "duration" : 18922
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-VMVNVBP"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "thread",
+    "value" : "15688-MainThread"
+  }, {
+    "name" : "suite",
+    "value" : "Scripts"
+  }, {
+    "name" : "testClass",
+    "value" : "Scripts"
+  }, {
+    "name" : "testMethod",
+    "value" : "test02.Test_2.test_login[123-123456]"
+  }, {
+    "name" : "package",
+    "value" : "Scripts"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "b99bc73e2d294f1a.json",
+  "parameterValues" : [ ]
+}

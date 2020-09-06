@@ -1,0 +1,61 @@
+{
+  "uid" : "e462471d81222e99",
+  "name" : "test02.Test_2.test_init[\\u5929\\u575b\\u793e\\u533a-\\u5929\\u575b\\u5c0f\\u533a-\\u5929\\u575b\\u4e1c\\u91cc-1\\u5355\\u5143-14-1402]",
+  "fullName" : "Scripts.test02.Test_2.test_init[\\u5929\\u575b\\u793e\\u533a-\\u5929\\u575b\\u5c0f\\u533a-\\u5929\\u575b\\u4e1c\\u91cc-1\\u5355\\u5143-14-1402]",
+  "historyId" : "8b8fba3659878433e792f16e087e22bd",
+  "time" : {
+    "start" : 1599232523711,
+    "stop" : 1599232531144,
+    "duration" : 7433
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-VMVNVBP"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "thread",
+    "value" : "15688-MainThread"
+  }, {
+    "name" : "suite",
+    "value" : "Scripts"
+  }, {
+    "name" : "testClass",
+    "value" : "Scripts"
+  }, {
+    "name" : "testMethod",
+    "value" : "test02.Test_2.test_init[\\u5929\\u575b\\u793e\\u533a-\\u5929\\u575b\\u5c0f\\u533a-\\u5929\\u575b\\u4e1c\\u91cc-1\\u5355\\u5143-14-1402]"
+  }, {
+    "name" : "package",
+    "value" : "Scripts"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "e462471d81222e99.json",
+  "parameterValues" : [ ]
+}

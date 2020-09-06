@@ -1,0 +1,26 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "AssertionError: assert False",
+      "children" : [ {
+        "name" : "test02.Test_2.test_004[C:\\\\Users\\\\26765\\\\Desktop\\\\python\\u6d4b\\u8bd5\\\\Ui\\u81ea\\u52a8\\u5316\\\\Data\\\\\\u8eab\\u4efd\\u8bc1\\u6b63\\u9762\\u7167\\u7247.jpg]",
+        "uid" : "a56eeb22a0160ac9",
+        "parentUid" : "8d89788b03808d3beec6ddf8e7d75f3d",
+        "status" : "failed",
+        "time" : {
+          "start" : 1599232578297,
+          "stop" : 1599232581402,
+          "duration" : 3105
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "8d89788b03808d3beec6ddf8e7d75f3d"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ]
+}
