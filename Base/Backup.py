@@ -28,7 +28,7 @@ class Mysqldbbackup():
          , data_test01.worker_job[-1]
          , data_test01.Issue_permissions[-1]
          , data_test01.login[-1][0])
-        print(sql%r)
+        # print(sql%r)
         self.cursor.execute(sql,(str(data_test01.user[-1][1]),"{0}年{1}月{2}日".format(data_test01.Brithday[-1][1],data_test01.Brithday[-1][2],data_test01.Brithday[-1][0])
                                  ,str(data_test01.list[-1])
                    ,str(data_test01.user[-1][0])

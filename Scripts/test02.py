@@ -64,7 +64,7 @@ class Test_2:
         self.d.owner(name, idcard, number, num)
         self.d.img(file1,file2,file3,x)
         els=self.d.find_elements((By.CSS_SELECTOR,'[class="el-image__inner el-image__preview"]'))
-        print(len(els))
+        # print(len(els))
         assert len(els)==2+len(file3)-x
 
     @allure.step(title='手机号核验测试')
@@ -81,7 +81,7 @@ class Test_2:
             assert f in '请输入正确的手机号'
         elif param == data_test02.list[1]:
             f = self.d.find_element(Scripts.element5).text
-            print(f)
+            # print(f)
             assert f in '户口簿'
 
     @allure.step(title='对提交为空的测试')
@@ -93,7 +93,7 @@ class Test_2:
         self.d.clickup()
         el = self.d.find_element(Scripts.element6)
         s = el.text
-        print(s)
+        # print(s)
         assert s in '请选择证件类型'
 
     @allure.step(title='身份证图片校验测试')
@@ -102,23 +102,23 @@ class Test_2:
     @pytest.mark.parametrize('file_Path1,file_Path2,type_c', data_test02.file_path2)
     def test_003(self, file_Path1, file_Path2, type_c):
         allure.attach('身份证图片校验', '确保身份证合法有效')
-        print(file_Path1)
+        # print(file_Path1)
         type = self.d.shengfz(file_path1=file_Path1, file_path2=file_Path2, type_cl=type_c)
         # time.sleep(2)
         if file_Path1 is not None:
             if '身份证正面照片' not in file_Path1 and '身份证反面照片' in file_Path2 and type == '身份证':
                 s = self.d.find_element(Scripts.element7).text
-                print(s)
+                # print(s)
                 # time.sleep(2)
                 time.sleep(1)
                 el = self.d.find_element(Scripts.element8).get_attribute('disabled')
-                print(el)
+                # print(el)
 
                 assert s in '请上传正确、清晰的身份证正面照片' and el == 'true'
 
             elif '身份证正面照片' in file_Path1 and '身份证反面照片' not in file_Path2 and type == '身份证':
                 s = self.d.find_element(Scripts.element7).text
-                print(s)
+                # print(s)
                 # time.sleep(2)
                 time.sleep(1)
                 el = self.d.find_element(Scripts.element9).get_attribute('disabled')
@@ -127,10 +127,10 @@ class Test_2:
 
             elif '身份证正面照片' not in file_Path1 and '身份证反面照片' not in file_Path2 and type == '身份证':
                 s = self.d.find_element(Scripts.element7).text
-                print(s)
+                # print(s)
                 time.sleep(1)
                 el = self.d.find_element(Scripts.element10).get_attribute('disabled')
-                print(el)
+                # print(el)
                 assert s in '请上传正确、清晰的身份证反面照片' or '请上传正确、清晰的身份证正面照片' and el == None
 
             elif '身份证正面照片' in file_Path1 and '身份证反面照片' in file_Path2 and type == '身份证':
@@ -210,4 +210,4 @@ class Test_2:
 
 
 if __name__ == '__main__':
-    pytest.main('-s -html=./Report/report.html test02.py')
+    pytest.main('-s -html=../Report/report.html test02.py')

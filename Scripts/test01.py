@@ -81,7 +81,7 @@ class Test_1:
             assert f in '请输入正确的手机号'
         elif s == data_test01.list[1]:
             f = self.d.find_element(Scripts.element4).text
-            print(f)
+            # print(f)
             assert f in '户口簿'
 
     @allure.step(title='对提交为空的测试')
@@ -92,7 +92,7 @@ class Test_1:
         self.d.clickup()
         el = self.d.find_element(Scripts.element7)
         s = el.text
-        print(s)
+        # print(s)
         assert s in '请选择证件类型'
 
     @allure.step(title='身份证图片校验测试')
@@ -101,23 +101,23 @@ class Test_1:
     @pytest.mark.parametrize('file_Path1,file_Path2,type_c', data_test01.file_path)
     def test_003(self, file_Path1, file_Path2, type_c):
         allure.attach('身份证图片校验', '确保身份证合法有效')
-        print(file_Path1)
+        # print(file_Path1)
         type = self.d.shengfz(file_path1=file_Path1, file_path2=file_Path2, type_cl=type_c)
         # time.sleep(2)
         if file_Path1 is not None:
             if '身份证正面照片' not in file_Path1 and '身份证反面照片' in file_Path2 and type == '身份证':
                 s = self.d.find_element(Scripts.element9).text
-                print(s)
+                # print(s)
                 # time.sleep(2)
                 time.sleep(1)
                 el = self.d.find_element(Scripts.element16).get_attribute('disabled')
-                print(el)
+                # print(el)
 
                 assert s in '请上传正确、清晰的身份证正面照片' and el == 'true'
 
             elif '身份证正面照片' in file_Path1 and '身份证反面照片' not in file_Path2 and type == '身份证':
                 s = self.d.find_element(Scripts.element9).text
-                print(s)
+                # print(s)
                 # time.sleep(2)
                 time.sleep(1)
                 el = self.d.find_element(Scripts.element17).get_attribute('disabled')
@@ -126,10 +126,10 @@ class Test_1:
 
             elif '身份证正面照片' not in file_Path1 and '身份证反面照片' not in file_Path2 and type == '身份证':
                 s = self.d.find_element(Scripts.element9).text
-                print(s)
+                # print(s)
                 time.sleep(1)
                 el = self.d.find_element(Scripts.element18).get_attribute('disabled')
-                print(el)
+                # print(el)
                 assert s in '请上传正确、清晰的身份证反面照片' or '请上传正确、清晰的身份证正面照片' and el == None
 
             elif '身份证正面照片' in file_Path1 and '身份证反面照片' in file_Path2 and type == '身份证':
@@ -217,7 +217,7 @@ class Test_1:
             text = i.text
             list = text.split('：')
             dict1[list[0]] = list[-1]
-        print(dict1)
+        # print(dict1)
         el = self.d.find_element(Scripts.element20).text
         time.sleep(1)
         assert data_test01.user[-1][0] in dict1['证件号码'] and data_test01.file_path[-1][-1] in dict1['证件类型'] and type1 in \
@@ -269,7 +269,7 @@ class Test_1:
         allure.attach('核对', '确保上传信息都正确')
         time.sleep(3)
         s = self.d.page(fun='driver.page_source')
-        print(s)
+        # print(s)
         x = 0
         list = [i for i in data_test01.select[-1]]
         list.insert(0, data_test01.user[-1][-1])

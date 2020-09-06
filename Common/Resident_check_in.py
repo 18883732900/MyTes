@@ -176,7 +176,7 @@ class Resident_check(Base):
         time.sleep(3)
         self.Operation(*Common.element40)
         years = int(self.find_element(Common.element41).text[0:-2])
-        print(years)
+        # print(years)
         mounts = int(self.find_element(Common.element42).text[0:-2])
         if int(year) is not None:
             if int(year) < years:
@@ -199,7 +199,7 @@ class Resident_check(Base):
         elp = self.find_elements(Common.element47)
         for i in elp:
             if i.text == day:
-                print(i.text)
+                # print(i.text)
                 i.click()
                 break
         return years
@@ -249,7 +249,7 @@ class Resident_check(Base):
         for c in devse:
             for e in p:
                 if c in e.text:
-                    print(e.text)
+                    # print(e.text)
                     time.sleep(5)
                     e.click()
                     break

@@ -17,6 +17,10 @@ shenfzf = r'C:\Users\26765\Desktop\python测试\Ui自动化\Data\身份证反面
 file_path = [(shenfzz,shenfzf,'身份证'),(file,file,'其他')]
 file_path1=[file,file,file,file]
 Issue_permissions=Mysqldb().mysqldb_03(type=7)
-print(login[-1][0])
+
+
+
+if __name__ == '__main__':
+    print(login[-1][0])
 
 

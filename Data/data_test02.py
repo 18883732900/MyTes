@@ -20,4 +20,8 @@ Brithday = Mysqldb().mysqldb(type=6,table='data_test02')
 file_list4=[[file,file],[file,None]]
 Issue_permissions=Mysqldb().mysqldb_03(type=7,table='data_test02')
 Relationship_type=Mysqldb().mysqldb(table='data_test02',type=9)
-print(Issue_permissions)
+
+
+
+if __name__ == '__main__':
+    print(Issue_permissions)

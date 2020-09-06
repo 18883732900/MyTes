@@ -143,7 +143,7 @@ class uploda(Base):
         time.sleep(3)
         self.Operation(*Common.element21)
         years =int(self.find_element(Common.element22).text[0:-2])
-        print(years)
+        # print(years)
         mounts = int(self.find_element(Common.element23).text[0:-2])
         if int(year) is not None:
             if int(year) < years:
@@ -166,7 +166,7 @@ class uploda(Base):
         elp = self.find_elements(Common.element24)
         for i in elp:
             if i.text == day:
-                print(i.text)
+                # print(i.text)
                 i.click()
                 break
         return years
@@ -194,7 +194,7 @@ class uploda(Base):
         for c in devse:
             for e in p:
                 if c in e.text:
-                    print(e.text)
+                    # print(e.text)
                     time.sleep(5)
                     e.click()
                     break
