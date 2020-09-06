@@ -1,0 +1,2004 @@
+<ns0:test-suite xmlns:ns0="urn:model.allure.qatools.yandex.ru" start="1599396382730" stop="1599396665748">
+  <name>Scripts</name>
+  <labels/>
+  <test-cases>
+    <test-case start="1599396382730" status="passed" stop="1599396403918">
+      <name>test01.Test_1.test_login[123-123456]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="CRITTCAL"/>
+        <label name="thread" value="8476-MainThread"/>
+        <label name="host" value="DESKTOP-VMVNVBP"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1599396400198" status="passed" stop="1599396403917">
+          <name>登录测试</name>
+          <title>登录测试</title>
+          <attachments>
+            <attachment source="19ae049f-b58a-428c-9421-9a7286688a51-attachment.txt" title="登录测试" type="text/plain"/>
+          </attachments>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1599396404035" status="passed" stop="1599396407581">
+      <name>test01.Test_1.test_login[admin-111]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="CRITTCAL"/>
+        <label name="thread" value="8476-MainThread"/>
+        <label name="host" value="DESKTOP-VMVNVBP"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1599396404110" status="passed" stop="1599396407581">
+          <name>登录测试</name>
+          <title>登录测试</title>
+          <attachments>
+            <attachment source="366f8c07-bbe8-4294-8370-44497a0f4f9b-attachment.txt" title="登录测试" type="text/plain"/>
+          </attachments>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1599396407767" status="passed" stop="1599396411904">
+      <name>test01.Test_1.test_login[admin -123456]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="CRITTCAL"/>
+        <label name="thread" value="8476-MainThread"/>
+        <label name="host" value="DESKTOP-VMVNVBP"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1599396407914" status="passed" stop="1599396411903">
+          <name>登录测试</name>
+          <title>登录测试</title>
+          <attachments>
+            <attachment source="223bcbb7-24db-48b8-82df-5c05bbd114a1-attachment.txt" title="登录测试" type="text/plain"/>
+          </attachments>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1599396412094" status="passed" stop="1599396417429">
+      <name>test01.Test_1.test_init[\u5bcc\u529b-A-A02-1]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="CRITTCAL"/>
+        <label name="thread" value="8476-MainThread"/>
+        <label name="host" value="DESKTOP-VMVNVBP"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1599396412229" status="passed" stop="1599396417429">
+          <name>进入工作人员登记前的社区选择测试</name>
+          <title>进入工作人员登记前的社区选择测试</title>
+          <attachments>
+            <attachment source="de7b1200-536b-41e8-a5f7-58cb33ee64a9-attachment.txt" title="选择不同的社区" type="text/plain"/>
+          </attachments>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1599396417566" status="passed" stop="1599396418041">
+      <name>test01.Test_1.test_001[1111111111]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="CRITTCAL"/>
+        <label name="thread" value="8476-MainThread"/>
+        <label name="host" value="DESKTOP-VMVNVBP"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1599396417649" status="passed" stop="1599396418040">
+          <name>手机号核验测试</name>
+          <title>手机号核验测试</title>
+          <attachments>
+            <attachment source="20383dbc-e7b2-418b-aa4c-07d16e2b4fd8-attachment.txt" title="校验手机号" type="text/plain"/>
+          </attachments>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1599396418166" status="passed" stop="1599396418745">
+      <name>test01.Test_1.test_001[18990038442]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="CRITTCAL"/>
+        <label name="thread" value="8476-MainThread"/>
+        <label name="host" value="DESKTOP-VMVNVBP"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1599396418246" status="passed" stop="1599396418745">
+          <name>手机号核验测试</name>
+          <title>手机号核验测试</title>
+          <attachments>
+            <attachment source="69a0ec93-0e44-40c5-895f-e974d0d3253d-attachment.txt" title="校验手机号" type="text/plain"/>
+          </attachments>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1599396418899" status="passed" stop="1599396419375">
+      <name>test01.Test_1.test_002</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="CRITTCAL"/>
+        <label name="thread" value="8476-MainThread"/>
+        <label name="host" value="DESKTOP-VMVNVBP"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1599396419000" status="passed" stop="1599396419374">
+          <name>对提交为空的测试</name>
+          <title>对提交为空的测试</title>
+          <attachments>
+            <attachment source="9df27157-9c98-4acb-965a-e9e13cbab52d-attachment.txt" title="空提交" type="text/plain"/>
+          </attachments>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1599396419512" status="passed" stop="1599396444182">
+      <name>test01.Test_1.test_003[C:\\Users\\26765\\Desktop\\python\u6d4b\u8bd5\\Ui\u81ea\u52a8\u5316\\Data\\\u8eab\u4efd\u8bc1\u6b63\u9762\u7167\u7247.jpg-C:\\Users\\26765\\Desktop\\python\u6d4b\u8bd5\\Ui\u81ea\u52a8\u5316\\Data\\\u8eab\u4efd\u8bc1\u53cd\u9762\u7167\u7247.jpg-\u8eab\u4efd\u8bc1]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="CRITTCAL"/>
+        <label name="thread" value="8476-MainThread"/>
+        <label name="host" value="DESKTOP-VMVNVBP"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1599396419597" status="passed" stop="1599396444182">
+          <name>身份证图片校验测试</name>
+          <title>身份证图片校验测试</title>
+          <attachments>
+            <attachment source="c21b1357-d6d7-4f20-8f74-264da00e7e99-attachment.txt" title="身份证图片校验" type="text/plain"/>
+          </attachments>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1599396444260" status="passed" stop="1599396447892">
+      <name>test01.Test_1.test_003[C:\\Users\\26765\\Desktop\\python\u6d4b\u8bd5\\Ui\u81ea\u52a8\u5316\\Data\\\u5fae\u4fe1\u622a\u56fe_20200820115449.png-C:\\Users\\26765\\Desktop\\python\u6d4b\u8bd5\\Ui\u81ea\u52a8\u5316\\Data\\\u5fae\u4fe1\u622a\u56fe_20200820115449.png-\u5176\u4ed6]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="CRITTCAL"/>
+        <label name="thread" value="8476-MainThread"/>
+        <label name="host" value="DESKTOP-VMVNVBP"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1599396444308" status="passed" stop="1599396447892">
+          <name>身份证图片校验测试</name>
+          <title>身份证图片校验测试</title>
+          <attachments>
+            <attachment source="6de4b44c-5f67-4981-b48c-373a31415c00-attachment.txt" title="身份证图片校验" type="text/plain"/>
+          </attachments>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1599396447969" status="passed" stop="1599396451118">
+      <name>test01.Test_1.test_004[C:\\Users\\26765\\Desktop\\python\u6d4b\u8bd5\\Ui\u81ea\u52a8\u5316\\Data\\\u5fae\u4fe1\u622a\u56fe_20200820115449.png0]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="CRITTCAL"/>
+        <label name="thread" value="8476-MainThread"/>
+        <label name="host" value="DESKTOP-VMVNVBP"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1599396448017" status="passed" stop="1599396451118">
+          <name>上传头像验证</name>
+          <title>上传头像验证</title>
+          <attachments>
+            <attachment source="ade305eb-02b9-44f9-b27f-a96515fad6af-attachment.txt" title="上传头像" type="text/plain"/>
+          </attachments>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1599396451191" status="passed" stop="1599396454335">
+      <name>test01.Test_1.test_004[C:\\Users\\26765\\Desktop\\python\u6d4b\u8bd5\\Ui\u81ea\u52a8\u5316\\Data\\\u5fae\u4fe1\u622a\u56fe_20200820115449.png1]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="CRITTCAL"/>
+        <label name="thread" value="8476-MainThread"/>
+        <label name="host" value="DESKTOP-VMVNVBP"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1599396451241" status="passed" stop="1599396454335">
+          <name>上传头像验证</name>
+          <title>上传头像验证</title>
+          <attachments>
+            <attachment source="62e2a6d8-2dc5-4318-8ee2-7ec25b35aceb-attachment.txt" title="上传头像" type="text/plain"/>
+          </attachments>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1599396454407" status="passed" stop="1599396457552">
+      <name>test01.Test_1.test_004[C:\\Users\\26765\\Desktop\\python\u6d4b\u8bd5\\Ui\u81ea\u52a8\u5316\\Data\\\u5fae\u4fe1\u622a\u56fe_20200820115449.png2]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="CRITTCAL"/>
+        <label name="thread" value="8476-MainThread"/>
+        <label name="host" value="DESKTOP-VMVNVBP"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1599396454457" status="passed" stop="1599396457552">
+          <name>上传头像验证</name>
+          <title>上传头像验证</title>
+          <attachments>
+            <attachment source="2a476f07-c6af-4ead-a6e2-4a4d245ffc9a-attachment.txt" title="上传头像" type="text/plain"/>
+          </attachments>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1599396457632" status="passed" stop="1599396460773">
+      <name>test01.Test_1.test_004[C:\\Users\\26765\\Desktop\\python\u6d4b\u8bd5\\Ui\u81ea\u52a8\u5316\\Data\\\u5fae\u4fe1\u622a\u56fe_20200820115449.png3]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="CRITTCAL"/>
+        <label name="thread" value="8476-MainThread"/>
+        <label name="host" value="DESKTOP-VMVNVBP"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1599396457680" status="passed" stop="1599396460773">
+          <name>上传头像验证</name>
+          <title>上传头像验证</title>
+          <attachments>
+            <attachment source="cebd2aea-4834-4e1d-a38c-75c35e307d02-attachment.txt" title="上传头像" type="text/plain"/>
+          </attachments>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1599396460848" status="passed" stop="1599396462049">
+      <name>test01.Test_1.test_005[652101199808071455-\u674e\u660a]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="CRITTCAL"/>
+        <label name="thread" value="8476-MainThread"/>
+        <label name="host" value="DESKTOP-VMVNVBP"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1599396460896" status="passed" stop="1599396462049">
+          <name>身份证号码输入验证</name>
+          <title>身份证号码输入验证</title>
+          <attachments>
+            <attachment source="f2f505d6-c0bd-4072-a585-6f670a835fab-attachment.txt" title="身份证号码校验" type="text/plain"/>
+          </attachments>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1599396462124" status="passed" stop="1599396463330">
+      <name>test01.Test_1.test_005[330000199808071395-\u738b\u4e8c]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="CRITTCAL"/>
+        <label name="thread" value="8476-MainThread"/>
+        <label name="host" value="DESKTOP-VMVNVBP"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1599396462171" status="passed" stop="1599396463330">
+          <name>身份证号码输入验证</name>
+          <title>身份证号码输入验证</title>
+          <attachments>
+            <attachment source="bde8f6eb-98c9-41f7-8876-52e2b544305f-attachment.txt" title="身份证号码校验" type="text/plain"/>
+          </attachments>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1599396463407" status="failed" stop="1599396473038">
+      <name>test01.Test_1.test_006[15-2014-11]</name>
+      <failure>
+        <message>ValueError: invalid literal for int() with base 10: ''</message>
+        <stack-trace>self = &lt;Scripts.test01.Test_1 object at 0x04FF3F50&gt;, day = '15', year = '2014', mount = '11'
+
+    @allure.step(title='工作人员年龄输入校验')
+    @pytest.allure.severity('CRITTCAL')
+    @pytest.mark.skipif(data_test01.file_path[-1][-1] == '身份证' or 1 == 2, reason='跳过')
+    @pytest.mark.parametrize('day,year,mount', data_test01.Brithday)
+    def test_006(self, day, year, mount):
+        allure.attach('工作人员年龄校验', '确保工作人员合法参加工作')
+        time.sleep(2)
+&gt;       self.d.select_Birthday(type_cl=data_test01.file_path[-1][-1], day=day, year=year, mount=mount)
+
+Scripts\test01.py:193: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;Common.uploda_worker.uploda object at 0x04F81490&gt;, type_cl = '其他', year = '2014', mount = '11', day = '15'
+
+    def select_Birthday(self,type_cl=None,year=None, mount=None, day=None):
+        time.sleep(3)
+        els = self.find_elements(Common.element18)
+        for i in els:
+            if i.text==type_cl:
+                i.click()
+                break
+        time.sleep(3)
+        self.Operation(*Common.element21)
+&gt;       years =int(self.find_element(Common.element22).text[0:-2])
+E       ValueError: invalid literal for int() with base 10: ''
+
+Common\uploda_worker.py:145: ValueError</stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="severity" value="CRITTCAL"/>
+        <label name="thread" value="8476-MainThread"/>
+        <label name="host" value="DESKTOP-VMVNVBP"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1599396463455" status="failed" stop="1599396473015">
+          <name>工作人员年龄输入校验</name>
+          <title>工作人员年龄输入校验</title>
+          <attachments>
+            <attachment source="a8b28bda-df8d-4e14-9d87-5adff83def21-attachment.txt" title="工作人员年龄校验" type="text/plain"/>
+          </attachments>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1599396473129" status="failed" stop="1599396482757">
+      <name>test01.Test_1.test_006[13-2003-10]</name>
+      <failure>
+        <message>ValueError: invalid literal for int() with base 10: ''</message>
+        <stack-trace>self = &lt;Scripts.test01.Test_1 object at 0x04FE9C90&gt;, day = '13', year = '2003', mount = '10'
+
+    @allure.step(title='工作人员年龄输入校验')
+    @pytest.allure.severity('CRITTCAL')
+    @pytest.mark.skipif(data_test01.file_path[-1][-1] == '身份证' or 1 == 2, reason='跳过')
+    @pytest.mark.parametrize('day,year,mount', data_test01.Brithday)
+    def test_006(self, day, year, mount):
+        allure.attach('工作人员年龄校验', '确保工作人员合法参加工作')
+        time.sleep(2)
+&gt;       self.d.select_Birthday(type_cl=data_test01.file_path[-1][-1], day=day, year=year, mount=mount)
+
+Scripts\test01.py:193: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;Common.uploda_worker.uploda object at 0x04F81490&gt;, type_cl = '其他', year = '2003', mount = '10', day = '13'
+
+    def select_Birthday(self,type_cl=None,year=None, mount=None, day=None):
+        time.sleep(3)
+        els = self.find_elements(Common.element18)
+        for i in els:
+            if i.text==type_cl:
+                i.click()
+                break
+        time.sleep(3)
+        self.Operation(*Common.element21)
+&gt;       years =int(self.find_element(Common.element22).text[0:-2])
+E       ValueError: invalid literal for int() with base 10: ''
+
+Common\uploda_worker.py:145: ValueError</stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="severity" value="CRITTCAL"/>
+        <label name="thread" value="8476-MainThread"/>
+        <label name="host" value="DESKTOP-VMVNVBP"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1599396473179" status="failed" stop="1599396482733">
+          <name>工作人员年龄输入校验</name>
+          <title>工作人员年龄输入校验</title>
+          <attachments>
+            <attachment source="c72cfbcf-615e-4b8f-82eb-798c961d7a91-attachment.txt" title="工作人员年龄校验" type="text/plain"/>
+          </attachments>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1599396482858" status="failed" stop="1599396510460">
+      <name>test01.Test_1.test_007[\u4e2d\u5171\u515a\u5458-\u8b66\u5bdf-\u4fdd\u5b89]</name>
+      <failure>
+        <message>TimeoutException: Message: 
+</message>
+        <stack-trace>self = &lt;Scripts.test01.Test_1 object at 0x04F69610&gt;, type1 = '中共党员', type2 = '警察', type3 = '保安'
+
+    @allure.step(title='提交后反显校验')
+    @pytest.allure.severity('CRITTCAL')
+    @pytest.mark.parametrize('type1,type2,type3', data_test01.worker_job)
+    @pytest.mark.skipif(1 == 2, reason='跳过')
+    def test_007(self, type1, type2, type3):
+        allure.attach('返显校验', '确保上传信息都有效')
+        time.sleep(3)
+        self.d.selects_Political(type=type1)
+        self.d.job(text=type2)
+        self.d.work_type(text=type3)
+        time.sleep(3)
+        self.d.clickup()
+        dict1 = {}
+        time.sleep(10)
+&gt;       els = self.d.find_elements(Scripts.element19)
+
+Scripts\test01.py:215: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+Base\base.py:111: in find_elements
+    el = WebDriverWait(self.driver, time, Frequency).until(lambda x: x.find_elements(*type_text))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;selenium.webdriver.support.wait.WebDriverWait (session="d2b68096-b8b9-4bc6-a931-66b1b0b4ac4a")&gt;, method = &lt;function Base.find_elements.&lt;locals&gt;.&lt;lambda&gt; at 0x052DB8A0&gt;, message = ''
+
+    def until(self, method, message=''):
+        """Calls the method provided with the driver as an argument until the \
+        return value is not False."""
+        screen = None
+        stacktrace = None
+    
+        end_time = time.time() + self._timeout
+        while True:
+            try:
+                value = method(self._driver)
+                if value:
+                    return value
+            except self._ignored_exceptions as exc:
+                screen = getattr(exc, 'screen', None)
+                stacktrace = getattr(exc, 'stacktrace', None)
+            time.sleep(self._poll)
+            if time.time() &gt; end_time:
+                break
+&gt;       raise TimeoutException(message, screen, stacktrace)
+E       selenium.common.exceptions.TimeoutException: Message:
+
+..\..\..\appdata\local\programs\python\python36-32\lib\site-packages\selenium\webdriver\support\wait.py:80: TimeoutException</stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="severity" value="CRITTCAL"/>
+        <label name="thread" value="8476-MainThread"/>
+        <label name="host" value="DESKTOP-VMVNVBP"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1599396482907" status="failed" stop="1599396510423">
+          <name>提交后反显校验</name>
+          <title>提交后反显校验</title>
+          <attachments>
+            <attachment source="f71a81e8-bfce-4d3e-97ed-5aa83d6c55fc-attachment.txt" title="返显校验" type="text/plain"/>
+          </attachments>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1599396510548" status="failed" stop="1599396520802">
+      <name>test01.Test_1.test_008[type0-devse0-17709471704-18607347313]</name>
+      <failure>
+        <message>TimeoutException: Message: 
+</message>
+        <stack-trace>self = &lt;Scripts.test01.Test_1 object at 0x01918970&gt;, type = ['IC卡绑定', '身份证绑定'], devse = ['温控门禁设备--61028', '月坛小区门禁设备'], num1 = '17709471704', num2 = '18607347313'
+
+    @allure.step(title='权限下发选择校验')
+    @pytest.allure.severity('CRITTCAL')
+    @pytest.mark.parametrize('type,devse,num1,num2', data_test01.Issue_permissions)
+    @pytest.mark.skipif(1 == 2, reason='跳过')
+    def test_008(self, type, devse, num1, num2):
+        allure.attach('点击权限', '核验是否选择')
+&gt;       self.d.Issue_permissions(type=type, devse=devse, num1=num1, num2=num2)
+
+Scripts\test01.py:233: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+Common\uploda_worker.py:182: in Issue_permissions
+    s=self.find_elements(Common.element35)
+Base\base.py:111: in find_elements
+    el = WebDriverWait(self.driver, time, Frequency).until(lambda x: x.find_elements(*type_text))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;selenium.webdriver.support.wait.WebDriverWait (session="d2b68096-b8b9-4bc6-a931-66b1b0b4ac4a")&gt;, method = &lt;function Base.find_elements.&lt;locals&gt;.&lt;lambda&gt; at 0x052DBC90&gt;, message = ''
+
+    def until(self, method, message=''):
+        """Calls the method provided with the driver as an argument until the \
+        return value is not False."""
+        screen = None
+        stacktrace = None
+    
+        end_time = time.time() + self._timeout
+        while True:
+            try:
+                value = method(self._driver)
+                if value:
+                    return value
+            except self._ignored_exceptions as exc:
+                screen = getattr(exc, 'screen', None)
+                stacktrace = getattr(exc, 'stacktrace', None)
+            time.sleep(self._poll)
+            if time.time() &gt; end_time:
+                break
+&gt;       raise TimeoutException(message, screen, stacktrace)
+E       selenium.common.exceptions.TimeoutException: Message:
+
+..\..\..\appdata\local\programs\python\python36-32\lib\site-packages\selenium\webdriver\support\wait.py:80: TimeoutException</stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="severity" value="CRITTCAL"/>
+        <label name="thread" value="8476-MainThread"/>
+        <label name="host" value="DESKTOP-VMVNVBP"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1599396510594" status="failed" stop="1599396520782">
+          <name>权限下发选择校验</name>
+          <title>权限下发选择校验</title>
+          <attachments>
+            <attachment source="abae6a07-7013-4330-85e9-4cf6ca6fc4c9-attachment.txt" title="点击权限" type="text/plain"/>
+          </attachments>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1599396520894" status="failed" stop="1599396531128">
+      <name>test01.Test_1.test_009</name>
+      <failure>
+        <message>TimeoutException: Message: 
+</message>
+        <stack-trace>self = &lt;Scripts.test01.Test_1 object at 0x018B9550&gt;
+
+    @allure.step(title='检查提交按钮是否自动进行页面跳转')
+    @pytest.allure.severity('CRITTCAL')
+    @pytest.mark.skipif(1 == 2, reason='跳过')
+    def test_009(self):
+        allure.attach('点击授权检测页面跳转', '确保成功点击授权')
+&gt;       self.d.up_issue()
+
+Scripts\test01.py:252: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+Common\uploda_worker.py:203: in up_issue
+    self.Operation(*Common.element39)
+Base\base.py:117: in Operation
+    el = self.find_element(type_text, time, Frequency)
+Base\base.py:105: in find_element
+    el = WebDriverWait(self.driver, time, Frequency).until(lambda x: x.find_element(*type_text))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;selenium.webdriver.support.wait.WebDriverWait (session="d2b68096-b8b9-4bc6-a931-66b1b0b4ac4a")&gt;, method = &lt;function Base.find_element.&lt;locals&gt;.&lt;lambda&gt; at 0x052EBB70&gt;, message = ''
+
+    def until(self, method, message=''):
+        """Calls the method provided with the driver as an argument until the \
+        return value is not False."""
+        screen = None
+        stacktrace = None
+    
+        end_time = time.time() + self._timeout
+        while True:
+            try:
+                value = method(self._driver)
+                if value:
+                    return value
+            except self._ignored_exceptions as exc:
+                screen = getattr(exc, 'screen', None)
+                stacktrace = getattr(exc, 'stacktrace', None)
+            time.sleep(self._poll)
+            if time.time() &gt; end_time:
+                break
+&gt;       raise TimeoutException(message, screen, stacktrace)
+E       selenium.common.exceptions.TimeoutException: Message:
+
+..\..\..\appdata\local\programs\python\python36-32\lib\site-packages\selenium\webdriver\support\wait.py:80: TimeoutException</stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="severity" value="CRITTCAL"/>
+        <label name="thread" value="8476-MainThread"/>
+        <label name="host" value="DESKTOP-VMVNVBP"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1599396520946" status="failed" stop="1599396531106">
+          <name>检查提交按钮是否自动进行页面跳转</name>
+          <title>检查提交按钮是否自动进行页面跳转</title>
+          <attachments>
+            <attachment source="ca568458-3d24-4f2a-9040-3f8b69c1bc21-attachment.txt" title="点击授权检测页面跳转" type="text/plain"/>
+          </attachments>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1599396531216" status="failed" stop="1599396537017">
+      <name>test01.Test_1.test_010</name>
+      <failure>
+        <message>AssertionError: assert 4 == 5
+ +  where 5 = len(['王二', '富力', 'A', 'A02', '1'])</message>
+        <stack-trace>self = &lt;Scripts.test01.Test_1 object at 0x018BD430&gt;
+
+    @allure.step(title='在工作人员列表中核对基本数据')
+    @pytest.allure.severity('CRITTCAL')
+    @pytest.mark.skipif(1 == 2, reason='跳过')
+    def test_010(self):
+        allure.attach('核对', '确保上传信息都正确')
+        time.sleep(3)
+        s = self.d.page(fun='driver.page_source')
+        print(s)
+        x = 0
+        list = [i for i in data_test01.select[-1]]
+        list.insert(0, data_test01.user[-1][-1])
+        for i in list:
+            if i in s:
+                x += 1
+&gt;       assert x == len(list)
+E       AssertionError: assert 4 == 5
+E        +  where 5 = len(['王二', '富力', 'A', 'A02', '1'])
+
+Scripts\test01.py:279: AssertionError</stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="severity" value="CRITTCAL"/>
+        <label name="thread" value="8476-MainThread"/>
+        <label name="host" value="DESKTOP-VMVNVBP"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1599396531260" status="failed" stop="1599396536972">
+          <name>在工作人员列表中核对基本数据</name>
+          <title>在工作人员列表中核对基本数据</title>
+          <attachments>
+            <attachment source="864f896b-e310-47d3-9947-ccc3716757d8-attachment.txt" title="核对" type="text/plain"/>
+          </attachments>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1599396537293" status="failed" stop="1599396547632">
+      <name>test01.Test_1.test_011</name>
+      <failure>
+        <message>TimeoutException: Message: 
+</message>
+        <stack-trace>self = &lt;Scripts.test01.Test_1 object at 0x04FBAFD0&gt;
+
+    @allure.step(title='在工作人员列表中门禁里检测上次填入信息是否成功带入')
+    @pytest.allure.severity('CRITTCAL')
+    def test_011(self):
+        allure.attach('返显校验', '权限带入正常')
+&gt;       self.d.Verify_permissions(text=data_test01.list[-1])
+
+Scripts\test01.py:285: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+Common\uploda_worker.py:206: in Verify_permissions
+    self.Operation(*Common.element41)
+Base\base.py:117: in Operation
+    el = self.find_element(type_text, time, Frequency)
+Base\base.py:105: in find_element
+    el = WebDriverWait(self.driver, time, Frequency).until(lambda x: x.find_element(*type_text))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;selenium.webdriver.support.wait.WebDriverWait (session="d2b68096-b8b9-4bc6-a931-66b1b0b4ac4a")&gt;, method = &lt;function Base.find_element.&lt;locals&gt;.&lt;lambda&gt; at 0x052EBE40&gt;, message = ''
+
+    def until(self, method, message=''):
+        """Calls the method provided with the driver as an argument until the \
+        return value is not False."""
+        screen = None
+        stacktrace = None
+    
+        end_time = time.time() + self._timeout
+        while True:
+            try:
+                value = method(self._driver)
+                if value:
+                    return value
+            except self._ignored_exceptions as exc:
+                screen = getattr(exc, 'screen', None)
+                stacktrace = getattr(exc, 'stacktrace', None)
+            time.sleep(self._poll)
+            if time.time() &gt; end_time:
+                break
+&gt;       raise TimeoutException(message, screen, stacktrace)
+E       selenium.common.exceptions.TimeoutException: Message:
+
+..\..\..\appdata\local\programs\python\python36-32\lib\site-packages\selenium\webdriver\support\wait.py:80: TimeoutException</stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="severity" value="CRITTCAL"/>
+        <label name="thread" value="8476-MainThread"/>
+        <label name="host" value="DESKTOP-VMVNVBP"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1599396537398" status="failed" stop="1599396547609">
+          <name>在工作人员列表中门禁里检测上次填入信息是否成功带入</name>
+          <title>在工作人员列表中门禁里检测上次填入信息是否成功带入</title>
+          <attachments>
+            <attachment source="54d80cf8-bbcf-4348-b48d-dfd680632301-attachment.txt" title="返显校验" type="text/plain"/>
+          </attachments>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1599396552718" status="passed" stop="1599396569451">
+      <name>test02.Test_2.test_login[123-123456]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="CRITTCAL"/>
+        <label name="thread" value="8476-MainThread"/>
+        <label name="host" value="DESKTOP-VMVNVBP"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1599396566009" status="passed" stop="1599396569451">
+          <name>登录测试</name>
+          <title>登录测试</title>
+          <attachments>
+            <attachment source="e2358888-1546-405a-a320-89d4ba4212c0-attachment.txt" title="登录测试" type="text/plain"/>
+          </attachments>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1599396569531" status="passed" stop="1599396572977">
+      <name>test02.Test_2.test_login[admin-111]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="CRITTCAL"/>
+        <label name="thread" value="8476-MainThread"/>
+        <label name="host" value="DESKTOP-VMVNVBP"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1599396569582" status="passed" stop="1599396572976">
+          <name>登录测试</name>
+          <title>登录测试</title>
+          <attachments>
+            <attachment source="6897e686-56ca-4ed6-9ec1-170c1f012b17-attachment.txt" title="登录测试" type="text/plain"/>
+          </attachments>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1599396573055" status="passed" stop="1599396576589">
+      <name>test02.Test_2.test_login[admin -123456]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="CRITTCAL"/>
+        <label name="thread" value="8476-MainThread"/>
+        <label name="host" value="DESKTOP-VMVNVBP"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1599396573106" status="passed" stop="1599396576589">
+          <name>登录测试</name>
+          <title>登录测试</title>
+          <attachments>
+            <attachment source="c2751620-9e95-4f30-b515-477583e80882-attachment.txt" title="登录测试" type="text/plain"/>
+          </attachments>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1599396576665" status="passed" stop="1599396584331">
+      <name>test02.Test_2.test_init[\u5929\u575b\u793e\u533a-\u5929\u575b\u5c0f\u533a-\u5929\u575b\u4e1c\u91cc-1\u5355\u5143-14-1402]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="CRITTCAL"/>
+        <label name="thread" value="8476-MainThread"/>
+        <label name="host" value="DESKTOP-VMVNVBP"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1599396576713" status="passed" stop="1599396584331">
+          <name>进入居民登记前的社区选择测试</name>
+          <title>进入居民登记前的社区选择测试</title>
+          <attachments>
+            <attachment source="16a942be-6668-4b75-b537-e8d14044c40c-attachment.txt" title="选择不同的社区" type="text/plain"/>
+          </attachments>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1599396584460" status="failed" stop="1599396601461">
+      <name>test02.Test_2.test_01[\u5468\u4e09-330000199808071395-13202268590-0629-C:\\Users\\26765\\Desktop\\python\u6d4b\u8bd5\\Ui\u81ea\u52a8\u5316\\Data\\\u8eab\u4efd\u8bc1\u6b63\u9762\u7167\u7247.jpg-C:\\Users\\26765\\Desktop\\python\u6d4b\u8bd5\\Ui\u81ea\u52a8\u5316\\Data\\\u8eab\u4efd\u8bc1\u53cd\u9762\u7167\u7247.jpg-file30-2]</name>
+      <failure>
+        <message>ElementClickInterceptedException: Message: Element &lt;i class="el-icon-close"&gt; is not clickable at point (1217,840) because another element &lt;div class="el-message-box__wrapper msgbox-fade-leave msgbox-fade-leave-active"&gt; obscures it
+</message>
+        <stack-trace>self = &lt;Scripts.test02.Test_2 object at 0x0190E9B0&gt;, name = '周三', idcard = '330000199808071395', number = '13202268590', num = '0629', file1 = 'C:\\Users\\26765\\Desktop\\python测试\\Ui自动化\\Data\\身份证正面照片.jpg'
+file2 = 'C:\\Users\\26765\\Desktop\\python测试\\Ui自动化\\Data\\身份证反面照片.jpg'
+file3 = ['C:\\Users\\26765\\Desktop\\python测试\\Ui自动化\\Data\\微信截图_20200820115449.png', 'C:\\Users\\26765\\Desktop\\python测试\\Ui自动化\\Data\\微信截图_20200820115449.png'], x = 2
+
+    @allure.step(title='产权人信息填写')
+    @pytest.allure.severity('CRITTCAL')
+    @pytest.mark.parametrize('file1,file2,file3,x',data_test02.file_path)
+    @pytest.mark.parametrize('name, idcard, number, num', data_test02.owner_message)
+    def test_01(self,name, idcard, number, num,file1,file2,file3,x):
+        allure.attach('图片校验', '对图片能否上传成功做断言')
+        self.d.owner(name, idcard, number, num)
+&gt;       self.d.img(file1,file2,file3,x)
+
+Scripts\test02.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+Common\Resident_check_in.py:100: in img
+    self.Operation(*Common.element23)
+Base\base.py:121: in Operation
+    el.click()
+..\..\..\appdata\local\programs\python\python36-32\lib\site-packages\selenium\webdriver\remote\webelement.py:80: in click
+    self._execute(Command.CLICK_ELEMENT)
+..\..\..\appdata\local\programs\python\python36-32\lib\site-packages\selenium\webdriver\remote\webelement.py:633: in _execute
+    return self._parent.execute(command, params)
+..\..\..\appdata\local\programs\python\python36-32\lib\site-packages\selenium\webdriver\remote\webdriver.py:321: in execute
+    self.error_handler.check_response(response)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;selenium.webdriver.remote.errorhandler.ErrorHandler object at 0x018C55B0&gt;
+response = {'status': 400, 'value': '{"value":{"error":"element click intercepted","message":"Element &lt;i class=\\"el-icon-close\\...e@chrome://marionette/content/listener.js:447:11\\nclickElement@chrome://marionette/content/listener.js:1319:24\\n"}}'}
+
+    def check_response(self, response):
+        """
+        Checks that a JSON response from the WebDriver does not have an error.
+    
+        :Args:
+         - response - The JSON response from the WebDriver server as a dictionary
+           object.
+    
+        :Raises: If the response contains an error message.
+        """
+        status = response.get('status', None)
+        if status is None or status == ErrorCode.SUCCESS:
+            return
+        value = None
+        message = response.get("message", "")
+        screen = response.get("screen", "")
+        stacktrace = None
+        if isinstance(status, int):
+            value_json = response.get('value', None)
+            if value_json and isinstance(value_json, basestring):
+                import json
+                try:
+                    value = json.loads(value_json)
+                    if len(value.keys()) == 1:
+                        value = value['value']
+                    status = value.get('error', None)
+                    if status is None:
+                        status = value["status"]
+                        message = value["value"]
+                        if not isinstance(message, basestring):
+                            value = message
+                            message = message.get('message')
+                    else:
+                        message = value.get('message', None)
+                except ValueError:
+                    pass
+    
+        exception_class = ErrorInResponseException
+        if status in ErrorCode.NO_SUCH_ELEMENT:
+            exception_class = NoSuchElementException
+        elif status in ErrorCode.NO_SUCH_FRAME:
+            exception_class = NoSuchFrameException
+        elif status in ErrorCode.NO_SUCH_WINDOW:
+            exception_class = NoSuchWindowException
+        elif status in ErrorCode.STALE_ELEMENT_REFERENCE:
+            exception_class = StaleElementReferenceException
+        elif status in ErrorCode.ELEMENT_NOT_VISIBLE:
+            exception_class = ElementNotVisibleException
+        elif status in ErrorCode.INVALID_ELEMENT_STATE:
+            exception_class = InvalidElementStateException
+        elif status in ErrorCode.INVALID_SELECTOR \
+                or status in ErrorCode.INVALID_XPATH_SELECTOR \
+                or status in ErrorCode.INVALID_XPATH_SELECTOR_RETURN_TYPER:
+            exception_class = InvalidSelectorException
+        elif status in ErrorCode.ELEMENT_IS_NOT_SELECTABLE:
+            exception_class = ElementNotSelectableException
+        elif status in ErrorCode.ELEMENT_NOT_INTERACTABLE:
+            exception_class = ElementNotInteractableException
+        elif status in ErrorCode.INVALID_COOKIE_DOMAIN:
+            exception_class = InvalidCookieDomainException
+        elif status in ErrorCode.UNABLE_TO_SET_COOKIE:
+            exception_class = UnableToSetCookieException
+        elif status in ErrorCode.TIMEOUT:
+            exception_class = TimeoutException
+        elif status in ErrorCode.SCRIPT_TIMEOUT:
+            exception_class = TimeoutException
+        elif status in ErrorCode.UNKNOWN_ERROR:
+            exception_class = WebDriverException
+        elif status in ErrorCode.UNEXPECTED_ALERT_OPEN:
+            exception_class = UnexpectedAlertPresentException
+        elif status in ErrorCode.NO_ALERT_OPEN:
+            exception_class = NoAlertPresentException
+        elif status in ErrorCode.IME_NOT_AVAILABLE:
+            exception_class = ImeNotAvailableException
+        elif status in ErrorCode.IME_ENGINE_ACTIVATION_FAILED:
+            exception_class = ImeActivationFailedException
+        elif status in ErrorCode.MOVE_TARGET_OUT_OF_BOUNDS:
+            exception_class = MoveTargetOutOfBoundsException
+        elif status in ErrorCode.JAVASCRIPT_ERROR:
+            exception_class = JavascriptException
+        elif status in ErrorCode.SESSION_NOT_CREATED:
+            exception_class = SessionNotCreatedException
+        elif status in ErrorCode.INVALID_ARGUMENT:
+            exception_class = InvalidArgumentException
+        elif status in ErrorCode.NO_SUCH_COOKIE:
+            exception_class = NoSuchCookieException
+        elif status in ErrorCode.UNABLE_TO_CAPTURE_SCREEN:
+            exception_class = ScreenshotException
+        elif status in ErrorCode.ELEMENT_CLICK_INTERCEPTED:
+            exception_class = ElementClickInterceptedException
+        elif status in ErrorCode.INSECURE_CERTIFICATE:
+            exception_class = InsecureCertificateException
+        elif status in ErrorCode.INVALID_COORDINATES:
+            exception_class = InvalidCoordinatesException
+        elif status in ErrorCode.INVALID_SESSION_ID:
+            exception_class = InvalidSessionIdException
+        elif status in ErrorCode.UNKNOWN_METHOD:
+            exception_class = UnknownMethodException
+        else:
+            exception_class = WebDriverException
+        if value == '' or value is None:
+            value = response['value']
+        if isinstance(value, basestring):
+            if exception_class == ErrorInResponseException:
+                raise exception_class(response, value)
+            raise exception_class(value)
+        if message == "" and 'message' in value:
+            message = value['message']
+    
+        screen = None
+        if 'screen' in value:
+            screen = value['screen']
+    
+        stacktrace = None
+        if 'stackTrace' in value and value['stackTrace']:
+            stacktrace = []
+            try:
+                for frame in value['stackTrace']:
+                    line = self._value_or_default(frame, 'lineNumber', '')
+                    file = self._value_or_default(frame, 'fileName', '&lt;anonymous&gt;')
+                    if line:
+                        file = "%s:%s" % (file, line)
+                    meth = self._value_or_default(frame, 'methodName', '&lt;anonymous&gt;')
+                    if 'className' in frame:
+                        meth = "%s.%s" % (frame['className'], meth)
+                    msg = "    at %s (%s)"
+                    msg = msg % (meth, file)
+                    stacktrace.append(msg)
+            except TypeError:
+                pass
+        if exception_class == ErrorInResponseException:
+            raise exception_class(response, message)
+        elif exception_class == UnexpectedAlertPresentException:
+            alert_text = None
+            if 'data' in value:
+                alert_text = value['data'].get('text')
+            elif 'alert' in value:
+                alert_text = value['alert'].get('text')
+            raise exception_class(message, screen, stacktrace, alert_text)
+&gt;       raise exception_class(message, screen, stacktrace)
+E       selenium.common.exceptions.ElementClickInterceptedException: Message: Element &lt;i class="el-icon-close"&gt; is not clickable at point (1217,840) because another element &lt;div class="el-message-box__wrapper msgbox-fade-leave msgbox-fade-leave-active"&gt; obscures it
+
+..\..\..\appdata\local\programs\python\python36-32\lib\site-packages\selenium\webdriver\remote\errorhandler.py:242: ElementClickInterceptedException</stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="severity" value="CRITTCAL"/>
+        <label name="thread" value="8476-MainThread"/>
+        <label name="host" value="DESKTOP-VMVNVBP"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1599396584542" status="failed" stop="1599396601370">
+          <name>产权人信息填写</name>
+          <title>产权人信息填写</title>
+          <attachments>
+            <attachment source="73c98712-f449-42b1-85b2-266e7d4f71de-attachment.txt" title="图片校验" type="text/plain"/>
+          </attachments>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1599396601550" status="failed" stop="1599396612793">
+      <name>test02.Test_2.test_02[1111111111]</name>
+      <failure>
+        <message>TimeoutException: Message: 
+</message>
+        <stack-trace>self = &lt;Scripts.test02.Test_2 object at 0x04F849B0&gt;, param = '1111111111'
+
+    @allure.step(title='手机号核验测试')
+    @pytest.allure.severity('CRITTCAL')
+    def test_02(self,param):
+        allure.attach('校验手机号', '参数中加入了正确和错误的手机号，对不同情况做了断言')
+&gt;       self.d.cd_worker(number=param)
+
+Scripts\test02.py:74: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+Common\Resident_check_in.py:111: in cd_worker
+    self.Operation(*Common.element25, number)
+Base\base.py:117: in Operation
+    el = self.find_element(type_text, time, Frequency)
+Base\base.py:105: in find_element
+    el = WebDriverWait(self.driver, time, Frequency).until(lambda x: x.find_element(*type_text))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;selenium.webdriver.support.wait.WebDriverWait (session="138af5cd-c645-4e98-8088-ae3b8551e5cb")&gt;, method = &lt;function Base.find_element.&lt;locals&gt;.&lt;lambda&gt; at 0x016D87C8&gt;, message = ''
+
+    def until(self, method, message=''):
+        """Calls the method provided with the driver as an argument until the \
+        return value is not False."""
+        screen = None
+        stacktrace = None
+    
+        end_time = time.time() + self._timeout
+        while True:
+            try:
+                value = method(self._driver)
+                if value:
+                    return value
+            except self._ignored_exceptions as exc:
+                screen = getattr(exc, 'screen', None)
+                stacktrace = getattr(exc, 'stacktrace', None)
+            time.sleep(self._poll)
+            if time.time() &gt; end_time:
+                break
+&gt;       raise TimeoutException(message, screen, stacktrace)
+E       selenium.common.exceptions.TimeoutException: Message:
+
+..\..\..\appdata\local\programs\python\python36-32\lib\site-packages\selenium\webdriver\support\wait.py:80: TimeoutException</stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="severity" value="CRITTCAL"/>
+        <label name="thread" value="8476-MainThread"/>
+        <label name="host" value="DESKTOP-VMVNVBP"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1599396601596" status="failed" stop="1599396612764">
+          <name>手机号核验测试</name>
+          <title>手机号核验测试</title>
+          <attachments>
+            <attachment source="58c0d38d-fd8d-489f-84d7-2bb91efa9efa-attachment.txt" title="校验手机号" type="text/plain"/>
+          </attachments>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1599396612911" status="passed" stop="1599396615566">
+      <name>test02.Test_2.test_02[13275664438]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="CRITTCAL"/>
+        <label name="thread" value="8476-MainThread"/>
+        <label name="host" value="DESKTOP-VMVNVBP"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1599396612978" status="passed" stop="1599396615566">
+          <name>手机号核验测试</name>
+          <title>手机号核验测试</title>
+          <attachments>
+            <attachment source="9871fca9-d9ac-4f87-959f-a10a9f1d4247-attachment.txt" title="校验手机号" type="text/plain"/>
+          </attachments>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1599396615695" status="passed" stop="1599396617621">
+      <name>test02.Test_2.test_002</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="CRITTCAL"/>
+        <label name="thread" value="8476-MainThread"/>
+        <label name="host" value="DESKTOP-VMVNVBP"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1599396615771" status="passed" stop="1599396617621">
+          <name>对提交为空的测试</name>
+          <title>对提交为空的测试</title>
+          <attachments>
+            <attachment source="7880d484-2a3d-4912-a355-c555ff8f700d-attachment.txt" title="空提交" type="text/plain"/>
+          </attachments>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1599396617720" status="failed" stop="1599396629049">
+      <name>test02.Test_2.test_003[C:\\Users\\26765\\Desktop\\python\u6d4b\u8bd5\\Ui\u81ea\u52a8\u5316\\Data\\\u8eab\u4efd\u8bc1\u6b63\u9762\u7167\u7247.jpg-C:\\Users\\26765\\Desktop\\python\u6d4b\u8bd5\\Ui\u81ea\u52a8\u5316\\Data\\\u8eab\u4efd\u8bc1\u53cd\u9762\u7167\u7247.jpg-\u8eab\u4efd\u8bc1]</name>
+      <failure>
+        <message>TimeoutException: Message: 
+</message>
+        <stack-trace>self = &lt;Scripts.test02.Test_2 object at 0x01901C50&gt;, file_Path1 = 'C:\\Users\\26765\\Desktop\\python测试\\Ui自动化\\Data\\身份证正面照片.jpg', file_Path2 = 'C:\\Users\\26765\\Desktop\\python测试\\Ui自动化\\Data\\身份证反面照片.jpg', type_c = '身份证'
+
+    @allure.step(title='身份证图片校验测试')
+    @pytest.allure.severity('CRITTCAL')
+    @pytest.mark.skipif(1 == 2, reason='跳过')
+    @pytest.mark.parametrize('file_Path1,file_Path2,type_c', data_test02.file_path2)
+    def test_003(self, file_Path1, file_Path2, type_c):
+        allure.attach('身份证图片校验', '确保身份证合法有效')
+        print(file_Path1)
+&gt;       type = self.d.shengfz(file_path1=file_Path1, file_path2=file_Path2, type_cl=type_c)
+
+Scripts\test02.py:106: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+Common\Resident_check_in.py:146: in shengfz
+    self.Operation(*Common.element33, file_path1)
+Base\base.py:117: in Operation
+    el = self.find_element(type_text, time, Frequency)
+Base\base.py:105: in find_element
+    el = WebDriverWait(self.driver, time, Frequency).until(lambda x: x.find_element(*type_text))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;selenium.webdriver.support.wait.WebDriverWait (session="138af5cd-c645-4e98-8088-ae3b8551e5cb")&gt;, method = &lt;function Base.find_element.&lt;locals&gt;.&lt;lambda&gt; at 0x016CF810&gt;, message = ''
+
+    def until(self, method, message=''):
+        """Calls the method provided with the driver as an argument until the \
+        return value is not False."""
+        screen = None
+        stacktrace = None
+    
+        end_time = time.time() + self._timeout
+        while True:
+            try:
+                value = method(self._driver)
+                if value:
+                    return value
+            except self._ignored_exceptions as exc:
+                screen = getattr(exc, 'screen', None)
+                stacktrace = getattr(exc, 'stacktrace', None)
+            time.sleep(self._poll)
+            if time.time() &gt; end_time:
+                break
+&gt;       raise TimeoutException(message, screen, stacktrace)
+E       selenium.common.exceptions.TimeoutException: Message:
+
+..\..\..\appdata\local\programs\python\python36-32\lib\site-packages\selenium\webdriver\support\wait.py:80: TimeoutException</stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="severity" value="CRITTCAL"/>
+        <label name="thread" value="8476-MainThread"/>
+        <label name="host" value="DESKTOP-VMVNVBP"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1599396617784" status="failed" stop="1599396629019">
+          <name>身份证图片校验测试</name>
+          <title>身份证图片校验测试</title>
+          <attachments>
+            <attachment source="3382f0b4-85e0-40a6-867e-7ecd6de6e51e-attachment.txt" title="身份证图片校验" type="text/plain"/>
+          </attachments>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1599396629161" status="passed" stop="1599396636478">
+      <name>test02.Test_2.test_003[C:\\Users\\26765\\Desktop\\python\u6d4b\u8bd5\\Ui\u81ea\u52a8\u5316\\Data\\\u5fae\u4fe1\u622a\u56fe_20200820115449.png-C:\\Users\\26765\\Desktop\\python\u6d4b\u8bd5\\Ui\u81ea\u52a8\u5316\\Data\\\u5fae\u4fe1\u622a\u56fe_20200820115449.png-\u5176\u4ed6]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="CRITTCAL"/>
+        <label name="thread" value="8476-MainThread"/>
+        <label name="host" value="DESKTOP-VMVNVBP"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1599396629227" status="passed" stop="1599396636478">
+          <name>身份证图片校验测试</name>
+          <title>身份证图片校验测试</title>
+          <attachments>
+            <attachment source="270d824b-5d5c-4f7d-bb41-fb8034c3a2b9-attachment.txt" title="身份证图片校验" type="text/plain"/>
+          </attachments>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1599396636574" status="passed" stop="1599396639751">
+      <name>test02.Test_2.test_004[C:\\Users\\26765\\Desktop\\python\u6d4b\u8bd5\\Ui\u81ea\u52a8\u5316\\Data\\\u5fae\u4fe1\u622a\u56fe_20200820115449.png0]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="CRITTCAL"/>
+        <label name="thread" value="8476-MainThread"/>
+        <label name="host" value="DESKTOP-VMVNVBP"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1599396636636" status="passed" stop="1599396639750">
+          <name>上传头像验证</name>
+          <title>上传头像验证</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1599396639830" status="passed" stop="1599396642977">
+      <name>test02.Test_2.test_004[C:\\Users\\26765\\Desktop\\python\u6d4b\u8bd5\\Ui\u81ea\u52a8\u5316\\Data\\\u5fae\u4fe1\u622a\u56fe_20200820115449.png1]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="CRITTCAL"/>
+        <label name="thread" value="8476-MainThread"/>
+        <label name="host" value="DESKTOP-VMVNVBP"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1599396639883" status="passed" stop="1599396642977">
+          <name>上传头像验证</name>
+          <title>上传头像验证</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1599396643057" status="passed" stop="1599396646203">
+      <name>test02.Test_2.test_004[C:\\Users\\26765\\Desktop\\python\u6d4b\u8bd5\\Ui\u81ea\u52a8\u5316\\Data\\\u5fae\u4fe1\u622a\u56fe_20200820115449.png2]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="CRITTCAL"/>
+        <label name="thread" value="8476-MainThread"/>
+        <label name="host" value="DESKTOP-VMVNVBP"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1599396643116" status="passed" stop="1599396646203">
+          <name>上传头像验证</name>
+          <title>上传头像验证</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1599396646288" status="failed" stop="1599396649451">
+      <name>test02.Test_2.test_004[C:\\Users\\26765\\Desktop\\python\u6d4b\u8bd5\\Ui\u81ea\u52a8\u5316\\Data\\\u8eab\u4efd\u8bc1\u6b63\u9762\u7167\u7247.jpg]</name>
+      <failure>
+        <message>AssertionError: assert False</message>
+        <stack-trace>self = &lt;Scripts.test02.Test_2 object at 0x05037AF0&gt;, file_path = 'C:\\Users\\26765\\Desktop\\python测试\\Ui自动化\\Data\\身份证正面照片.jpg'
+
+    @allure.step(title='上传头像验证')
+    @pytest.allure.severity('CRITTCAL')
+    @pytest.mark.parametrize('file_path', data_test02.file_path1)
+    @pytest.mark.skipif(1 == 2, reason='跳过')
+    def test_004(self, file_path):
+            self.d.up_worker(file_path)
+            time.sleep(3)
+            els = self.d.find_elements(Scripts.element12)
+            x = 0
+            for el in els:
+                s = el.get_attribute('src')
+                if file_path[-9:] in s:
+                    x += 1
+                    return x
+            if x == 1:
+                assert True
+            else:
+&gt;               assert False
+E               assert False
+
+Scripts\test02.py:164: AssertionError</stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="severity" value="CRITTCAL"/>
+        <label name="thread" value="8476-MainThread"/>
+        <label name="host" value="DESKTOP-VMVNVBP"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1599396646344" status="failed" stop="1599396649442">
+          <name>上传头像验证</name>
+          <title>上传头像验证</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1599396649550" status="passed" stop="1599396650724">
+      <name>test02.Test_2.test_005[652101199808071455-\u674e\u660a]</name>
+      <attachments>
+        <attachment source="35150769-ad93-42b3-a532-22f7ce541b24-attachment.txt" title="上传头像" type="text/plain"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="8476-MainThread"/>
+        <label name="host" value="DESKTOP-VMVNVBP"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1599396650823" status="passed" stop="1599396652084">
+      <name>test02.Test_2.test_005[330000199808071395-\u6768\u56db]</name>
+      <attachments>
+        <attachment source="8db5145e-da90-4516-9294-a29423f1fd88-attachment.txt" title="上传头像" type="text/plain"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="8476-MainThread"/>
+        <label name="host" value="DESKTOP-VMVNVBP"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1599396652256" status="failed" stop="1599396661954">
+      <name>test02.Test_2.test_006[13-2003-10]</name>
+      <failure>
+        <message>ValueError: invalid literal for int() with base 10: ''</message>
+        <stack-trace>self = &lt;Scripts.test02.Test_2 object at 0x04FE1590&gt;, day = '13', year = '2003', mount = '10'
+
+    @allure.step(title='年龄输入校验')
+    @pytest.allure.severity('CRITTCAL')
+    @pytest.mark.skipif(data_test02.file_path2[-1][-1] == '身份证' or 1 == 2, reason='跳过')
+    @pytest.mark.parametrize('day,year,mount', data_test02.Brithday)
+    def test_006(self, day, year, mount):
+        time.sleep(2)
+&gt;       self.d.select_Birthday(type_cl=data_test02.file_path2[-1][-1], day=day, year=year, mount=mount)
+
+Scripts\test02.py:189: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;Common.Resident_check_in.Resident_check object at 0x018C5F10&gt;, type_cl = '其他', year = '2003', mount = '10', day = '13'
+
+    def select_Birthday(self, type_cl=None, year=None, mount=None, day=None):
+        time.sleep(3)
+        els = self.find_elements(Common.element31)
+        for i in els:
+            if i.text == type_cl:
+                i.click()
+                break
+        time.sleep(3)
+        self.Operation(*Common.element40)
+&gt;       years = int(self.find_element(Common.element41).text[0:-2])
+E       ValueError: invalid literal for int() with base 10: ''
+
+Common\Resident_check_in.py:178: ValueError</stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="severity" value="CRITTCAL"/>
+        <label name="thread" value="8476-MainThread"/>
+        <label name="host" value="DESKTOP-VMVNVBP"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1599396652361" status="failed" stop="1599396661936">
+          <name>年龄输入校验</name>
+          <title>年龄输入校验</title>
+          <attachments/>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1599396662044" status="failed" stop="1599396665207">
+      <name>test02.Test_2.test_007[\u5e38\u4f4f-\u79df\u5ba2-\u53d6\u6d88-file_path0]</name>
+      <failure>
+        <message>NameError: name 'm' is not defined</message>
+        <stack-trace>self = &lt;Scripts.test02.Test_2 object at 0x0503C090&gt;, type = '常住', text = '租客'
+file_path = ['C:\\Users\\26765\\Desktop\\python测试\\Ui自动化\\Data\\微信截图_20200820115449.png', 'C:\\Users\\26765\\Desktop\\python测试\\Ui自动化\\Data\\微信截图_20200820115449.png'], bt = '取消'
+
+    @pytest.mark.parametrize('file_path',data_test02.file_list4)
+    @pytest.mark.parametrize('type, text, bt',data_test02.Relationship_type)
+    def test_007(self,type, text, file_path, bt):
+&gt;       self.d.Relationship_type(type, text, file_path, bt)
+
+Scripts\test02.py:199: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;Common.Resident_check_in.Resident_check object at 0x018C5F10&gt;, type = '常住', text = '租客'
+file_path = ['C:\\Users\\26765\\Desktop\\python测试\\Ui自动化\\Data\\微信截图_20200820115449.png', 'C:\\Users\\26765\\Desktop\\python测试\\Ui自动化\\Data\\微信截图_20200820115449.png'], bt = '取消'
+
+    def Relationship_type(self, type, text, file_path=None, bt='确定'):
+        els = self.find_elements(Common.element48)
+        for i in els:
+            if i.text == type:
+                i.click()
+                break
+    
+        els2 = self.find_elements(Common.element49)
+        for i in els2:
+            if i.text == text:
+                i.click()
+                break
+        if text == '租客':
+            time.sleep(2)
+            for c in file_path:
+                self.Operation(*Common.element50, c)
+                self.find_element(Common.element50[0]).clear()
+&gt;       s = m.mysqldn_01(c='天坛社区', g='天坛小区', b='天坛东里', u='1单元', r='1402')
+E       NameError: name 'm' is not defined
+
+Common\Resident_check_in.py:224: NameError</stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="8476-MainThread"/>
+        <label name="host" value="DESKTOP-VMVNVBP"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1599396665299" status="failed" stop="1599396665389">
+      <name>test02.Test_2.test_007[\u5e38\u4f4f-\u79df\u5ba2-\u53d6\u6d88-file_path1]</name>
+      <failure>
+        <message>ElementClickInterceptedException: Message: Element &lt;span&gt; is not clickable at point (429,479) because another element &lt;p class="el-loading-text"&gt; obscures it
+</message>
+        <stack-trace>self = &lt;Scripts.test02.Test_2 object at 0x04F69D30&gt;, type = '常住', text = '租客', file_path = ['C:\\Users\\26765\\Desktop\\python测试\\Ui自动化\\Data\\微信截图_20200820115449.png', None], bt = '取消'
+
+    @pytest.mark.parametrize('file_path',data_test02.file_list4)
+    @pytest.mark.parametrize('type, text, bt',data_test02.Relationship_type)
+    def test_007(self,type, text, file_path, bt):
+&gt;       self.d.Relationship_type(type, text, file_path, bt)
+
+Scripts\test02.py:199: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+Common\Resident_check_in.py:211: in Relationship_type
+    i.click()
+..\..\..\appdata\local\programs\python\python36-32\lib\site-packages\selenium\webdriver\remote\webelement.py:80: in click
+    self._execute(Command.CLICK_ELEMENT)
+..\..\..\appdata\local\programs\python\python36-32\lib\site-packages\selenium\webdriver\remote\webelement.py:633: in _execute
+    return self._parent.execute(command, params)
+..\..\..\appdata\local\programs\python\python36-32\lib\site-packages\selenium\webdriver\remote\webdriver.py:321: in execute
+    self.error_handler.check_response(response)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;selenium.webdriver.remote.errorhandler.ErrorHandler object at 0x018C55B0&gt;
+response = {'status': 400, 'value': '{"value":{"error":"element click intercepted","message":"Element &lt;span&gt; is not clickable at ...e@chrome://marionette/content/listener.js:447:11\\nclickElement@chrome://marionette/content/listener.js:1319:24\\n"}}'}
+
+    def check_response(self, response):
+        """
+        Checks that a JSON response from the WebDriver does not have an error.
+    
+        :Args:
+         - response - The JSON response from the WebDriver server as a dictionary
+           object.
+    
+        :Raises: If the response contains an error message.
+        """
+        status = response.get('status', None)
+        if status is None or status == ErrorCode.SUCCESS:
+            return
+        value = None
+        message = response.get("message", "")
+        screen = response.get("screen", "")
+        stacktrace = None
+        if isinstance(status, int):
+            value_json = response.get('value', None)
+            if value_json and isinstance(value_json, basestring):
+                import json
+                try:
+                    value = json.loads(value_json)
+                    if len(value.keys()) == 1:
+                        value = value['value']
+                    status = value.get('error', None)
+                    if status is None:
+                        status = value["status"]
+                        message = value["value"]
+                        if not isinstance(message, basestring):
+                            value = message
+                            message = message.get('message')
+                    else:
+                        message = value.get('message', None)
+                except ValueError:
+                    pass
+    
+        exception_class = ErrorInResponseException
+        if status in ErrorCode.NO_SUCH_ELEMENT:
+            exception_class = NoSuchElementException
+        elif status in ErrorCode.NO_SUCH_FRAME:
+            exception_class = NoSuchFrameException
+        elif status in ErrorCode.NO_SUCH_WINDOW:
+            exception_class = NoSuchWindowException
+        elif status in ErrorCode.STALE_ELEMENT_REFERENCE:
+            exception_class = StaleElementReferenceException
+        elif status in ErrorCode.ELEMENT_NOT_VISIBLE:
+            exception_class = ElementNotVisibleException
+        elif status in ErrorCode.INVALID_ELEMENT_STATE:
+            exception_class = InvalidElementStateException
+        elif status in ErrorCode.INVALID_SELECTOR \
+                or status in ErrorCode.INVALID_XPATH_SELECTOR \
+                or status in ErrorCode.INVALID_XPATH_SELECTOR_RETURN_TYPER:
+            exception_class = InvalidSelectorException
+        elif status in ErrorCode.ELEMENT_IS_NOT_SELECTABLE:
+            exception_class = ElementNotSelectableException
+        elif status in ErrorCode.ELEMENT_NOT_INTERACTABLE:
+            exception_class = ElementNotInteractableException
+        elif status in ErrorCode.INVALID_COOKIE_DOMAIN:
+            exception_class = InvalidCookieDomainException
+        elif status in ErrorCode.UNABLE_TO_SET_COOKIE:
+            exception_class = UnableToSetCookieException
+        elif status in ErrorCode.TIMEOUT:
+            exception_class = TimeoutException
+        elif status in ErrorCode.SCRIPT_TIMEOUT:
+            exception_class = TimeoutException
+        elif status in ErrorCode.UNKNOWN_ERROR:
+            exception_class = WebDriverException
+        elif status in ErrorCode.UNEXPECTED_ALERT_OPEN:
+            exception_class = UnexpectedAlertPresentException
+        elif status in ErrorCode.NO_ALERT_OPEN:
+            exception_class = NoAlertPresentException
+        elif status in ErrorCode.IME_NOT_AVAILABLE:
+            exception_class = ImeNotAvailableException
+        elif status in ErrorCode.IME_ENGINE_ACTIVATION_FAILED:
+            exception_class = ImeActivationFailedException
+        elif status in ErrorCode.MOVE_TARGET_OUT_OF_BOUNDS:
+            exception_class = MoveTargetOutOfBoundsException
+        elif status in ErrorCode.JAVASCRIPT_ERROR:
+            exception_class = JavascriptException
+        elif status in ErrorCode.SESSION_NOT_CREATED:
+            exception_class = SessionNotCreatedException
+        elif status in ErrorCode.INVALID_ARGUMENT:
+            exception_class = InvalidArgumentException
+        elif status in ErrorCode.NO_SUCH_COOKIE:
+            exception_class = NoSuchCookieException
+        elif status in ErrorCode.UNABLE_TO_CAPTURE_SCREEN:
+            exception_class = ScreenshotException
+        elif status in ErrorCode.ELEMENT_CLICK_INTERCEPTED:
+            exception_class = ElementClickInterceptedException
+        elif status in ErrorCode.INSECURE_CERTIFICATE:
+            exception_class = InsecureCertificateException
+        elif status in ErrorCode.INVALID_COORDINATES:
+            exception_class = InvalidCoordinatesException
+        elif status in ErrorCode.INVALID_SESSION_ID:
+            exception_class = InvalidSessionIdException
+        elif status in ErrorCode.UNKNOWN_METHOD:
+            exception_class = UnknownMethodException
+        else:
+            exception_class = WebDriverException
+        if value == '' or value is None:
+            value = response['value']
+        if isinstance(value, basestring):
+            if exception_class == ErrorInResponseException:
+                raise exception_class(response, value)
+            raise exception_class(value)
+        if message == "" and 'message' in value:
+            message = value['message']
+    
+        screen = None
+        if 'screen' in value:
+            screen = value['screen']
+    
+        stacktrace = None
+        if 'stackTrace' in value and value['stackTrace']:
+            stacktrace = []
+            try:
+                for frame in value['stackTrace']:
+                    line = self._value_or_default(frame, 'lineNumber', '')
+                    file = self._value_or_default(frame, 'fileName', '&lt;anonymous&gt;')
+                    if line:
+                        file = "%s:%s" % (file, line)
+                    meth = self._value_or_default(frame, 'methodName', '&lt;anonymous&gt;')
+                    if 'className' in frame:
+                        meth = "%s.%s" % (frame['className'], meth)
+                    msg = "    at %s (%s)"
+                    msg = msg % (meth, file)
+                    stacktrace.append(msg)
+            except TypeError:
+                pass
+        if exception_class == ErrorInResponseException:
+            raise exception_class(response, message)
+        elif exception_class == UnexpectedAlertPresentException:
+            alert_text = None
+            if 'data' in value:
+                alert_text = value['data'].get('text')
+            elif 'alert' in value:
+                alert_text = value['alert'].get('text')
+            raise exception_class(message, screen, stacktrace, alert_text)
+&gt;       raise exception_class(message, screen, stacktrace)
+E       selenium.common.exceptions.ElementClickInterceptedException: Message: Element &lt;span&gt; is not clickable at point (429,479) because another element &lt;p class="el-loading-text"&gt; obscures it
+
+..\..\..\appdata\local\programs\python\python36-32\lib\site-packages\selenium\webdriver\remote\errorhandler.py:242: ElementClickInterceptedException</stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="8476-MainThread"/>
+        <label name="host" value="DESKTOP-VMVNVBP"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1599396665478" status="failed" stop="1599396665569">
+      <name>test02.Test_2.test_007[\u5e38\u4f4f-\u79df\u5ba2-\u786e\u5b9a-file_path0]</name>
+      <failure>
+        <message>ElementClickInterceptedException: Message: Element &lt;span&gt; is not clickable at point (429,479) because another element &lt;p class="el-loading-text"&gt; obscures it
+</message>
+        <stack-trace>self = &lt;Scripts.test02.Test_2 object at 0x0191DB90&gt;, type = '常住', text = '租客'
+file_path = ['C:\\Users\\26765\\Desktop\\python测试\\Ui自动化\\Data\\微信截图_20200820115449.png', 'C:\\Users\\26765\\Desktop\\python测试\\Ui自动化\\Data\\微信截图_20200820115449.png'], bt = '确定'
+
+    @pytest.mark.parametrize('file_path',data_test02.file_list4)
+    @pytest.mark.parametrize('type, text, bt',data_test02.Relationship_type)
+    def test_007(self,type, text, file_path, bt):
+&gt;       self.d.Relationship_type(type, text, file_path, bt)
+
+Scripts\test02.py:199: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+Common\Resident_check_in.py:211: in Relationship_type
+    i.click()
+..\..\..\appdata\local\programs\python\python36-32\lib\site-packages\selenium\webdriver\remote\webelement.py:80: in click
+    self._execute(Command.CLICK_ELEMENT)
+..\..\..\appdata\local\programs\python\python36-32\lib\site-packages\selenium\webdriver\remote\webelement.py:633: in _execute
+    return self._parent.execute(command, params)
+..\..\..\appdata\local\programs\python\python36-32\lib\site-packages\selenium\webdriver\remote\webdriver.py:321: in execute
+    self.error_handler.check_response(response)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;selenium.webdriver.remote.errorhandler.ErrorHandler object at 0x018C55B0&gt;
+response = {'status': 400, 'value': '{"value":{"error":"element click intercepted","message":"Element &lt;span&gt; is not clickable at ...e@chrome://marionette/content/listener.js:447:11\\nclickElement@chrome://marionette/content/listener.js:1319:24\\n"}}'}
+
+    def check_response(self, response):
+        """
+        Checks that a JSON response from the WebDriver does not have an error.
+    
+        :Args:
+         - response - The JSON response from the WebDriver server as a dictionary
+           object.
+    
+        :Raises: If the response contains an error message.
+        """
+        status = response.get('status', None)
+        if status is None or status == ErrorCode.SUCCESS:
+            return
+        value = None
+        message = response.get("message", "")
+        screen = response.get("screen", "")
+        stacktrace = None
+        if isinstance(status, int):
+            value_json = response.get('value', None)
+            if value_json and isinstance(value_json, basestring):
+                import json
+                try:
+                    value = json.loads(value_json)
+                    if len(value.keys()) == 1:
+                        value = value['value']
+                    status = value.get('error', None)
+                    if status is None:
+                        status = value["status"]
+                        message = value["value"]
+                        if not isinstance(message, basestring):
+                            value = message
+                            message = message.get('message')
+                    else:
+                        message = value.get('message', None)
+                except ValueError:
+                    pass
+    
+        exception_class = ErrorInResponseException
+        if status in ErrorCode.NO_SUCH_ELEMENT:
+            exception_class = NoSuchElementException
+        elif status in ErrorCode.NO_SUCH_FRAME:
+            exception_class = NoSuchFrameException
+        elif status in ErrorCode.NO_SUCH_WINDOW:
+            exception_class = NoSuchWindowException
+        elif status in ErrorCode.STALE_ELEMENT_REFERENCE:
+            exception_class = StaleElementReferenceException
+        elif status in ErrorCode.ELEMENT_NOT_VISIBLE:
+            exception_class = ElementNotVisibleException
+        elif status in ErrorCode.INVALID_ELEMENT_STATE:
+            exception_class = InvalidElementStateException
+        elif status in ErrorCode.INVALID_SELECTOR \
+                or status in ErrorCode.INVALID_XPATH_SELECTOR \
+                or status in ErrorCode.INVALID_XPATH_SELECTOR_RETURN_TYPER:
+            exception_class = InvalidSelectorException
+        elif status in ErrorCode.ELEMENT_IS_NOT_SELECTABLE:
+            exception_class = ElementNotSelectableException
+        elif status in ErrorCode.ELEMENT_NOT_INTERACTABLE:
+            exception_class = ElementNotInteractableException
+        elif status in ErrorCode.INVALID_COOKIE_DOMAIN:
+            exception_class = InvalidCookieDomainException
+        elif status in ErrorCode.UNABLE_TO_SET_COOKIE:
+            exception_class = UnableToSetCookieException
+        elif status in ErrorCode.TIMEOUT:
+            exception_class = TimeoutException
+        elif status in ErrorCode.SCRIPT_TIMEOUT:
+            exception_class = TimeoutException
+        elif status in ErrorCode.UNKNOWN_ERROR:
+            exception_class = WebDriverException
+        elif status in ErrorCode.UNEXPECTED_ALERT_OPEN:
+            exception_class = UnexpectedAlertPresentException
+        elif status in ErrorCode.NO_ALERT_OPEN:
+            exception_class = NoAlertPresentException
+        elif status in ErrorCode.IME_NOT_AVAILABLE:
+            exception_class = ImeNotAvailableException
+        elif status in ErrorCode.IME_ENGINE_ACTIVATION_FAILED:
+            exception_class = ImeActivationFailedException
+        elif status in ErrorCode.MOVE_TARGET_OUT_OF_BOUNDS:
+            exception_class = MoveTargetOutOfBoundsException
+        elif status in ErrorCode.JAVASCRIPT_ERROR:
+            exception_class = JavascriptException
+        elif status in ErrorCode.SESSION_NOT_CREATED:
+            exception_class = SessionNotCreatedException
+        elif status in ErrorCode.INVALID_ARGUMENT:
+            exception_class = InvalidArgumentException
+        elif status in ErrorCode.NO_SUCH_COOKIE:
+            exception_class = NoSuchCookieException
+        elif status in ErrorCode.UNABLE_TO_CAPTURE_SCREEN:
+            exception_class = ScreenshotException
+        elif status in ErrorCode.ELEMENT_CLICK_INTERCEPTED:
+            exception_class = ElementClickInterceptedException
+        elif status in ErrorCode.INSECURE_CERTIFICATE:
+            exception_class = InsecureCertificateException
+        elif status in ErrorCode.INVALID_COORDINATES:
+            exception_class = InvalidCoordinatesException
+        elif status in ErrorCode.INVALID_SESSION_ID:
+            exception_class = InvalidSessionIdException
+        elif status in ErrorCode.UNKNOWN_METHOD:
+            exception_class = UnknownMethodException
+        else:
+            exception_class = WebDriverException
+        if value == '' or value is None:
+            value = response['value']
+        if isinstance(value, basestring):
+            if exception_class == ErrorInResponseException:
+                raise exception_class(response, value)
+            raise exception_class(value)
+        if message == "" and 'message' in value:
+            message = value['message']
+    
+        screen = None
+        if 'screen' in value:
+            screen = value['screen']
+    
+        stacktrace = None
+        if 'stackTrace' in value and value['stackTrace']:
+            stacktrace = []
+            try:
+                for frame in value['stackTrace']:
+                    line = self._value_or_default(frame, 'lineNumber', '')
+                    file = self._value_or_default(frame, 'fileName', '&lt;anonymous&gt;')
+                    if line:
+                        file = "%s:%s" % (file, line)
+                    meth = self._value_or_default(frame, 'methodName', '&lt;anonymous&gt;')
+                    if 'className' in frame:
+                        meth = "%s.%s" % (frame['className'], meth)
+                    msg = "    at %s (%s)"
+                    msg = msg % (meth, file)
+                    stacktrace.append(msg)
+            except TypeError:
+                pass
+        if exception_class == ErrorInResponseException:
+            raise exception_class(response, message)
+        elif exception_class == UnexpectedAlertPresentException:
+            alert_text = None
+            if 'data' in value:
+                alert_text = value['data'].get('text')
+            elif 'alert' in value:
+                alert_text = value['alert'].get('text')
+            raise exception_class(message, screen, stacktrace, alert_text)
+&gt;       raise exception_class(message, screen, stacktrace)
+E       selenium.common.exceptions.ElementClickInterceptedException: Message: Element &lt;span&gt; is not clickable at point (429,479) because another element &lt;p class="el-loading-text"&gt; obscures it
+
+..\..\..\appdata\local\programs\python\python36-32\lib\site-packages\selenium\webdriver\remote\errorhandler.py:242: ElementClickInterceptedException</stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="8476-MainThread"/>
+        <label name="host" value="DESKTOP-VMVNVBP"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1599396665656" status="failed" stop="1599396665748">
+      <name>test02.Test_2.test_007[\u5e38\u4f4f-\u79df\u5ba2-\u786e\u5b9a-file_path1]</name>
+      <failure>
+        <message>ElementClickInterceptedException: Message: Element &lt;span&gt; is not clickable at point (429,479) because another element &lt;p class="el-loading-text"&gt; obscures it
+</message>
+        <stack-trace>self = &lt;Scripts.test02.Test_2 object at 0x018C9610&gt;, type = '常住', text = '租客', file_path = ['C:\\Users\\26765\\Desktop\\python测试\\Ui自动化\\Data\\微信截图_20200820115449.png', None], bt = '确定'
+
+    @pytest.mark.parametrize('file_path',data_test02.file_list4)
+    @pytest.mark.parametrize('type, text, bt',data_test02.Relationship_type)
+    def test_007(self,type, text, file_path, bt):
+&gt;       self.d.Relationship_type(type, text, file_path, bt)
+
+Scripts\test02.py:199: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+Common\Resident_check_in.py:211: in Relationship_type
+    i.click()
+..\..\..\appdata\local\programs\python\python36-32\lib\site-packages\selenium\webdriver\remote\webelement.py:80: in click
+    self._execute(Command.CLICK_ELEMENT)
+..\..\..\appdata\local\programs\python\python36-32\lib\site-packages\selenium\webdriver\remote\webelement.py:633: in _execute
+    return self._parent.execute(command, params)
+..\..\..\appdata\local\programs\python\python36-32\lib\site-packages\selenium\webdriver\remote\webdriver.py:321: in execute
+    self.error_handler.check_response(response)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;selenium.webdriver.remote.errorhandler.ErrorHandler object at 0x018C55B0&gt;
+response = {'status': 400, 'value': '{"value":{"error":"element click intercepted","message":"Element &lt;span&gt; is not clickable at ...e@chrome://marionette/content/listener.js:447:11\\nclickElement@chrome://marionette/content/listener.js:1319:24\\n"}}'}
+
+    def check_response(self, response):
+        """
+        Checks that a JSON response from the WebDriver does not have an error.
+    
+        :Args:
+         - response - The JSON response from the WebDriver server as a dictionary
+           object.
+    
+        :Raises: If the response contains an error message.
+        """
+        status = response.get('status', None)
+        if status is None or status == ErrorCode.SUCCESS:
+            return
+        value = None
+        message = response.get("message", "")
+        screen = response.get("screen", "")
+        stacktrace = None
+        if isinstance(status, int):
+            value_json = response.get('value', None)
+            if value_json and isinstance(value_json, basestring):
+                import json
+                try:
+                    value = json.loads(value_json)
+                    if len(value.keys()) == 1:
+                        value = value['value']
+                    status = value.get('error', None)
+                    if status is None:
+                        status = value["status"]
+                        message = value["value"]
+                        if not isinstance(message, basestring):
+                            value = message
+                            message = message.get('message')
+                    else:
+                        message = value.get('message', None)
+                except ValueError:
+                    pass
+    
+        exception_class = ErrorInResponseException
+        if status in ErrorCode.NO_SUCH_ELEMENT:
+            exception_class = NoSuchElementException
+        elif status in ErrorCode.NO_SUCH_FRAME:
+            exception_class = NoSuchFrameException
+        elif status in ErrorCode.NO_SUCH_WINDOW:
+            exception_class = NoSuchWindowException
+        elif status in ErrorCode.STALE_ELEMENT_REFERENCE:
+            exception_class = StaleElementReferenceException
+        elif status in ErrorCode.ELEMENT_NOT_VISIBLE:
+            exception_class = ElementNotVisibleException
+        elif status in ErrorCode.INVALID_ELEMENT_STATE:
+            exception_class = InvalidElementStateException
+        elif status in ErrorCode.INVALID_SELECTOR \
+                or status in ErrorCode.INVALID_XPATH_SELECTOR \
+                or status in ErrorCode.INVALID_XPATH_SELECTOR_RETURN_TYPER:
+            exception_class = InvalidSelectorException
+        elif status in ErrorCode.ELEMENT_IS_NOT_SELECTABLE:
+            exception_class = ElementNotSelectableException
+        elif status in ErrorCode.ELEMENT_NOT_INTERACTABLE:
+            exception_class = ElementNotInteractableException
+        elif status in ErrorCode.INVALID_COOKIE_DOMAIN:
+            exception_class = InvalidCookieDomainException
+        elif status in ErrorCode.UNABLE_TO_SET_COOKIE:
+            exception_class = UnableToSetCookieException
+        elif status in ErrorCode.TIMEOUT:
+            exception_class = TimeoutException
+        elif status in ErrorCode.SCRIPT_TIMEOUT:
+            exception_class = TimeoutException
+        elif status in ErrorCode.UNKNOWN_ERROR:
+            exception_class = WebDriverException
+        elif status in ErrorCode.UNEXPECTED_ALERT_OPEN:
+            exception_class = UnexpectedAlertPresentException
+        elif status in ErrorCode.NO_ALERT_OPEN:
+            exception_class = NoAlertPresentException
+        elif status in ErrorCode.IME_NOT_AVAILABLE:
+            exception_class = ImeNotAvailableException
+        elif status in ErrorCode.IME_ENGINE_ACTIVATION_FAILED:
+            exception_class = ImeActivationFailedException
+        elif status in ErrorCode.MOVE_TARGET_OUT_OF_BOUNDS:
+            exception_class = MoveTargetOutOfBoundsException
+        elif status in ErrorCode.JAVASCRIPT_ERROR:
+            exception_class = JavascriptException
+        elif status in ErrorCode.SESSION_NOT_CREATED:
+            exception_class = SessionNotCreatedException
+        elif status in ErrorCode.INVALID_ARGUMENT:
+            exception_class = InvalidArgumentException
+        elif status in ErrorCode.NO_SUCH_COOKIE:
+            exception_class = NoSuchCookieException
+        elif status in ErrorCode.UNABLE_TO_CAPTURE_SCREEN:
+            exception_class = ScreenshotException
+        elif status in ErrorCode.ELEMENT_CLICK_INTERCEPTED:
+            exception_class = ElementClickInterceptedException
+        elif status in ErrorCode.INSECURE_CERTIFICATE:
+            exception_class = InsecureCertificateException
+        elif status in ErrorCode.INVALID_COORDINATES:
+            exception_class = InvalidCoordinatesException
+        elif status in ErrorCode.INVALID_SESSION_ID:
+            exception_class = InvalidSessionIdException
+        elif status in ErrorCode.UNKNOWN_METHOD:
+            exception_class = UnknownMethodException
+        else:
+            exception_class = WebDriverException
+        if value == '' or value is None:
+            value = response['value']
+        if isinstance(value, basestring):
+            if exception_class == ErrorInResponseException:
+                raise exception_class(response, value)
+            raise exception_class(value)
+        if message == "" and 'message' in value:
+            message = value['message']
+    
+        screen = None
+        if 'screen' in value:
+            screen = value['screen']
+    
+        stacktrace = None
+        if 'stackTrace' in value and value['stackTrace']:
+            stacktrace = []
+            try:
+                for frame in value['stackTrace']:
+                    line = self._value_or_default(frame, 'lineNumber', '')
+                    file = self._value_or_default(frame, 'fileName', '&lt;anonymous&gt;')
+                    if line:
+                        file = "%s:%s" % (file, line)
+                    meth = self._value_or_default(frame, 'methodName', '&lt;anonymous&gt;')
+                    if 'className' in frame:
+                        meth = "%s.%s" % (frame['className'], meth)
+                    msg = "    at %s (%s)"
+                    msg = msg % (meth, file)
+                    stacktrace.append(msg)
+            except TypeError:
+                pass
+        if exception_class == ErrorInResponseException:
+            raise exception_class(response, message)
+        elif exception_class == UnexpectedAlertPresentException:
+            alert_text = None
+            if 'data' in value:
+                alert_text = value['data'].get('text')
+            elif 'alert' in value:
+                alert_text = value['alert'].get('text')
+            raise exception_class(message, screen, stacktrace, alert_text)
+&gt;       raise exception_class(message, screen, stacktrace)
+E       selenium.common.exceptions.ElementClickInterceptedException: Message: Element &lt;span&gt; is not clickable at point (429,479) because another element &lt;p class="el-loading-text"&gt; obscures it
+
+..\..\..\appdata\local\programs\python\python36-32\lib\site-packages\selenium\webdriver\remote\errorhandler.py:242: ElementClickInterceptedException</stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="8476-MainThread"/>
+        <label name="host" value="DESKTOP-VMVNVBP"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+  </test-cases>
+</ns0:test-suite>
