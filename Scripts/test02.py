@@ -212,13 +212,12 @@ class Test_2:
     @pytest.mark.parametrize('type, text, bt', data_test02.Relationship_type)
     def test_007(self,type, text, file_path, bt):
         try:
-            els = self.d.find_elements((By.CSS_SELECTOR, 'div.contractImgView> div:nth-child(2)'))
+            els = self.d.find_elements(Scripts.element15)
             for i in els:
                 time.sleep(1)
-                self.d.Operation(*((By.CSS_SELECTOR, 'div.contractImgView:nth-child(1) > div:nth-child(2)'), 'click'))
+                self.d.Operation(*Scripts.element16)
                 time.sleep(2)
-                self.d.Operation(*(
-                    (By.CSS_SELECTOR, '.el-message-box__btns > button:nth-child(2) > span:nth-child(1)'), 'click'))
+                self.d.Operation(*Scripts.element17)
         except:
             pass
         time.sleep(2)
@@ -231,7 +230,6 @@ class Test_2:
               Mysqldbbackup().backup_uesr()
               el=self.d.find_element((By.XPATH,'/html/body/div[7]/div/div[1]/span')).text
               assert  el=='门禁授权管理'
-
 
 
 

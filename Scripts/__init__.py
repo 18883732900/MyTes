@@ -59,4 +59,7 @@ class test02():
     element12=(By.CSS_SELECTOR,'.res-info > div:nth-child(1) > div> div:nth-child(1) > img:nth-child(1)')
     element13 = (By.CSS_SELECTOR, '.el-form-item__error')
     element14= ((By.CSS_SELECTOR, '[placeholder="请选择出生日期"]'), 'move_to_element')
+    element15=(By.CSS_SELECTOR, 'div.contractImgView> div:nth-child(2)')
+    element16=((By.CSS_SELECTOR, 'div.contractImgView:nth-child(1) > div:nth-child(2)'), 'click')
+    element17=((By.CSS_SELECTOR, '.el-message-box__btns > button:nth-child(2) > span:nth-child(1)'), 'click')
 
