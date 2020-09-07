@@ -105,7 +105,7 @@ class Resident_check(Base):
 
     def cd_worker(self, number):
         try:
-           self.Operation(*Common.element27)
+            self.Operation(*Common.element27)
 
         except:
             pass
@@ -222,32 +222,24 @@ class Resident_check(Base):
                 break
         if text == '租客':
             time.sleep(2)
-            try:
-                els = self.find_elements((By.CSS_SELECTOR, 'div.contractImgView> div:nth-child(2)'))
-                for i in els:
-                    time.sleep(1)
-                    self.Operation(*((By.CSS_SELECTOR, 'div.contractImgView:nth-child(1) > div:nth-child(2)'), 'click'))
-                    time.sleep(2)
-                    self.Operation(*(
-                    (By.CSS_SELECTOR, '.el-message-box__btns > button:nth-child(2) > span:nth-child(1)'), 'click'))
-            except:
-                pass
-            time.sleep(2)
             for c in file_path:
-                self.Operation(*Common.element50, c)
-                self.find_element(Common.element50[0]).clear()
+                if c :
+                   self.Operation(*Common.element50, c)
+                   self.find_element(Common.element50[0]).clear()
+                else:
+                    pass
         s = m.mysqldn_01(c='天坛社区', g='天坛小区', b='天坛东里', u='1单元', r='1402')
-        time.sleep(11)
+        time.sleep(10)
         self.clickup()
-        if text == '租客':
-            if s[1] != 0 or s[0] ==0:
+        if text == '租客' :
+            if s[1] != 0 or s[0] == 0 and len(file_path) >= 2:
                 t = self.find_elements(Common.element55[0])
                 time.sleep(1)
                 for i in t:
                     if i.text == bt:
                         i.click()
-            # else:
-            #     pass
+            else:
+                pass
 
     def Issue_permissions(self, type, devse, num1=None, num2=None):
         s = self.find_elements(Common.element51)

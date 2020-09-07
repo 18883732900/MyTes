@@ -153,15 +153,24 @@ class Test_2:
             time.sleep(3)
             els = self.d.find_elements(Scripts.element12)
             x = 0
+            z=1
             for el in els:
                 s = el.get_attribute('src')
                 if file_path[-9:] in s:
                     x += 1
-                    return x
-            if x == 1:
-                assert True
+                    break
+
+            if file_path==data_test02.file_path1[3]:
+                for el in els:
+                    s = el.get_attribute('src')
+                    if file_path[-9:]  in s:
+                        z -=1
+
+
+            if x == 1 or z==1 :
+                   assert True
             else:
-                assert False
+                    assert False
     @pytest.mark.parametrize('idcard,name', data_test02.user)
     @pytest.mark.skipif(1 == 2, reason='跳过')
     def test_005(self, idcard, name):
@@ -202,14 +211,26 @@ class Test_2:
     @pytest.mark.parametrize('file_path',data_test02.file_list4)
     @pytest.mark.parametrize('type, text, bt', data_test02.Relationship_type)
     def test_007(self,type, text, file_path, bt):
+        try:
+            els = self.d.find_elements((By.CSS_SELECTOR, 'div.contractImgView> div:nth-child(2)'))
+            for i in els:
+                time.sleep(1)
+                self.d.Operation(*((By.CSS_SELECTOR, 'div.contractImgView:nth-child(1) > div:nth-child(2)'), 'click'))
+                time.sleep(2)
+                self.d.Operation(*(
+                    (By.CSS_SELECTOR, '.el-message-box__btns > button:nth-child(2) > span:nth-child(1)'), 'click'))
+        except:
+            pass
+        time.sleep(2)
         self.d.Relationship_type(type, text, file_path, bt)
         if len(file_path)<2:
-            pass
+            el=self.d.find_element((By.CSS_SELECTOR,'.el-message__content')).text
+            assert  el=='请上传两张或两张以上的租借合同'
         else:
             if bt=='确定':
               Mysqldbbackup().backup_uesr()
-              pass
-
+              el=self.d.find_element((By.XPATH,'/html/body/div[7]/div/div[1]/span')).text
+              assert  el=='门禁授权管理'
 
 
 
