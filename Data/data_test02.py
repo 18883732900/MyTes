@@ -17,11 +17,12 @@ file_path1=[file,file,file,shenfzz]
 file_path2 = [(shenfzz,shenfzf,'身份证'),(file,file,'其他')]
 user=Mysqldb().mysqldb_02(type=5, number="{0},{1}".format(IdNumber.generate_myid(),name()), title='%正确%',table='data_test02')
 Brithday = Mysqldb().mysqldb(type=6,table='data_test02')
-file_list4=[[file,file],[file,None]]
+file_list4=[(file,file),(file,None)]
 Issue_permissions=Mysqldb().mysqldb_03(type=7,table='data_test02')
 Relationship_type=Mysqldb().mysqldb(table='data_test02',type=9)
+worker_job= Mysqldb().mysqldb(type=3,table='data_test02')
 
 
 
 if __name__ == '__main__':
-    print(Issue_permissions)
+    print(worker_job)

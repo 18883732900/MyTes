@@ -1,10 +1,13 @@
 import time
+
+from selenium.webdriver.common.by import By
+
 from Base.base import Base
 from Common import Resident_check_in
 from Base.Mysqldb_test import Mysqldb_test
 
 Common = Resident_check_in()
-# m = Mysqldb_test()
+m = Mysqldb_test()
 
 
 class Resident_check(Base):
@@ -205,12 +208,13 @@ class Resident_check(Base):
         return years
 
     def Relationship_type(self, type, text, file_path=None, bt='确定'):
+        time.sleep(4)
+
         els = self.find_elements(Common.element48)
         for i in els:
             if i.text == type:
                 i.click()
                 break
-
         els2 = self.find_elements(Common.element49)
         for i in els2:
             if i.text == text:
@@ -218,11 +222,22 @@ class Resident_check(Base):
                 break
         if text == '租客':
             time.sleep(2)
+            try:
+                els = self.find_elements((By.CSS_SELECTOR, 'div.contractImgView> div:nth-child(2)'))
+                for i in els:
+                    time.sleep(1)
+                    self.Operation(*((By.CSS_SELECTOR, 'div.contractImgView:nth-child(1) > div:nth-child(2)'), 'click'))
+                    time.sleep(2)
+                    self.Operation(*(
+                    (By.CSS_SELECTOR, '.el-message-box__btns > button:nth-child(2) > span:nth-child(1)'), 'click'))
+            except:
+                pass
+            time.sleep(2)
             for c in file_path:
                 self.Operation(*Common.element50, c)
                 self.find_element(Common.element50[0]).clear()
         s = m.mysqldn_01(c='天坛社区', g='天坛小区', b='天坛东里', u='1单元', r='1402')
-        time.sleep(10)
+        time.sleep(11)
         self.clickup()
         if text == '租客':
             if s[1] != 0 or s[0] ==0:

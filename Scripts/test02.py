@@ -193,8 +193,14 @@ class Test_2:
             assert True
         else:
             assert False
+
+    @pytest.mark.parametrize('type, text', data_test02.worker_job)
+    def test_008(self,type,text):
+        self.d.selects_Political(type)
+        self.d.job(text)
+
     @pytest.mark.parametrize('file_path',data_test02.file_list4)
-    @pytest.mark.parametrize('type, text, bt',data_test02.Relationship_type)
+    @pytest.mark.parametrize('type, text, bt', data_test02.Relationship_type)
     def test_007(self,type, text, file_path, bt):
         self.d.Relationship_type(type, text, file_path, bt)
         if len(file_path)<2:
