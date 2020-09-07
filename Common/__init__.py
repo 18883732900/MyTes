@@ -103,7 +103,7 @@ class upload_worker():
                  'click')
 
 
-class Resident_check_in():
+class Resident_check_in_data():
     user_name = ((By.CSS_SELECTOR, '[placeholder="请输入账号"]'), 'send_keys')
     user_password = ((By.CSS_SELECTOR, '[placeholder="请输入密码"]'), 'send_keys')
     login = ((By.XPATH, '/html/body/div/div[2]/div/form/div[4]/div/button/span'), 'click')

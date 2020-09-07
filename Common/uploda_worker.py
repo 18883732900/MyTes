@@ -119,6 +119,7 @@ class uploda(Base):
                 self.Operation(*Common.element20, file_path1)
         return type_cl
     def selects_Political(self,type):
+        '''选择政治类型'''
         self.Operation(*Common.element29)
         els=self.find_elements(Common.element30)
         for i in els:
@@ -126,8 +127,10 @@ class uploda(Base):
                 i.click()
                 break
     def job(self,text):
+        '''写入职业'''
         self.Operation(*Common.element31,text)
     def setup_idcard(self,text,name):
+        '''插入证件图片'''
         self.find_element(Common.element32[0]).clear()
         self.Operation(*Common.element32,text)
         self.find_element(Common.element33[0]).clear()
@@ -135,6 +138,7 @@ class uploda(Base):
 
     def select_Birthday(self,type_cl=None,year=None, mount=None, day=None):
         time.sleep(3)
+        '''选择出生日期'''
         els = self.find_elements(Common.element18)
         for i in els:
             if i.text==type_cl:
@@ -171,7 +175,7 @@ class uploda(Base):
                 break
         return years
     def work_type(self,text):
-
+        '''选择于户主的工作关系'''
         els=self.find_elements(Common.element34)
         for i in els:
             if i.text==text:
@@ -180,7 +184,7 @@ class uploda(Base):
 
     def Issue_permissions(self,type,devse,num1=None,num2=None):
         s=self.find_elements(Common.element35)
-
+        '''选择门禁授权类型'''
         for i in type:
             for t in s:
                if i==t.text:
@@ -200,9 +204,11 @@ class uploda(Base):
                     break
 
     def up_issue(self):
+        '''点击提交授权'''
         self.Operation(*Common.element39)
 
     def Verify_permissions(self,text=None,type='手机号'):
+        '''搜索工作人员'''
         self.Operation(*Common.element41)
         s=self.find_elements(Common.element42)
         for i in s :

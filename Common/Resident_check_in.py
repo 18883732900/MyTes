@@ -1,13 +1,10 @@
 import time
-
 from selenium.webdriver.common.by import By
-
 from Base.base import Base
-from Common import Resident_check_in
+from Common import Resident_check_in_data
 from Base.Mysqldb_test import Mysqldb_test
 
-Common = Resident_check_in()
-m = Mysqldb_test()
+Common = Resident_check_in_data()
 
 
 class Resident_check(Base):
@@ -228,7 +225,7 @@ class Resident_check(Base):
                    self.find_element(Common.element50[0]).clear()
                 else:
                     pass
-        s = m.mysqldn_01(parent_Community, Community, Floor, unit,Fl,roomId)
+        s = Mysqldb_test().mysqldn_01(parent_Community, Community, Floor, unit,Fl,roomId)
         time.sleep(10)
         self.clickup()
         if text == '租客' :
