@@ -210,7 +210,8 @@ class Test_2:
 
     @pytest.mark.parametrize('file_path',data_test02.file_list4)
     @pytest.mark.parametrize('type, text, bt', data_test02.Relationship_type)
-    def test_007(self,type, text, file_path, bt):
+    @pytest.mark.parametrize('parent_Community, Community, Floor, unit,Fl, roomId',[data_test02.select[-1]])
+    def test_007(self,type, text, file_path, bt,parent_Community, Community ,Floor, unit,Fl,roomId):
         try:
             els = self.d.find_elements(Scripts.element15)
             for i in els:
@@ -221,7 +222,7 @@ class Test_2:
         except:
             pass
         time.sleep(2)
-        self.d.Relationship_type(type, text, file_path, bt)
+        self.d.Relationship_type(type=type, text=text, file_path=file_path, bt=bt,parent_Community=parent_Community,Community=Community,Floor=Floor,unit=unit,Fl=Fl,roomId=roomId)
         if len(file_path)<2:
             el=self.d.find_element((By.CSS_SELECTOR,'.el-message__content')).text
             assert  el=='请上传两张或两张以上的租借合同'

@@ -207,7 +207,7 @@ class Resident_check(Base):
                 break
         return years
 
-    def Relationship_type(self, type, text, file_path=None, bt='确定'):
+    def Relationship_type(self, type, text,parent_Community, Community, Floor, unit, Fl , roomId, file_path=None, bt='确定'):
         time.sleep(4)
 
         els = self.find_elements(Common.element48)
@@ -228,7 +228,7 @@ class Resident_check(Base):
                    self.find_element(Common.element50[0]).clear()
                 else:
                     pass
-        s = m.mysqldn_01(c='天坛社区', g='天坛小区', b='天坛东里', u='1单元', r='1402')
+        s = m.mysqldn_01(parent_Community, Community, Floor, unit,Fl,roomId)
         time.sleep(10)
         self.clickup()
         if text == '租客' :

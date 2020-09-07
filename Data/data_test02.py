@@ -33,4 +33,4 @@ worker_job= Mysqldb().mysqldb(type=3,table='data_test02')
 
 
 if __name__ == '__main__':
-    print(len(file_list4[0]))
+    print([select[-1]])

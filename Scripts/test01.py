@@ -152,12 +152,19 @@ class Test_1:
         time.sleep(3)
         els = self.d.find_elements(Scripts.element8)
         x = 0
+        z = 0
         for el in els:
             s = el.get_attribute('src')
             if data_test01.file[-9:] in s:
                 x += 1
                 return x
-        if x == 1:
+        if file_path == data_test01.file_path1[3]:
+            for el in els:
+                s = el.get_attribute('src')
+                if file_path[-9:] in s:
+                    z -= 1
+
+        if x == 1 or z==1:
             assert True
         else:
             assert False
