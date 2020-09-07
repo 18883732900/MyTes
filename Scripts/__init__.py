@@ -1,5 +1,13 @@
 from selenium.webdriver.common.by import By
+
+
+
+'''
+test01测试的
+断言元素定位
+'''
 class test01:
+    find=r'<div id="tab-/index" aria-controls="pane-/index" role="tab" aria-selected="true" tabindex="0" class="el-tabs__item is-top is-active">(.+?)</div>'
     element1 = (By.CSS_SELECTOR, '.el-message__content')
 
     '''定位手机号错误提示'''
@@ -40,9 +48,19 @@ class test01:
     element22 = (By.CSS_SELECTOR,
                  '.el-menu-vertical-demo > div:nth-child(1) > div:nth-child(1) > li:nth-child(1) > ul:nth-child(2) > div:nth-child(1) > div:nth-child(4) > li:nth-child(1) > ul:nth-child(2) > div:nth-child(1) > div > li:nth-child(1) > span:nth-child(2)')
     element23 = (By.CSS_SELECTOR, '.el-message__content')
+    element24=(By.CSS_SELECTOR,
+                                     'div.tab > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > input:nth-child(1)')
 
 
+
+
+
+'''
+test01测试的
+断言元素定位
+'''
 class test02():
+    find= r'<div id="tab-/index" aria-controls="pane-/index" role="tab" aria-selected="true" tabindex="0" class="el-tabs__item is-top is-active">(.+?)</div>'
     element1 = (By.CSS_SELECTOR, '.el-message__content')
     element2= (By.XPATH,'//*[@id="indexContent"]/section/main/div/div[2]/div/div/div[2]/h2')
     element3=(By.CSS_SELECTOR, '[placeholder="请输入手机号"]')
@@ -62,4 +80,7 @@ class test02():
     element15=(By.CSS_SELECTOR, 'div.contractImgView> div:nth-child(2)')
     element16=((By.CSS_SELECTOR, 'div.contractImgView:nth-child(1) > div:nth-child(2)'), 'click')
     element17=((By.CSS_SELECTOR, '.el-message-box__btns > button:nth-child(2) > span:nth-child(1)'), 'click')
-
+    element18=(By.CSS_SELECTOR,'.el-message__content')
+    element19=(By.XPATH,'/html/body/div[7]/div/div[1]/span')
+    element20=(By.CLASS_NAME,"el-input__icon.el-icon-circle-close")
+    element21=(By.CSS_SELECTOR,'[class="el-image__inner el-image__preview"]')

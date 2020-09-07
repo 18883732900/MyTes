@@ -36,9 +36,7 @@ class Test_2:
             assert s in '用户名密码不正确!'
         elif name == data_test02.login[2][0]:
             s = self.driver.page_source
-            p = re.findall(
-                r'<div id="tab-/index" aria-controls="pane-/index" role="tab" aria-selected="true" tabindex="0" class="el-tabs__item is-top is-active">(.+?)</div>',
-                s)
+            p = re.findall(Scripts.find,s)
             assert '数据看板首页' in p
 
     @allure.step(title='进入居民登记前的社区选择测试')
@@ -63,7 +61,7 @@ class Test_2:
         allure.attach('图片校验', '对图片能否上传成功做断言')
         self.d.owner(name, idcard, number, num)
         self.d.img(file1,file2,file3,x)
-        els=self.d.find_elements((By.CSS_SELECTOR,'[class="el-image__inner el-image__preview"]'))
+        els=self.d.find_elements(Scripts.element21)
         # print(len(els))
         assert len(els)==2+len(file3)-x
 
@@ -189,6 +187,8 @@ class Test_2:
                     el = self.d.find_element(Scripts.element13).text
                     assert el in '请输入正确的身份证号'
 
+
+
     @allure.step(title='年龄输入校验')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.skipif(data_test02.file_path2[-1][-1] == '身份证' or 1 == 2, reason='跳过')
@@ -197,7 +197,7 @@ class Test_2:
         time.sleep(2)
         self.d.select_Birthday(type_cl=data_test02.file_path2[-1][-1], day=day, year=year, mount=mount)
         self.d.Operation(*Scripts.element14)
-        s=self.d.find_elements((By.CLASS_NAME,"el-input__icon.el-icon-circle-close"))
+        s=self.d.find_elements(Scripts.element20)
         if s:
             assert True
         else:
@@ -224,12 +224,12 @@ class Test_2:
         time.sleep(2)
         self.d.Relationship_type(type=type, text=text, file_path=file_path, bt=bt,parent_Community=parent_Community,Community=Community,Floor=Floor,unit=unit,Fl=Fl,roomId=roomId)
         if len(file_path)<2:
-            el=self.d.find_element((By.CSS_SELECTOR,'.el-message__content')).text
+            el=self.d.find_element(Scripts.element18).text
             assert  el=='请上传两张或两张以上的租借合同'
         else:
             if bt=='确定':
               Mysqldbbackup().backup_uesr()
-              el=self.d.find_element((By.XPATH,'/html/body/div[7]/div/div[1]/span')).text
+              el=self.d.find_element(Scripts.element19).text
               assert  el=='门禁授权管理'
 
 

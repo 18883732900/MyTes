@@ -17,6 +17,11 @@ idcard = IdNumber.generate_myid()
 number = number()
 
 
+
+'''
+upload_worker
+的元素定位封装
+'''
 class upload_worker():
     user_name = ((By.CSS_SELECTOR, '[placeholder="请输入账号"]'), 'send_keys')
     user_password = ((By.CSS_SELECTOR, '[placeholder="请输入密码"]'), 'send_keys')
@@ -103,6 +108,10 @@ class upload_worker():
                  'click')
 
 
+'''
+Resident_check_in
+的元素定位封装
+'''
 class Resident_check_in_data():
     user_name = ((By.CSS_SELECTOR, '[placeholder="请输入账号"]'), 'send_keys')
     user_password = ((By.CSS_SELECTOR, '[placeholder="请输入密码"]'), 'send_keys')

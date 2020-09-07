@@ -44,9 +44,7 @@ class Test_1:
             assert s in '用户名密码不正确!'
         elif name == data_test01.login[2][0]:
             s = self.driver.page_source
-            p = re.findall(
-                r'<div id="tab-/index" aria-controls="pane-/index" role="tab" aria-selected="true" tabindex="0" class="el-tabs__item is-top is-active">(.+?)</div>',
-                s)
+            p = re.findall(Scripts.find,s)
             assert '数据看板首页' in p
 
     @allure.step(title='进入工作人员登记前的社区选择测试')
@@ -303,8 +301,7 @@ class Test_1:
             if i in list:
                 y += 1
         z = 0
-        text = self.d.find_elements((By.CSS_SELECTOR,
-                                     'div.tab > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > input:nth-child(1)'))
+        text = self.d.find_elements(Scripts.element24)
         for i in text:
             text1 = i.get_attribute('value')
             if text1 in data_test01.Issue_permissions[-1][2] or data_test01.Issue_permissions[-1][3]:
