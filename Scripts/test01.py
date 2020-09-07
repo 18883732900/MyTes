@@ -62,8 +62,7 @@ class Test_1:
     def teardown_class(self):
         # self.d.page('get_screenshot_as_file', filepath='./结果图.png')
         time.sleep(5)
-
-        # self.driver.quit()
+        self.driver.quit()
 
     @allure.step(title='手机号核验测试')
     @pytest.allure.severity('CRITTCAL')
