@@ -33,4 +33,4 @@ worker_job= Mysqldb().mysqldb(type=3,table='data_test02')
 
 
 if __name__ == '__main__':
-    print([select[-1]])
+    print(Relationship_type)

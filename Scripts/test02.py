@@ -229,8 +229,23 @@ class Test_2:
         else:
             if bt=='确定':
               Mysqldbbackup().backup_uesr()
-              el=self.d.find_element(Scripts.element19).text
-              assert  el=='门禁授权管理'
+              dict1 = {}
+              time.sleep(10)
+              els = self.d.find_elements(Scripts.element23)
+              for i in els:
+                  text = i.text
+                  list = text.split('：')
+                  dict1[list[0]] = list[-1]
+              # print(dict1)
+              el = self.d.find_element(Scripts.element22).text
+              time.sleep(1)
+              assert data_test02.user[-1][0] in dict1['证件号码'] and data_test02.file_path2[-1][-1] in dict1['证件类型'] and data_test02.worker_job[-1][0] in dict1['政治面貌'] \
+                     and data_test02.worker_job[-1][1] in dict1['职业'] and text in dict1['登记角色'] and data_test02.user[-1][-1] in el
+
+
+
+
+
 
 
 

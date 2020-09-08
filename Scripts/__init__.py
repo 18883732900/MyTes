@@ -84,3 +84,5 @@ class test02():
     element19=(By.XPATH,'/html/body/div[7]/div/div[1]/span')
     element20=(By.CLASS_NAME,"el-input__icon.el-icon-circle-close")
     element21=(By.CSS_SELECTOR,'[class="el-image__inner el-image__preview"]')
+    element22=(By.CSS_SELECTOR, '.baseCont > h3:nth-child(1)')
+    element23=(By.CSS_SELECTOR, 'li.clearfix > span')
