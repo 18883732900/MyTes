@@ -62,6 +62,7 @@ class Test_1:
         time.sleep(5)
         self.driver.quit()
 
+
     @allure.step(title='手机号核验测试')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.skipif(1 == 2, reason='跳过')
