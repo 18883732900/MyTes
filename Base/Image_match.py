@@ -13,12 +13,19 @@ class ImageMath:
         return p1[0] == p2[0] and p1[1] == p2[1] and p1[2] == p2[2] and p1[3] == p2[3]
 
     def find_image(self, target):
+
         file_path = os.path.join(os.getcwd(), 'Template_Image')
+
         self.screen = ImageGrab.grab().convert("RGBA")
+
         self.template = Image.open(os.path.join(file_path, target)).convert("RGBA")
+
         screen_width, screen_height = self.screen.size
+
         template_width, template_height = self.template.size
+
         self.screen_data = self.screen.load()
+
         self.template_data = self.template.load()
         pos_x = -1
         pos_y = -1
