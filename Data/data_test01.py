@@ -1,3 +1,5 @@
+import os
+
 from Base.number import number
 from  Base.name import name
 from Base.idCard import IdNumber
@@ -5,9 +7,19 @@ from  Base.Mysqldb import Mysqldb
 
 idcard=IdNumber.generate_myid()
 
-file = r"C:\Users\26765\Desktop\python测试\Ui自动化\Data\微信截图_20200820115449.png"
-shenfzz = r'C:\Users\26765\Desktop\python测试\Ui自动化\Data\身份证正面照片.jpg'
-shenfzf = r'C:\Users\26765\Desktop\python测试\Ui自动化\Data\身份证反面照片.jpg'
+path__1 = r'C:\Users\26765\Desktop\python测试\Ui自动化\Image'
+def path(file_name):
+    path1=os.path.join(path__1,file_name)
+    return path1
+
+s=os.walk(path__1)
+for a,b,c in s:
+    listt=[i for i in c]
+
+file = path(listt[0])
+shenfzz = path(listt[2])
+shenfzf = path(listt[1])
+
 file_path = [(shenfzz,shenfzf,'身份证'),(file,file,'其他')]
 file_path1=[file,file,file,file]
 
