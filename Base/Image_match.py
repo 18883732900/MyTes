@@ -27,6 +27,7 @@ class ImageMath:
         self.screen_data = self.screen.load()
 
         self.template_data = self.template.load()
+
         pos_x = -1
         pos_y = -1
 
@@ -49,6 +50,7 @@ class ImageMath:
                             pos_y = y + template_height / 2
                             return  pos_x ,pos_y
         return pos_x, pos_y
+
 
     def check_match(self,x,y):
         template_width,template_height = self.template.size
