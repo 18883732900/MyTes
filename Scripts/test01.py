@@ -350,5 +350,8 @@ class Test_1:
         assert x + y + z == len(type) + len(deves) + 2
 
 
+
+
+
 if __name__ == '__main__':
     pytest.main('-s -html=./Report/report.html test01.py')
