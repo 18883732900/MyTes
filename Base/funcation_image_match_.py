@@ -12,7 +12,7 @@ class Image_Test():
         self.match = ImageMath()
 
     def start_app(self):
-        pass
+        os.system('startup')
 
     def on_click(self, target, n=1):
         x, y = self.match.find_image(target)
@@ -44,5 +44,7 @@ class Image_Test():
 
 
 if __name__ == '__main__':
+
     c = Image_Test()
+    c.start_app()
     c.on_click('微信截图_20200909222517.png')
