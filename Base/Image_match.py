@@ -13,7 +13,9 @@ class ImageMath:
         return p1[0] == p2[0] and p1[1] == p2[1] and p1[2] == p2[2] and p1[3] == p2[3]
 
     def find_image(self, target):
-
+        # 日常测试使用
+        # file_path = os.path.join(r'C:\Users\26765\Desktop\python测试\Ui自动化', 'Template_Image')
+        # jenkins使用
         file_path = os.path.join(os.getcwd(), 'Template_Image')
 
         self.screen = ImageGrab.grab().convert("RGBA")
@@ -48,7 +50,7 @@ class ImageMath:
                         if is_math:
                             pos_x = x + template_width / 2
                             pos_y = y + template_height / 2
-                            return  pos_x ,pos_y
+                            return  int(pos_x) ,int(pos_y)
         return pos_x, pos_y
 
 
@@ -61,7 +63,7 @@ class ImageMath:
         return True
 
 
-    def check_match_smil(self,x,y,similarity=0.8):
+    def check_match_smil(self,x,y,similarity=0.9):
         template_width,template_height = self.template.size
         total_count=template_height*template_width
         unmatch_count=0
@@ -86,6 +88,9 @@ class ImageMath:
 
 
 if __name__ == '__main__':
-    s='微信截图_20200909193807.png'
-    print(ImageMath().find_image(s))
+    s='微信截图_20200909222517.png'
+    x,y=ImageMath().find_image(s)
+    print(x)
+    print(y)
+
     print(ImageMath().check_exist(s))
