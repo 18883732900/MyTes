@@ -14,6 +14,7 @@ class Base:
     #     if cls.addr==None:
     #         cls.addr=object.__new__(cls)
     #     return cls.addr
+
     def windows_handles(self):
         '''查看句柄'''
         handles = self.driver.window_handles

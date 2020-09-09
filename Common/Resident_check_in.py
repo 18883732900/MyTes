@@ -75,12 +75,10 @@ class Resident_check(Base):
         '''输入手机号进行校验'''
         time.sleep(1)
         self.Operation(*Common.element25, number)
-        # time.sleep(1)
         self.Operation(*Common.element26)
 
     def up_worker(self, file_path):
         '''上传身份证头像'''
-        # time.sleep(2)
         self.Operation(*Common.element28, file_path)
 
     def clickup(self):
@@ -128,7 +126,6 @@ class Resident_check(Base):
         time.sleep(3)
         self.Operation(*Common.element40)
         years = int(self.find_element(Common.element41).text[0:-2])
-        # print(years)
         mounts = int(self.find_element(Common.element42).text[0:-2])
         if int(year) is not None:
             if int(year) < years:

@@ -1,5 +1,4 @@
-
-import re,time,datetime
+import re, time, datetime
 from Base.Backup import Mysqldbbackup
 import allure
 import pytest
@@ -11,75 +10,107 @@ from Common.common import Page
 from Data import data_test02
 from Scripts import test02
 
-Scripts=test02()
+Scripts = test02()
 curr_time = datetime.datetime.now()
+
+
 @pytest.fixture(scope='function', params=data_test02.list)
 def param(request):
     return request.param
 
+
 class Test_2:
     def setup_class(self):
+
         self.driver = inidriver('http://172.16.13.105/#/login')
+
         self.driver.maximize_window()
+
         self.d = Page(self.driver).Resident()
+
     @allure.step(title='登录测试')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.parametrize('name,password', data_test02.login)
-    def test_login(self,name,password):
-        self.d.login(name, password)
+    def test_login(self, name, password):
+
+        self.d.login(name, password, )
+
         allure.attach('登录测试', '模拟了正确用户名错误用户名，正确/错误密码之间的组合加入校验')
+
         if name == data_test02.login[0][0]:
+
             s = self.d.find_element(Scripts.element1).text
+
             assert s in '该用户不存在!'
+
         elif name == data_test02.login[1][0]:
+
             s = self.d.find_element(Scripts.element1).text
+
             assert s in '用户名密码不正确!'
+
         elif name == data_test02.login[2][0]:
+
             s = self.driver.page_source
-            p = re.findall(Scripts.find,s)
+
+            p = re.findall(Scripts.find, s)
+
             assert '数据看板首页' in p
 
     @allure.step(title='进入居民登记前的社区选择测试')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.skipif(1 == 2, reason='跳过')
     @pytest.mark.parametrize('parent_Community,Community,Floor,unit,Fl,room', data_test02.select)
-    def test_init(self, parent_Community, Community, Floor,unit,Fl,room):
-            allure.attach('选择不同的社区', '不同的社区不同的楼栋房间')
-            self.d.int(parent_Community, Community, Floor, unit,Fl,room)
-            f = self.d.find_element(Scripts.element2).text
-            assert  Floor  in f and unit in f and Fl  in f and   room  in f
+    def test_init(self, parent_Community, Community, Floor, unit, Fl, room):
+        allure.attach('选择不同的社区', '不同的社区不同的楼栋房间')
+
+        self.d.int(parent_Community, Community, Floor, unit, Fl, room)
+
+        f = self.d.find_element(Scripts.element2).text
+
+        assert Floor in f and unit in f and Fl in f and room in f
 
     def teardown_class(self):
         self.d.page('get_screenshot_as_file', filepath='./结果图.png')
+
         time.sleep(5)
 
     @allure.step(title='产权人信息填写')
     @pytest.allure.severity('CRITTCAL')
-    @pytest.mark.parametrize('file1,file2,file3,x',data_test02.file_path)
+    @pytest.mark.parametrize('file1,file2,file3,x', data_test02.file_path)
     @pytest.mark.parametrize('name, idcard, number, num', data_test02.owner_message)
-    def test_01(self,name, idcard, number, num,file1,file2,file3,x):
+    def test_01(self, name, idcard, number, num, file1, file2, file3, x):
         allure.attach('图片校验', '对图片能否上传成功做断言')
+
         self.d.owner(name, idcard, number, num)
-        self.d.img(file1,file2,file3,x)
-        els=self.d.find_elements(Scripts.element21)
-        # print(len(els))
-        assert len(els)==2+len(file3)-x
+
+        self.d.img(file1, file2, file3, x)
+
+        els = self.d.find_elements(Scripts.element21)
+
+        assert len(els) == 2 + len(file3) - x
 
     @allure.step(title='手机号核验测试')
     @pytest.allure.severity('CRITTCAL')
-    def test_02(self,param):
+    def test_02(self, param):
         allure.attach('校验手机号', '参数中加入了正确和错误的手机号，对不同情况做了断言')
+
         self.d.cd_worker(number=param)
+
         try:
             self.d.find_element(Scripts.element3).clear()
+
         except:
             pass
+
         if param == data_test02.list[0]:
             f = self.d.find_element(Scripts.element4).text
+
             assert f in '请输入正确的手机号'
+
         elif param == data_test02.list[1]:
             f = self.d.find_element(Scripts.element5).text
-            # print(f)
+
             assert f in '户口簿'
 
     @allure.step(title='对提交为空的测试')
@@ -87,11 +118,15 @@ class Test_2:
     @pytest.mark.skipif(1 == 2, reason='跳过')
     def test_002(self):
         allure.attach('空提交', '校验不能为空提交！！！')
+
         time.sleep(1)
+
         self.d.clickup()
+
         el = self.d.find_element(Scripts.element6)
+
         s = el.text
-        # print(s)
+
         assert s in '请选择证件类型'
 
     @allure.step(title='身份证图片校验测试')
@@ -100,46 +135,45 @@ class Test_2:
     @pytest.mark.parametrize('file_Path1,file_Path2,type_c', data_test02.file_path2)
     def test_003(self, file_Path1, file_Path2, type_c):
         allure.attach('身份证图片校验', '确保身份证合法有效')
-        # print(file_Path1)
+
         type = self.d.shengfz(file_path1=file_Path1, file_path2=file_Path2, type_cl=type_c)
-        # time.sleep(2)
+
         if file_Path1 is not None:
+
             if '身份证正面照片' not in file_Path1 and '身份证反面照片' in file_Path2 and type == '身份证':
                 s = self.d.find_element(Scripts.element7).text
-                # print(s)
-                # time.sleep(2)
                 time.sleep(1)
                 el = self.d.find_element(Scripts.element8).get_attribute('disabled')
-                # print(el)
 
                 assert s in '请上传正确、清晰的身份证正面照片' and el == 'true'
 
             elif '身份证正面照片' in file_Path1 and '身份证反面照片' not in file_Path2 and type == '身份证':
                 s = self.d.find_element(Scripts.element7).text
-                # print(s)
-                # time.sleep(2)
                 time.sleep(1)
                 el = self.d.find_element(Scripts.element9).get_attribute('disabled')
+
                 assert s in '请上传正确、清晰的身份证反面照片' and el == 'true'
 
 
             elif '身份证正面照片' not in file_Path1 and '身份证反面照片' not in file_Path2 and type == '身份证':
                 s = self.d.find_element(Scripts.element7).text
-                # print(s)
                 time.sleep(1)
                 el = self.d.find_element(Scripts.element10).get_attribute('disabled')
-                # print(el)
+
                 assert s in '请上传正确、清晰的身份证反面照片' or '请上传正确、清晰的身份证正面照片' and el == None
+
 
             elif '身份证正面照片' in file_Path1 and '身份证反面照片' in file_Path2 and type == '身份证':
                 time.sleep(2)
                 el1 = self.d.find_element(Scripts.element8).get_attribute('disabled')
                 el2 = self.d.find_element(Scripts.element9).get_attribute('disabled')
                 time.sleep(1)
+
                 assert el1 == 'true' and el2 == 'true'
 
             else:
                 s = self.d.find_element(Scripts.element11).get_attribute('src')
+
                 assert 'https://taijiashequ.oss-cn-beijing.aliyunc' in s
 
     @allure.step(title='上传头像验证')
@@ -147,107 +181,133 @@ class Test_2:
     @pytest.mark.parametrize('file_path', data_test02.file_path1)
     @pytest.mark.skipif(1 == 2, reason='跳过')
     def test_004(self, file_path):
-            self.d.up_worker(file_path)
-            time.sleep(3)
-            els = self.d.find_elements(Scripts.element12)
-            x = 0
-            z=1
+
+        self.d.up_worker(file_path)
+
+        time.sleep(3)
+
+        els = self.d.find_elements(Scripts.element12)
+
+        x = 0
+        z = 1
+        for el in els:
+            s = el.get_attribute('src')
+            if file_path[-9:] in s:
+                x += 1
+                break
+
+        if file_path == data_test02.file_path1[3]:
             for el in els:
                 s = el.get_attribute('src')
                 if file_path[-9:] in s:
-                    x += 1
-                    break
+                    z -= 1
 
-            if file_path==data_test02.file_path1[3]:
-                for el in els:
-                    s = el.get_attribute('src')
-                    if file_path[-9:]  in s:
-                        z -=1
+        if x == 1 or z == 1:
+            assert True
 
+        else:
+            assert False
 
-            if x == 1 or z==1 :
-                   assert True
-            else:
-                    assert False
     @pytest.mark.parametrize('idcard,name', data_test02.user)
     @pytest.mark.skipif(1 == 2, reason='跳过')
     def test_005(self, idcard, name):
         self.d.setup_idcard(text=idcard, name=name)
+
         allure.attach('上传头像', '判断了头像是否上传成功了')
+
         time.sleep(1)
+
         if data_test02.file_path == '身份证':
+
             if len(idcard) != 18:
                 el = self.d.find_element(Scripts.element13).text
+
                 assert el in '请输入正确的身份证号'
+
             elif len(idcard) == 18:
                 idnumber = IdNumber(idcard)
+
                 if idnumber.get_check_digit() == idcard[-1]:
                     assert True
+
                 else:
                     el = self.d.find_element(Scripts.element13).text
                     assert el in '请输入正确的身份证号'
-
-
 
     @allure.step(title='年龄输入校验')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.skipif(data_test02.file_path2[-1][-1] == '身份证' or 1 == 2, reason='跳过')
     @pytest.mark.parametrize('day,year,mount', data_test02.Brithday)
     def test_006(self, day, year, mount):
+
         time.sleep(2)
+
         self.d.select_Birthday(type_cl=data_test02.file_path2[-1][-1], day=day, year=year, mount=mount)
+
         self.d.Operation(*Scripts.element14)
-        s=self.d.find_elements(Scripts.element20)
+
+        s = self.d.find_elements(Scripts.element20)
+
         if s:
             assert True
         else:
             assert False
 
     @pytest.mark.parametrize('type, text', data_test02.worker_job)
-    def test_008(self,type,text):
+    def test_008(self, type, text):
         self.d.selects_Political(type)
         self.d.job(text)
 
-    @pytest.mark.parametrize('file_path',data_test02.file_list4)
+    @pytest.mark.parametrize('file_path', data_test02.file_list4)
     @pytest.mark.parametrize('type, text, bt', data_test02.Relationship_type)
-    @pytest.mark.parametrize('parent_Community, Community, Floor, unit,Fl, roomId',[data_test02.select[-1]])
-    def test_007(self,type, text, file_path, bt,parent_Community, Community ,Floor, unit,Fl,roomId):
+    @pytest.mark.parametrize('parent_Community, Community, Floor, unit,Fl, roomId', [data_test02.select[-1]])
+    def test_007(self, type, text, file_path, bt, parent_Community, Community, Floor, unit, Fl, roomId):
         try:
             els = self.d.find_elements(Scripts.element15)
+
             for i in els:
+
                 time.sleep(1)
+
                 self.d.Operation(*Scripts.element16)
+
                 time.sleep(2)
+
                 self.d.Operation(*Scripts.element17)
         except:
+
             pass
+
         time.sleep(2)
-        self.d.Relationship_type(type=type, text=text, file_path=file_path, bt=bt,parent_Community=parent_Community,Community=Community,Floor=Floor,unit=unit,Fl=Fl,roomId=roomId)
-        if len(file_path)<2:
-            el=self.d.find_element(Scripts.element18).text
-            assert  el=='请上传两张或两张以上的租借合同'
+        self.d.Relationship_type(type=type, text=text, file_path=file_path, bt=bt, parent_Community=parent_Community,
+                                 Community=Community, Floor=Floor, unit=unit, Fl=Fl, roomId=roomId)
+        if len(file_path) < 2:
+            el = self.d.find_element(Scripts.element18).text
+
+            assert el == '请上传两张或两张以上的租借合同'
         else:
-            if bt=='确定':
-              Mysqldbbackup().backup_uesr()
-              dict1 = {}
-              time.sleep(10)
-              els = self.d.find_elements(Scripts.element23)
-              for i in els:
-                  text = i.text
-                  list = text.split('：')
-                  dict1[list[0]] = list[-1]
-              # print(dict1)
-              el = self.d.find_element(Scripts.element22).text
-              time.sleep(1)
-              assert data_test02.user[-1][0] in dict1['证件号码'] and data_test02.file_path2[-1][-1] in dict1['证件类型'] and data_test02.worker_job[-1][0] in dict1['政治面貌'] \
-                     and data_test02.worker_job[-1][1] in dict1['职业'] and text in dict1['登记角色'] and data_test02.user[-1][-1] in el
+            if bt == '确定':
+                Mysqldbbackup().backup_uesr()
+                dict1 = {}
+                time.sleep(10)
 
+                els = self.d.find_elements(Scripts.element23)
 
+                for i in els:
 
+                    text = i.text
 
+                    list = text.split('：')
 
+                    dict1[list[0]] = list[-1]
 
+                el = self.d.find_element(Scripts.element22).text
+                time.sleep(1)
 
+                assert data_test02.user[-1][0] in dict1['证件号码'] and data_test02.file_path2[-1][-1] in dict1['证件类型'] and \
+                       data_test02.worker_job[-1][0] in dict1['政治面貌'] \
+                       and data_test02.worker_job[-1][1] in dict1['职业'] and text in dict1['登记角色'] and \
+                       data_test02.user[-1][-1] in el
 
 
 if __name__ == '__main__':

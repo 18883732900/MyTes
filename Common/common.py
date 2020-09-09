@@ -19,6 +19,21 @@ class Page(object):
       return  Resident_check(self.driver)
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 if __name__ == '__main__':
     file = r"C:\Users\26765\Desktop\python测试\Ui自动化\Data\微信截图_20200820115449.png"
     shenfzz = r'C:\Users\26765\Desktop\python测试\Ui自动化\Data\身份证正面照片.jpg'
@@ -44,7 +59,7 @@ if __name__ == '__main__':
     c.job('测试')
     time.sleep(3)
     c.selects_Political('群众')
-    c.Relationship_type('常住','租客',[file,file])
+    c.Relationship_type('常住','租客',[file,file],'取消')
     time.sleep(3)
     # c.Issue_permissions(('IC卡绑定','身份证绑定'),('温控门禁设备--61028','月坛小区门禁设备'),"18865572920","18988739264")
 
