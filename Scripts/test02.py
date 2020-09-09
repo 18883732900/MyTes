@@ -19,7 +19,7 @@ def param(request):
 
 class Test_2:
     def setup_class(self):
-        self.driver = inidriver('http://test.bjhontai.com:180/#/login')
+        self.driver = inidriver('http://172.16.13.105/#/login')
         self.driver.maximize_window()
         self.d = Page(self.driver).Resident()
     @allure.step(title='登录测试')
@@ -43,7 +43,7 @@ class Test_2:
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.skipif(1 == 2, reason='跳过')
     @pytest.mark.parametrize('parent_Community,Community,Floor,unit,Fl,room', data_test02.select)
-    def test_init(self, parent_Community, Community, Floor, unit,Fl,room):
+    def test_init(self, parent_Community, Community, Floor,unit,Fl,room):
             allure.attach('选择不同的社区', '不同的社区不同的楼栋房间')
             self.d.int(parent_Community, Community, Floor, unit,Fl,room)
             f = self.d.find_element(Scripts.element2).text

@@ -51,6 +51,16 @@ class Base:
     def select(self):
         self.select()
 
+    def for_find_OP(self,el,p=None,type='click',text=None):
+        els=self.find_elements(el)
+        for i in els:
+          if p in i.text :
+             if type=='click':
+                i.click()
+             if type=='send_keys':
+                 i.send_keys(text)
+             break
+
     def page(self, fun, x=None, y=None, filepath=None):
         '''最大化窗口'''
         if fun == 'maximize_window':

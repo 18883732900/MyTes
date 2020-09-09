@@ -20,55 +20,21 @@ class Resident_check(Base):
         time.sleep(3)
 
     def int(self, parent_Community, Community, Floor, unit, FL, roomId):
-        s1 = self.find_elements(Common.element1)
-        for i in s1:
-            if i.text == '人房信息':
-                i.click()
-        s2 = self.find_elements(Common.element2)
-        for i in s2:
-            if i.text == '居民信息管理':
-                i.click()
-        s3 = self.find_elements(Common.element3)
-        for i in s3:
-            if i.text == '居民入住登记':
-                i.click()
+        self.for_find_OP(Common.element1, '人房信息','click')
+        self.for_find_OP(Common.element2,'居民信息管理','click')
+        self.for_find_OP(Common.element3,'居民入住登记','click')
         time.sleep(2)
         self.Operation(*Common.element4)
-        s1 = self.find_elements(Common.element5)
-        for i in s1:
-            if parent_Community in i.text:
-                i.click()
-                break
+        self.for_find_OP(Common.element5,parent_Community,'click')
         self.Operation(*Common.element6)
-        s2 = self.find_elements(Common.element7)
-        for i in s2:
-            if Community in i.text:
-                i.click()
-                break
+        self.for_find_OP(Common.element7,Community,'click')
         self.Operation(*Common.element8)
-        s3 = self.find_elements(Common.element9)
-        for i in s3:
-            if Floor in i.text:
-                i.click()
-                break
+        self.for_find_OP(Common.element9,Floor,'click')
         self.Operation(*Common.element10)
-        s4 = self.find_elements(Common.element11)
-        for i in s4:
-            if unit in i.text:
-                i.click()
-                break
+        self.for_find_OP(Common.element11,unit,'click')
         self.Operation(*Common.element12)
-        s5 = self.find_elements(Common.element13)
-        for i in s5:
-            if FL in i.text:
-                i.click()
-                break
-        time.sleep(2)
-        s6 = self.find_elements(Common.element14)
-        for i in s6:
-            if roomId in i.text:
-                i.click()
-                break
+        self.for_find_OP(Common.element13,FL,'click')
+        self.for_find_OP(Common.element14,roomId, 'click')
 
     def submin(self):
         self.Operation(*Common.element15)
@@ -124,18 +90,12 @@ class Resident_check(Base):
     def shengfz(self, file_path1=None, file_path2=None, type_cl='身份证'):
         time.sleep(1)
         try:
-            els = self.find_elements(Common.element30)
-            for i in els:
-                i.click()
+            self.for_find_OP(Common.element30, type='click')
         except:
             pass
 
         '''选择证件类型自动上传图片'''
-        els = self.find_elements(Common.element31)
-        for i in els:
-            if i.text == type_cl:
-                i.click()
-                break
+        self.for_find_OP(Common.element31,type_cl,'click')
         try:
             self.find_element(Common.element32[0]).clear()
         except:
@@ -151,11 +111,7 @@ class Resident_check(Base):
 
     def selects_Political(self, type):
         self.Operation(*Common.element35)
-        els = self.find_elements(Common.element36)
-        for i in els:
-            if i.text == type:
-                i.click()
-                break
+        self.for_find_OP(Common.element36, type, 'click')
 
     def job(self, text):
         self.Operation(*Common.element37, text)
@@ -168,11 +124,7 @@ class Resident_check(Base):
 
     def select_Birthday(self, type_cl=None, year=None, mount=None, day=None):
         time.sleep(3)
-        els = self.find_elements(Common.element31)
-        for i in els:
-            if i.text == type_cl:
-                i.click()
-                break
+        self.for_find_OP(Common.element31, type_cl, 'click')
         time.sleep(3)
         self.Operation(*Common.element40)
         years = int(self.find_element(Common.element41).text[0:-2])
@@ -207,16 +159,8 @@ class Resident_check(Base):
     def Relationship_type(self, type, text,parent_Community, Community, Floor, unit, Fl , roomId, file_path=None, bt='确定'):
         time.sleep(4)
 
-        els = self.find_elements(Common.element48)
-        for i in els:
-            if i.text == type:
-                i.click()
-                break
-        els2 = self.find_elements(Common.element49)
-        for i in els2:
-            if i.text == text:
-                i.click()
-                break
+        self.for_find_OP(Common.element48,type, 'click')
+        self.for_find_OP(Common.element49,text, 'click')
         if text == '租客':
             time.sleep(2)
             for c in file_path:
