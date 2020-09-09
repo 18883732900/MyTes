@@ -1,5 +1,4 @@
 import os
-
 from Base.number import number
 from Base.name import name
 from Base.idCard import IdNumber
@@ -9,11 +8,9 @@ idcard = IdNumber.generate_myid()
 
 path__1 = r'C:\Users\26765\Desktop\python测试\Ui自动化\Image'
 
-
 def path(file_name):
     path1 = os.path.join(path__1, file_name)
     return path1
-
 
 s = os.walk(path__1)
 for a, b, c in s:
@@ -22,9 +19,9 @@ for a, b, c in s:
 file = path(listt[0])
 shenfzz = path(listt[2])
 shenfzf = path(listt[1])
+
 file_path = [(shenfzz, shenfzf, '身份证'), (file, file, '其他')]
 file_path1 = [file, file, file, file]
-
 list = Mysqldb().mysqldb_02(type=4, number=number(), title='%正确%')
 
 login = Mysqldb().mysqldb(type=1)

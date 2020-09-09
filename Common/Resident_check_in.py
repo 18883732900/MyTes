@@ -145,12 +145,7 @@ class Resident_check(Base):
                     self.Operation(*Common.element46)
             else:
                 pass
-        elp = self.find_elements(Common.element47)
-        for i in elp:
-            if i.text == day:
-                # print(i.text)
-                i.click()
-                break
+        self.for_find_OP(Common.element47, day, 'click')
         return years
 
     def Relationship_type(self, type, text,parent_Community, Community, Floor, unit, Fl , roomId, file_path=None, bt='确定'):
@@ -190,14 +185,8 @@ class Resident_check(Base):
                     elif i in 'IC卡绑定':
                         self.Operation(*Common.element53, num2)
                     break
-        p = self.find_elements(Common.element54)
         for c in devse:
-            for e in p:
-                if c in e.text:
-                    # print(e.text)
-                    time.sleep(5)
-                    e.click()
-                    break
+            self.for_find_OP(Common.element54, c, 'click')
 
 
 if __name__ == '__main__':
