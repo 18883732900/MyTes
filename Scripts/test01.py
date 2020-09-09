@@ -311,6 +311,7 @@ class Test_1:
 
         x = 0
         list = [i for i in data_test01.select[-1]]
+
         list.insert(0, data_test01.user[-1][-1])
         for i in list:
             if i in s:
