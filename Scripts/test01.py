@@ -18,7 +18,6 @@ def param(request):
     return request.param
 
 
-file_name = './胡图图.png'
 
 
 class Test_1:
@@ -48,7 +47,6 @@ class Test_1:
         except:
             s = self.driver.page_source
 
-        self.driver.save_screenshot(file_name)
 
         if name == data_test01.login[0][0]:
 
@@ -87,7 +85,6 @@ class Test_1:
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.skipif(1 == 2, reason='跳过')
     def test_001(self, param):
-
         allure.attach('校验手机号', '参数中加入了正确和错误的手机号，对不同情况做了断言')
 
         s = param
@@ -307,9 +304,11 @@ class Test_1:
     @pytest.mark.skipif(1 == 2, reason='跳过')
     def test_010(self):
         allure.attach('核对', '确保上传信息都正确')
+
         time.sleep(3)
+
         s = self.d.page(fun='driver.page_source')
-        # print(s)
+
         x = 0
         list = [i for i in data_test01.select[-1]]
         list.insert(0, data_test01.user[-1][-1])
@@ -348,6 +347,7 @@ class Test_1:
                 z += 1
 
         assert x + y + z == len(type) + len(deves) + 2
+
 
 
 
