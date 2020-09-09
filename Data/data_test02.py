@@ -4,13 +4,11 @@ from Base.idCard import IdNumber
 from Base.Mysqldb import Mysqldb
 import os
 
-path__1 = r'C:\Users\26765\Desktop\python测试\Ui自动化\Image'
-
+path__1 = os.path.join(os.getcwd(),'image')
 
 def path(file_name):
     path1 = os.path.join(path__1, file_name)
     return path1
-
 
 s = os.walk(path__1)
 for a, b, c in s:

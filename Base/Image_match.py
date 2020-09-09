@@ -73,6 +73,9 @@ class ImageMath:
 
 
 
+
+
+
 if __name__ == '__main__':
     s='微信截图_20200909193807.png'
     print(ImageMath().find_image(s))
