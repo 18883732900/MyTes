@@ -304,11 +304,8 @@ class Test_1:
     @pytest.mark.skipif(1 == 2, reason='跳过')
     def test_010(self):
         allure.attach('核对', '确保上传信息都正确')
-
         time.sleep(3)
-
         s = self.d.page(fun='driver.page_source')
-
         x = 0
         list = [i for i in data_test01.select[-1]]
 
@@ -330,23 +327,19 @@ class Test_1:
         x = 0
         y = 0
         z = 0
-
         type = data_test01.Issue_permissions[-1][0]
         for i in type:
             if i in list:
                 x += 1
-
         deves = data_test01.Issue_permissions[-1][1]
         for i in deves:
             if i in list:
                 y += 1
-
         text = self.d.find_elements(Scripts.element24)
         for i in text:
             text1 = i.get_attribute('value')
             if text1 in data_test01.Issue_permissions[-1][2] or data_test01.Issue_permissions[-1][3]:
                 z += 1
-
         assert x + y + z == len(type) + len(deves) + 2
 
 
