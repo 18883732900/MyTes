@@ -11,8 +11,24 @@ class Image_Test():
         self.keyboard = PyKeyboard()
         self.match = ImageMath()
 
-    def start_app(self):
-        os.system('startup')
+    def start_server(self):
+        # 模拟按住 左边windows徽 (复杂写法，避免忘记使用方式)
+        self.keyboard.press_key(self.keyboard.windows_l_key)
+        # 模拟松开windows
+        self.keyboard.release_key(self.keyboard.windows_l_key)
+        # 输入cmd
+        time.sleep(1)
+        self.keyboard.type_string('cmd')
+        time.sleep(1.5)
+        self.keyboard.tap_key(self.keyboard.right_key)
+        time.sleep(1)
+        self.keyboard.tap_key(self.keyboard.down_key)
+        time.sleep(1)
+        self.keyboard.tap_key(self.keyboard.enter_key)
+        time.sleep(2)
+        self.keyboard.type_string('net start mysql')
+        self.keyboard.tap_key(self.keyboard.enter_key)
+
 
     def on_click(self, target, n=1):
         x, y = self.match.find_image(target)
@@ -45,6 +61,7 @@ class Image_Test():
 
 if __name__ == '__main__':
 
+
     c = Image_Test()
-    c.start_app()
-    c.on_click('微信截图_20200909222517.png')
+    c.start_server()
+    # c.on_click('微信截图_20200909222517.png')

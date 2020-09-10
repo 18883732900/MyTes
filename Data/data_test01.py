@@ -17,11 +17,15 @@ for a, b, c in s:
     listt = [i for i in c]
 
 file = path(listt[0])
+
 shenfzz = path(listt[2])
+
 shenfzf = path(listt[1])
 
 file_path = [(shenfzz, shenfzf, '身份证'), (file, file, '其他')]
+
 file_path1 = [file, file, file, file]
+
 list = Mysqldb().mysqldb_02(type=4, number=number(), title='%正确%')
 
 login = Mysqldb().mysqldb(type=1)
