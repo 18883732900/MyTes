@@ -1,4 +1,5 @@
 import time
+from selenium import webdriver
 from selenium.webdriver.common.by import By
 from Base.base import Base
 from Common import Resident_check_in_data
@@ -10,6 +11,7 @@ Common = Resident_check_in_data()
 class Resident_check(Base):
     def __init__(self, driver):
         Base.__init__(self, driver)
+
 
     def login(self, name=None, password=None):
         self.find_element(Common.user_name[0]).clear()

@@ -18,14 +18,21 @@ def param(request):
     return request.param
 
 
+@pytest.fixture(scope='class', autouse=True)
+def fix(browser):
+    global d
+    global driver
+    driver = browser
+    d = Page(browser).uploda()
+    return d
 
 
 class Test_1:
 
     def setup_class(self):
-        self.driver = inidriver('http://test.bjhontai.com:180/#/login')
-        self.driver.maximize_window()
-        self.d = Page(self.driver).uploda()
+        self.d = d
+        self.driver = driver
+
 
     '''   方法：@pytest.allure.severity(Severity)
     参数：
@@ -46,7 +53,6 @@ class Test_1:
 
         except:
             s = self.driver.page_source
-
 
         if name == data_test01.login[0][0]:
 
@@ -341,10 +347,6 @@ class Test_1:
             if text1 in data_test01.Issue_permissions[-1][2] or data_test01.Issue_permissions[-1][3]:
                 z += 1
         assert x + y + z == len(type) + len(deves) + 2
-
-
-
-
 
 
 if __name__ == '__main__':

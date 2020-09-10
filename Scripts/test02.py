@@ -3,9 +3,7 @@ from Base.Backup import Mysqldbbackup
 import allure
 import pytest
 from selenium.webdriver.common.by import By
-
 from Base.idCard import IdNumber
-from Base.initdriver import inidriver
 from Common.common import Page
 from Data import data_test02
 from Scripts import test02
@@ -13,49 +11,66 @@ from Scripts import test02
 Scripts = test02()
 curr_time = datetime.datetime.now()
 
-
 @pytest.fixture(scope='function', params=data_test02.list)
 def param(request):
     return request.param
 
 
+@pytest.fixture(scope='class',autouse=True)
+def fix(browser):
+        global d
+        global driver
+        driver=browser
+        d = Page(browser).Resident()
+        return d
+
+
+
 class Test_2:
     def setup_class(self):
+        self.d=d
+        self.driver=driver
 
-        self.driver = inidriver('http://172.16.13.105/#/login')
-
-        self.driver.maximize_window()
-
-        self.d = Page(self.driver).Resident()
 
     @allure.step(title='登录测试')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.parametrize('name,password', data_test02.login)
     def test_login(self, name, password):
+        self.d.login(name, password)
+        try:
+            s = self.d.find_element(Scripts.element1,time=4).text
 
-        self.d.login(name, password, )
-
-        allure.attach('登录测试', '模拟了正确用户名错误用户名，正确/错误密码之间的组合加入校验')
-
+        except:
+            s = self.driver.page_source
+        '''
+        登录测试
+        描述：模拟了正确用户名错误用户名，正确/错误密码之间的组合加入校验
+        '''
         if name == data_test02.login[0][0]:
+            with allure.step('输入错误的账号登录'):
+                allure.attach('参数',"账号：{0}  ；密码：{1}".format(name,password))
 
-            s = self.d.find_element(Scripts.element1).text
+            with allure.step('断言:{0}'.format(s)):
 
-            assert s in '该用户不存在!'
+                  assert s in '该用户不存在!'
+
 
         elif name == data_test02.login[1][0]:
+            with allure.step('输入错误的密码登录'):
+                allure.attach('参数',"账号：{0}  ；密码：{1}".format(name, password))
 
-            s = self.d.find_element(Scripts.element1).text
-
-            assert s in '用户名密码不正确!'
+            with  allure.step('断言：{0}'.format(s)):
+                assert s == '用户名密码不正确!'
 
         elif name == data_test02.login[2][0]:
+            with allure.step('输入正确的账号密码登录{0}{1}'.format(name, password)):
+                allure.attach( '参数',"账号：{0}  ；密码：{1}".format(name, password))
+                p = re.findall(Scripts.find, s)
 
-            s = self.driver.page_source
+            with  allure.step('断言：{0}'.format(p)):
+                assert '数据看板首页' in p
 
-            p = re.findall(Scripts.find, s)
 
-            assert '数据看板首页' in p
 
     @allure.step(title='进入居民登记前的社区选择测试')
     @pytest.allure.severity('CRITTCAL')
@@ -266,7 +281,6 @@ class Test_2:
             els = self.d.find_elements(Scripts.element15)
 
             for i in els:
-
                 time.sleep(1)
 
                 self.d.Operation(*Scripts.element16)
@@ -283,7 +297,6 @@ class Test_2:
                                  Community=Community, Floor=Floor, unit=unit, Fl=Fl, roomId=roomId)
         if len(file_path) < 2:
             el = self.d.find_element(Scripts.element18).text
-
             assert el == '请上传两张或两张以上的租借合同'
         else:
             if bt == '确定':
@@ -294,7 +307,6 @@ class Test_2:
                 els = self.d.find_elements(Scripts.element23)
 
                 for i in els:
-
                     text = i.text
 
                     list = text.split('：')

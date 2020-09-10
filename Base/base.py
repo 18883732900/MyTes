@@ -6,14 +6,15 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 
 class Base:
-    # addr=None
+
+    addr=None
     def __init__(self, driver):
         self.driver = driver
 
-    # def __new__(cls, *args, **kwargs):
-    #     if cls.addr==None:
-    #         cls.addr=object.__new__(cls)
-    #     return cls.addr
+    def __new__(cls, *args, **kwargs):
+        if cls.addr==None:
+            cls.addr=object.__new__(cls)
+        return cls.addr
 
     def windows_handles(self):
         '''查看句柄'''
@@ -96,16 +97,17 @@ class Base:
         '''获取当前页面的网页源代码'''
         if fun == 'driver.page_source':
             source = self.driver.page_source
-            if filepath is not filepath:
-                with open(filepath, 'wb') as f:
-                    f.write(source.encode())
+            # if filepath is not filepath:
+            #     with open(filepath, 'wb') as f:
+            #         f.write(source.encode())
             return source
 
         '''获取当前页面的截图'''
         if fun == 'get_screenshot_as_png':
             jpg = self.driver.get_screenshot_as_png()
-            with open(filepath, 'wb') as f:
-                f.write(jpg)
+            return jpg
+            # with open(filepath, 'wb') as f:
+            #     f.write(jpg)
         '''获取当前页面的截图'''
         if fun == 'get_screenshot_as_file':
             self.driver.get_screenshot_as_file(filepath)
