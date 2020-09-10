@@ -4,8 +4,8 @@ from Base.idCard import IdNumber
 from Base.Mysqldb import Mysqldb
 import os
 
-path__1 = os.path.join(os.getcwd(),'image')
-# path__1=r"C:\Users\26765\Desktop\python测试\Ui自动化\Image"
+# path__1 = os.path.join(os.getcwd(),'image')
+path__1=r"C:\Users\26765\Desktop\python测试\Ui自动化\Image"
 
 def path(file_name):
     path1 = os.path.join(path__1, file_name)
@@ -51,4 +51,4 @@ Relationship_type = Mysqldb().mysqldb(table='data_test02', type=9)
 worker_job = Mysqldb().mysqldb(type=3, table='data_test02')
 
 if __name__ == '__main__':
-    print(file_list)
+    print(Relationship_type)
