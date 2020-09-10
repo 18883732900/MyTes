@@ -19,12 +19,12 @@ def param(request):
 
 
 @pytest.fixture(scope='class', autouse=True)
-def fix(browser):
+def fix(conf_initdriver):
     global d
     global driver
-    driver = browser
-    d = Page(browser).uploda()
-    return d
+    driver=conf_initdriver
+    d = Page(driver).uploda()
+
 
 
 class Test_1:
@@ -41,7 +41,6 @@ class Test_1:
     使用方式：
         @pytest.allure.severity(pytest.allure.severity_level.CRITICAL）
         """
-
     @allure.step(title='登录测试')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.parametrize('name,password', data_test01.login)
@@ -54,57 +53,48 @@ class Test_1:
             s = self.d.find_element(Scripts.element1, time=3).text
 
         except:
-            s = self.driver.page_source
+           s = self.driver.page_source
 
         if name == data_test01.login[0][0]:
-
             assert s in '该用户不存在!'
 
         elif name == data_test01.login[1][0]:
             assert s in '用户名密码不正确!'
 
         elif name == data_test01.login[2][0]:
-
             p = re.findall(Scripts.find, s)
-
             assert '数据看板首页' in p
+
+
 
     @allure.step(title='进入工作人员登记前的社区选择测试')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.skipif(1 == 2, reason='跳过')
     @pytest.mark.parametrize('parent_Community,Community,Floor,unit', data_test01.select)
     def test_init(self, parent_Community, Community, Floor, unit):
-
         allure.attach('选择不同的社区', '不同的社区不同的楼栋关联不同的物业')
-
         self.d.int(parent_Community, Community, Floor, unit)
-
         f = self.d.find_element(Scripts.element6).text
-
         assert f in '工作人员类别列表'
 
     def teardown_class(self):
-        # self.d.page('get_screenshot_as_file', filepath='./结果图.png')
-        time.sleep(5)
 
-        self.driver.quit()
+        # self.d.page('get_screenshot_as_file', filepath='./结果图.png')
+        del self.d
+        del self.driver
+
 
     @allure.step(title='手机号核验测试')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.skipif(1 == 2, reason='跳过')
     def test_001(self, param):
         allure.attach('校验手机号', '参数中加入了正确和错误的手机号，对不同情况做了断言')
-
         s = param
-
         self.d.cd_worker(number=s)
-
         try:
-
             self.d.find_element(Scripts.element5).clear()
 
         except:
-
             pass
 
         if s == data_test01.list[0]:

@@ -1,4 +1,6 @@
 import os
+import time
+
 import allure
 from selenium import webdriver
 import pytest
@@ -6,7 +8,7 @@ import pytest
 # 添加报错截图到allure报告里
 from Base.initdriver import inidriver
 
-driver = None
+# driver = None
 
 '''
 会自动监听用例断言结果针对失败的用例进行截图并加入报告
@@ -40,10 +42,21 @@ def pytest_runtest_makereport(item, call):
 
 
 
-@pytest.fixture(scope='session')
-def browser():
+@pytest.fixture(scope = "class")
+def conf_initdriver():
     global driver
-    if driver is None:
-        driver = inidriver('http://172.16.13.105/#/login')
-        driver.maximize_window()
-    return driver
+    driver = inidriver('http://test.bjhontai.com:180/#/login')
+    driver.maximize_window()
+    yield driver
+    time.sleep(3)
+    driver.quit()
+    del driver
+
+
+
+
+
+if __name__ == '__main__':
+   a=conf_initdriver()
+   for i in a:
+       print(i)

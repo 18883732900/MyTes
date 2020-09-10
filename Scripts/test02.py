@@ -17,12 +17,11 @@ def param(request):
 
 
 @pytest.fixture(scope='class',autouse=True)
-def fix(browser):
+def fix(conf_initdriver):
         global d
         global driver
-        driver=browser
-        d = Page(browser).Resident()
-        return d
+        driver=conf_initdriver
+        d = Page(driver).Resident()
 
 
 
@@ -47,6 +46,7 @@ class Test_2:
 
         except:
             s = self.driver.page_source
+
         if name == data_test02.login[0][0]:
             with allure.step('输入错误的账号登录'):
                 allure.attach('参数',"账号：{0}  ；密码：{1}".format(name,password))
@@ -87,9 +87,9 @@ class Test_2:
         assert Floor in f and unit in f and Fl in f and room in f
 
     def teardown_class(self):
-        self.d.page('get_screenshot_as_file', filepath='./结果图.png')
-
-        time.sleep(5)
+        # self.d.page('get_screenshot_as_file', filepath='./结果图.png')
+        del self.d
+        del self.driver
 
     @allure.step(title='产权人信息填写')
     @pytest.allure.severity('CRITTCAL')
