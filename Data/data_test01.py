@@ -6,8 +6,8 @@ from Base.Mysqldb import Mysqldb
 
 idcard = IdNumber.generate_myid()
 
-# path__1 = os.path.join(os.getcwd(),'image')
-path__1=r"C:\Users\26765\Desktop\python测试\Ui自动化\Image"
+path__1 = os.path.join(os.getcwd(),'image')
+# path__1=r"C:\Users\26765\Desktop\python测试\Ui自动化\Image"
 def path(file_name):
     path1 = os.path.join(path__1, file_name)
     return path1
