@@ -34,11 +34,13 @@ class Test_1:
         self.driver = driver
 
 
-    '''   方法：@pytest.allure.severity(Severity)
+    """
+      方法：@pytest.allure.severity(Severity)
     参数：
         Severity：严重级别(BLOCKER,CRITICAL,NORMAL,MINOR,TRIVIAL)
     使用方式：
-        @pytest.allure.severity(pytest.allure.severity_level.CRITICAL）'''
+        @pytest.allure.severity(pytest.allure.severity_level.CRITICAL）
+        """
 
     @allure.step(title='登录测试')
     @pytest.allure.severity('CRITTCAL')
