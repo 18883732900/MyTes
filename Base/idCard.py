@@ -56,6 +56,13 @@ class IdNumber(object):
         return generate_ids[s]
     # def __del__(self):
     #     print(self.num)
+
+
+
+
+
+
+
 if __name__ == "__main__":
     # generate_ids = IdNumber.generate_myid()
     # print(generate_ids)

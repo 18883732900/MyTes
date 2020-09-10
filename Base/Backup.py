@@ -15,8 +15,11 @@ class Mysqldbbackup():
               ,str( '%s,%s'%(data_test02.Relationship_type[-1][0],data_test02.Relationship_type[-1][1]))
                    ,str(data_test02.Issue_permissions[-1])
                    ,str(data_test02.login[-1][0])))
+
         self.con.commit()
+
         s=self.cursor.fetchall()
+
         return s
 
     def backup_worker(self):
@@ -28,8 +31,11 @@ class Mysqldbbackup():
               ,str(data_test01.worker_job[-1])
                    ,str(data_test01.Issue_permissions[-1])
                    ,str(data_test01.login[-1][0])))
+
         self.con.commit()
+
         s=self.cursor.fetchall()
+
         return s
 
 
