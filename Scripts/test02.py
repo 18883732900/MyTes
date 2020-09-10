@@ -36,16 +36,17 @@ class Test_2:
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.parametrize('name,password', data_test02.login)
     def test_login(self, name, password):
+        """
+         登录测试
+        描述：模拟了正确用户名错误用户名，
+        正确/错误密码之间的组合加入校验
+        """
         self.d.login(name, password)
         try:
             s = self.d.find_element(Scripts.element1,time=4).text
 
         except:
             s = self.driver.page_source
-        '''
-        登录测试
-        描述：模拟了正确用户名错误用户名，正确/错误密码之间的组合加入校验
-        '''
         if name == data_test02.login[0][0]:
             with allure.step('输入错误的账号登录'):
                 allure.attach('参数',"账号：{0}  ；密码：{1}".format(name,password))

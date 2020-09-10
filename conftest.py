@@ -8,7 +8,9 @@ from Base.initdriver import inidriver
 
 driver = None
 
-
+'''
+会自动监听用例断言结果针对失败的用例进行截图并加入报告
+'''
 @pytest.hookimpl(tryfirst=True, hookwrapper=True)
 def pytest_runtest_makereport(item, call):
     '''
