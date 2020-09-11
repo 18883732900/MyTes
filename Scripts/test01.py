@@ -82,6 +82,9 @@ class Test_1:
             with  allure.step('断言：{0}'.format(p)):
                 assert '数据看板首页' in p
 
+
+
+
     @allure.step(title='进入工作人员登记前的社区选择测试')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.skipif(1 == 2, reason='跳过')
@@ -102,6 +105,9 @@ class Test_1:
         # self.d.page('get_screenshot_as_file', filepath='./结果图.png')
         del self.d
         del self.driver
+
+
+
 
     @allure.step(title='手机号核验测试')
     @pytest.allure.severity('CRITTCAL')
@@ -135,6 +141,9 @@ class Test_1:
             with  allure.step('断言：{0}in 户口簿'.format(f)):
                 assert f in '户口簿'
 
+
+
+
     @allure.step(title='对提交为空的测试')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.skipif(1 == 2, reason='跳过')
@@ -151,6 +160,9 @@ class Test_1:
         s = el.text
         with  allure.step('断言：{0} in  请选择证件类型'.format(s)):
            assert s in '请选择证件类型'
+
+
+
 
     @allure.step(title='身份证图片校验测试')
     @pytest.allure.severity('CRITTCAL')
