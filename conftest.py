@@ -2,11 +2,10 @@ import os
 import time
 
 import allure
-from selenium import webdriver
 import pytest
 
 # 添加报错截图到allure报告里
-from Base.initdriver import inidriver
+from Base.Base_InitDriver.initdriver import inidriver
 
 # driver = None
 

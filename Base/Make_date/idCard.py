@@ -1,5 +1,5 @@
 
-import Base
+import Base.Make_date
 from random import  randint
 s=randint(0,500)
 class IdNumber(object):
@@ -14,7 +14,7 @@ class IdNumber(object):
         self.id = id_number
 
     def __str__(self):
-          return Base.addrsy
+          return Base.Make_date.addrsy
 
 
         # return funcation.addrsy
@@ -64,11 +64,11 @@ class IdNumber(object):
 
 
 if __name__ == "__main__":
-    # generate_ids = IdNumber.generate_myid()
-    # print(generate_ids)
-    # for id in generate_ids:
-    #     print(id)
-    v='12345619440404041'
-    a=IdNumber(v)
-    print(len(v))
-    print(a.get_check_digit())
+    generate_ids = IdNumber.generate_myid()
+    print(generate_ids)
+    for id in generate_ids:
+        print(id)
+    # v='12345619440404041'
+    # a=IdNumber(v)
+    # print(len(v))
+    # print(a.get_check_digit())

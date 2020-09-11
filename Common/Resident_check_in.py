@@ -1,9 +1,7 @@
 import time
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from Base.base import Base
+from Base.Base_InitDriver.base import Base
 from Common import Resident_check_in_data
-from Base.Mysqldb_test import Mysqldb_test
+from Base.MYSQL import Mysqldb_test
 
 Common = Resident_check_in_data()
 

@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
-from Base.idCard import IdNumber
-from Base.number import number
-from Base.name import name
+from Base.Make_date.idCard import IdNumber
+from Base.Make_date.name import name
+from Base.Make_date.number import number
 
 user_name = ((By.CSS_SELECTOR, '[placeholder="请输入账号"]'), 'send_keys')
 user_password = ((By.CSS_SELECTOR, '[placeholder="请输入密码"]'), 'send_keys')

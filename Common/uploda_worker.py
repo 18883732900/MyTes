@@ -1,8 +1,5 @@
 import time
-from selenium.webdriver import ActionChains
-from selenium.webdriver.common.by import By
-from Base.base import Base
-from Base.initdriver import inidriver
+from Base.Base_InitDriver.base import Base
 from Common import upload_worker
 
 Common = upload_worker()

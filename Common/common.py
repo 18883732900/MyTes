@@ -1,9 +1,8 @@
 import time
 
-from Base.initdriver import  inidriver
-from Base.name import name
-from Base.idCard import IdNumber
-from Base.number import number
+from Base.Base_InitDriver.initdriver import  inidriver
+from Base.Make_date import name, number
+from Base.Make_date.idCard import IdNumber
 from Common.uploda_worker import uploda
 from Common.Resident_check_in import Resident_check
 
@@ -49,13 +48,13 @@ if __name__ == '__main__':
     # time.sleep(2)
     # c.submin()
 
-    c.cd_worker( number())
+    c.cd_worker(number())
     c.up_worker(file)
     time.sleep(10)
     c.clickup()
     c.shengfz( file_path1=shenfzz, file_path2=shenfzf, type_cl='身份证')
     time.sleep(10)
-    c.setup_idcard(IdNumber.generate_myid(),name())
+    c.setup_idcard(IdNumber.generate_myid(), name())
     c.job('测试')
     time.sleep(3)
     c.selects_Political('群众')
