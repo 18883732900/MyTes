@@ -58,5 +58,6 @@ def conf_initdriver():
 
 if __name__ == '__main__':
    a=conf_initdriver()
+   print(next(a))
    for i in a:
        print(i)
