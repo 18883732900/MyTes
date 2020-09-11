@@ -21,6 +21,7 @@ class Resident_check(Base):
         self.Operation(*Common.login)
         time.sleep(3)
 
+
     def int(self, parent_Community, Community, Floor, unit, FL, roomId):
         self.for_find_OP(Common.element1, '人房信息','click')
         self.for_find_OP(Common.element2,'居民信息管理','click')
@@ -38,8 +39,10 @@ class Resident_check(Base):
         self.for_find_OP(Common.element13,FL,'click')
         self.for_find_OP(Common.element14,roomId, 'click')
 
+
     def submin(self):
         self.Operation(*Common.element15)
+
 
     def owner(self, name, idcard, number, num):
         time.sleep(3)
@@ -51,6 +54,7 @@ class Resident_check(Base):
         self.Operation(*Common.element18, number)
         self.find_element(Common.element19[0]).clear()
         self.Operation(*Common.element19, num)
+
 
     def img(self, file1, file2, file3, x=None):
         time.sleep(2)
@@ -68,6 +72,7 @@ class Resident_check(Base):
                 self.Operation(*Common.element23)
                 self.Operation(*Common.element24)
 
+
     def cd_worker(self, number):
         try:
             self.Operation(*Common.element27)
@@ -78,6 +83,7 @@ class Resident_check(Base):
         time.sleep(1)
         self.Operation(*Common.element25, number)
         self.Operation(*Common.element26)
+
 
     def up_worker(self, file_path):
         '''上传身份证头像'''
@@ -162,6 +168,7 @@ class Resident_check(Base):
         self.for_find_OP(Common.element47, day, 'click')
         return years
 
+
     def Relationship_type(self, type, text,parent_Community, Community, Floor, unit, Fl , roomId, file_path=None, bt='确定'):
         time.sleep(3)
         """选择居住类型和居住关系"""
@@ -197,6 +204,7 @@ class Resident_check(Base):
                         i.click()
             else:
                 pass
+
 
     def Issue_permissions(self, type, devse, num1=None, num2=None):
         s = self.find_elements(Common.element51)

@@ -17,12 +17,14 @@ def param(request):
     return request.param
 
 
+
 @pytest.fixture(scope='class', autouse=True)
 def fix(conf_initdriver):
     global d
     global driver
     driver = conf_initdriver
     d = Page(driver).Resident()
+
 
 
 class Test_2:
@@ -269,13 +271,13 @@ class Test_2:
                 x += 1
                 break
 
-
-
         if x == 1 or z == 1:
             assert True
 
         else:
             assert False
+
+
 
     @allure.step(title='身份证输入校验')
     @pytest.mark.parametrize('idcard,name', data_test02.user)
