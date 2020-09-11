@@ -343,16 +343,22 @@ class Test_1:
         self.d.clickup()
         dict1 = {}
         time.sleep(12)
-        els = self.d.find_elements(Scripts.element19)
-        for i in els:
-            text = i.text
-            list = text.split('：')
-            dict1[list[0]] = list[-1]
-        el = self.d.find_element(Scripts.element20).text
-        time.sleep(1)
-        assert data_test01.user[-1][0] in dict1['证件号码'] and data_test01.file_path[-1][-1] in dict1['证件类型'] and type1 in \
-               dict1['政治面貌'] \
-               and type2 in dict1['职业'] and type3 in dict1['登记角色'] and data_test01.user[-1][-1] in el
+        try:
+            els = self.d.find_elements(Scripts.element19)
+            for i in els:
+                text = i.text
+                list = text.split('：')
+                dict1[list[0]] = list[-1]
+            el = self.d.find_element(Scripts.element20).text
+            time.sleep(1)
+            assert data_test01.user[-1][0] in dict1['证件号码'] and data_test01.file_path[-1][-1] in dict1[
+                '证件类型'] and type1 in \
+                   dict1['政治面貌'] and type2 in dict1['职业'] and type3 in dict1['登记角色'] and data_test01.user[-1][-1] in el
+
+        except:
+            print("出现故障，无法跳转")
+            assert False
+
 
 
 
@@ -371,18 +377,23 @@ class Test_1:
         :param num2:
         :return:
         """
-        self.d.Issue_permissions(type=type, devse=devse, num1=num1, num2=num2)
-        els = self.d.find_elements(Scripts.element21)
-        list = [i.text for i in els]
-        x = 0
-        for i in type:
-            if i in list:
-                x += 1
-        y = 0
-        for i in devse:
-            if i in list:
-                y += 1
-        assert x + y == len(type) + len(devse)
+        try:
+            self.d.Issue_permissions(type=type, devse=devse, num1=num1, num2=num2)
+            els = self.d.find_elements(Scripts.element21)
+            list = [i.text for i in els]
+            x = 0
+            for i in type:
+                if i in list:
+                    x += 1
+            y = 0
+            for i in devse:
+                if i in list:
+                    y += 1
+            assert x + y == len(type) + len(devse)
+
+        except:
+            print('由于上一条的错误,程序无法执行')
+            assert False
 
 
 
@@ -396,16 +407,20 @@ class Test_1:
         确保成功点击授权
         :return:
         """
-        self.d.up_issue()
-        time.sleep(3)
         try:
-            s3 = self.d.find_elements(Scripts.element22)
-            for i in s3:
-                if i.text == '工作人员列表':
-                    i.click()
-                    Mysqldbbackup().backup_worker()
-                    assert True
+           self.d.up_issue()
+           time.sleep(3)
+           try:
+               s3 = self.d.find_elements(Scripts.element22)
+               for i in s3:
+                   if i.text == '工作人员列表':
+                       i.click()
+                       Mysqldbbackup().backup_worker()
+                       assert True
+           except:
+               assert False
         except:
+            print('由于上一条的错误,程序无法执行')
             assert False
 
 
@@ -418,17 +433,22 @@ class Test_1:
         核对', '确保上传信息都正确'
         :return:
         """
-        time.sleep(3)
-        s = self.d.page(fun='driver.page_source')
-        x = 0
-        list = [i for i in data_test01.select[-1]]
+        try:
+            time.sleep(3)
+            s = self.d.page(fun='driver.page_source')
+            x = 0
+            list = [i for i in data_test01.select[-1]]
 
-        list.insert(0, data_test01.user[-1][-1])
-        for i in list:
-            if i in s:
-                x += 1
+            list.insert(0, data_test01.user[-1][-1])
+            for i in list:
+                if i in s:
+                    x += 1
 
-        assert x == len(list)
+            assert x == len(list)
+        except:
+            print('由于上一条的错误,程序无法执行')
+            assert False
+
 
 
 
@@ -440,27 +460,32 @@ class Test_1:
          权限带入正常
         :return:
         """
-        self.d.Verify_permissions(text=data_test01.list[-1])
-        els = self.d.find_elements(Scripts.element21)
-        list = [i.text for i in els]
-        self.d.implicitly_wait(30)
-        x = 0
-        y = 0
-        z = 0
-        type = data_test01.Issue_permissions[-1][0]
-        for i in type:
-            if i in list:
-                x += 1
-        deves = data_test01.Issue_permissions[-1][1]
-        for i in deves:
-            if i in list:
-                y += 1
-        text = self.d.find_elements(Scripts.element24)
-        for i in text:
-            text1 = i.get_attribute('value')
-            if text1 in data_test01.Issue_permissions[-1][2] or data_test01.Issue_permissions[-1][3]:
-                z += 1
-        assert x + y + z == len(type) + len(deves) + 2
+        try:
+            self.d.Verify_permissions(text=data_test01.list[-1])
+            els = self.d.find_elements(Scripts.element21)
+            list = [i.text for i in els]
+            self.d.implicitly_wait(30)
+            x = 0
+            y = 0
+            z = 0
+            type = data_test01.Issue_permissions[-1][0]
+            for i in type:
+                if i in list:
+                    x += 1
+            deves = data_test01.Issue_permissions[-1][1]
+            for i in deves:
+                if i in list:
+                    y += 1
+            text = self.d.find_elements(Scripts.element24)
+            for i in text:
+                text1 = i.get_attribute('value')
+                if text1 in data_test01.Issue_permissions[-1][2] or data_test01.Issue_permissions[-1][3]:
+                    z += 1
+            assert x + y + z == len(type) + len(deves) + 2
+
+        except:
+            print('由于上一条的错误,程序无法执行')
+            assert False
 
 
 if __name__ == '__main__':
