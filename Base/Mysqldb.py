@@ -1,4 +1,3 @@
-import time
 import MySQLdb
 from Base.idCard import IdNumber
 from Base.name import name
@@ -69,6 +68,9 @@ class Mysqldb():
                     tunl.append(a)
             list.append(tuple(tunl))
         return list
+
+
+
     def mysqldb_04(self, type, name,id,number,cnumber,table='data_test01'):
         sql="update {0} set date_01 ='{2},{3},{4},{5}' where type={1}"
         self.cursor.execute(sql.format(table,type,name,id,number,cnumber))
