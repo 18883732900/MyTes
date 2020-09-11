@@ -22,9 +22,8 @@ def param(request):
 def fix(conf_initdriver):
     global d
     global driver
-    driver=conf_initdriver
+    driver = conf_initdriver
     d = Page(driver).uploda()
-
 
 
 class Test_1:
@@ -33,48 +32,69 @@ class Test_1:
         self.d = d
         self.driver = driver
 
-
     """
       方法：@pytest.allure.severity(Severity)
     参数：
         Severity：严重级别(BLOCKER,CRITICAL,NORMAL,MINOR,TRIVIAL)
     使用方式：
         @pytest.allure.severity(pytest.allure.severity_level.CRITICAL）
+        
         """
+
     @allure.step(title='登录测试')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.parametrize('name,password', data_test01.login)
     def test_login(self, name, password):
 
-        allure.attach('登录测试', '模拟了正确用户名错误用户名，正确/错误密码之间的组合加入校验')
+        """
+               登录测试
+              描述：模拟了正确用户名错误用户名，
+              正确/错误密码之间的组合加入校验
+              """
 
         self.d.login(name, password)
         try:
             s = self.d.find_element(Scripts.element1, time=3).text
 
         except:
-           s = self.driver.page_source
+            s = self.driver.page_source
 
         if name == data_test01.login[0][0]:
-            assert s in '该用户不存在!'
+            with allure.step('输入错误的账号登录'):
+                allure.attach('参数', "账号：{0}  ；密码：{1}".format(name, password))
+
+            with allure.step('断言:{0}'.format(s)):
+                assert s in '该用户不存在!'
 
         elif name == data_test01.login[1][0]:
-            assert s in '用户名密码不正确!'
+            with allure.step('输入错误的密码登录'):
+                allure.attach('参数', "账号：{0}  ；密码：{1}".format(name, password))
+
+            with  allure.step('断言：{0}'.format(s)):
+
+                assert s in '用户名密码不正确!'
 
         elif name == data_test01.login[2][0]:
-            p = re.findall(Scripts.find, s)
-            assert '数据看板首页' in p
+            with allure.step('输入正确的账号密码登录'):
+                allure.attach('参数', "账号：{0}  ；密码：{1}".format(name, password))
+                p = re.findall(Scripts.find, s)
 
-
+            with  allure.step('断言：{0}'.format(p)):
+                assert '数据看板首页' in p
 
     @allure.step(title='进入工作人员登记前的社区选择测试')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.skipif(1 == 2, reason='跳过')
     @pytest.mark.parametrize('parent_Community,Community,Floor,unit', data_test01.select)
     def test_init(self, parent_Community, Community, Floor, unit):
-        allure.attach('选择不同的社区', '不同的社区不同的楼栋关联不同的物业')
+        """
+        选择不同的社区:
+        不同的社区不同的楼栋关联不同的物业
+        """
         self.d.int(parent_Community, Community, Floor, unit)
         f = self.d.find_element(Scripts.element6).text
+        with allure.step('输入错误的手机号'):
+            allure.attach('参数', "地址：社区：{0},小区：{1},楼栋：{2},单元：{3}".format(parent_Community,Community,Floor,unit))
         assert f in '工作人员类别列表'
 
     def teardown_class(self):
@@ -83,12 +103,14 @@ class Test_1:
         del self.d
         del self.driver
 
-
     @allure.step(title='手机号核验测试')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.skipif(1 == 2, reason='跳过')
     def test_001(self, param):
-        allure.attach('校验手机号', '参数中加入了正确和错误的手机号，对不同情况做了断言')
+        """
+        校验手机号:
+        参数中加入了正确和错误的手机号，对不同情况做了断言
+        """
         s = param
         self.d.cd_worker(number=s)
         try:
@@ -100,35 +122,49 @@ class Test_1:
         if s == data_test01.list[0]:
 
             f = self.d.find_element(Scripts.element3).text
-
-            assert f in '请输入正确的手机号'
+            with allure.step('输入错误的手机号'):
+                allure.attach('参数', "手机号：{0}".format(s))
+            with  allure.step('断言：{0} in 请输入正确的手机号'.format(f)):
+                assert f in '请输入正确的手机号'
 
         elif s == data_test01.list[1]:
 
             f = self.d.find_element(Scripts.element4).text
-
-            assert f in '户口簿'
+            with allure.step('输入正确的手机号'):
+                allure.attach('参数', "手机号：{0}".format(s))
+            with  allure.step('断言：{0}in 户口簿'.format(f)):
+                assert f in '户口簿'
 
     @allure.step(title='对提交为空的测试')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.skipif(1 == 2, reason='跳过')
     def test_002(self):
-        allure.attach('空提交', '校验不能为空提交！！！')
+        """
+        '空提交',
+        '校验不能为空提交！！！
+        """
 
         self.d.clickup()
 
         el = self.d.find_element(Scripts.element7)
 
         s = el.text
-
-        assert s in '请选择证件类型'
+        with  allure.step('断言：{0} in  请选择证件类型'.format(s)):
+           assert s in '请选择证件类型'
 
     @allure.step(title='身份证图片校验测试')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.skipif(1 == 2, reason='跳过')
     @pytest.mark.parametrize('file_Path1,file_Path2,type_c', data_test01.file_path)
     def test_003(self, file_Path1, file_Path2, type_c):
-        allure.attach('身份证图片校验', '确保身份证合法有效')
+        """
+        '身份证图片校验',
+        '确保身份证合法有效
+        :param file_Path1:
+        :param file_Path2:
+        :param type_c:
+        :return:
+        """
 
         type = self.d.shengfz(file_path1=file_Path1, file_path2=file_Path2, type_cl=type_c)
 
@@ -138,7 +174,8 @@ class Test_1:
                 s = self.d.find_element(Scripts.element9).text
                 time.sleep(1)
                 el = self.d.find_element(Scripts.element16).get_attribute('disabled')
-
+                with allure.step('输入错的身份证正面照片'):
+                    allure.attach('参数', "照片：{0}{1},类型：{2}".format(file_Path1,file_Path2,type_c))
                 assert s in '请上传正确、清晰的身份证正面照片' and el == 'true'
 
             elif '身份证正面照片' in file_Path1 and '身份证反面照片' not in file_Path2 and type == '身份证':
@@ -153,6 +190,8 @@ class Test_1:
                 s = self.d.find_element(Scripts.element9).text
                 time.sleep(1)
                 el = self.d.find_element(Scripts.element18).get_attribute('disabled')
+                with allure.step('输入错的身份证反面照片'):
+                    allure.attach('参数', "照片：{0}{1},类型：{2}".format(file_Path1,file_Path2,type_c))
 
                 assert s in '请上传正确、清晰的身份证反面照片' or '请上传正确、清晰的身份证正面照片' and el == None
 
@@ -161,20 +200,32 @@ class Test_1:
                 el1 = self.d.find_element(Scripts.element16).get_attribute('disabled')
                 el2 = self.d.find_element(Scripts.element17).get_attribute('disabled')
                 time.sleep(1)
+                with allure.step('输入正确的身份证照片'):
+                    allure.attach('参数', "照片：{0}{1},类型：{2}".format(file_Path1,file_Path2,type_c))
 
                 assert el1 == 'true' and el2 == 'true'
 
             else:
                 s = self.d.find_element(Scripts.element12).get_attribute('src')
+                with allure.step('输入其他证件照片'):
+                    allure.attach('参数', "照片：{0}{1},类型：{2}".format(file_Path1,file_Path2,type_c))
 
                 assert 'https://taijiashequ.oss-cn-beijing.aliyunc' in s
+
+
 
     @allure.step(title='上传头像验证')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.parametrize('file_path', data_test01.file_path1)
     @pytest.mark.skipif(1 == 2, reason='跳过')
     def test_004(self, file_path):
-        allure.attach('上传头像', '判断了头像是否上传成功了')
+        """
+        上传头像:
+        判断了头像是否上传成功了
+
+        :param file_path:
+        :return:
+        """
 
         self.d.up_worker(file_path)
 
@@ -201,12 +252,20 @@ class Test_1:
         else:
             assert False
 
+
+
     @allure.step(title='身份证号码输入验证')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.parametrize('idcard,name', data_test01.user)
     @pytest.mark.skipif(1 == 2, reason='跳过')
     def test_005(self, idcard, name):
-        allure.attach('身份证号码校验', '确保身份证号码合法有效')
+        """
+        身份证号码校验:
+         确保身份证号码合法有效
+        :param idcard:
+        :param name:
+        :return:
+        """
         self.d.setup_idcard(text=idcard, name=name)
         time.sleep(1)
         if data_test01.file_path == '身份证':
@@ -226,7 +285,13 @@ class Test_1:
     @pytest.mark.skipif(data_test01.file_path[-1][-1] == '身份证' or 1 == 2, reason='跳过')
     @pytest.mark.parametrize('day,year,mount', data_test01.Brithday)
     def test_006(self, day, year, mount):
-        allure.attach('工作人员年龄校验', '确保工作人员合法参加工作')
+        """
+        工作人员年龄校验', '确保工作人员合法参加工作
+        :param day:
+        :param year:
+        :param mount:
+        :return:
+        """
         time.sleep(2)
         self.d.select_Birthday(type_cl=data_test01.file_path[-1][-1], day=day, year=year, mount=mount)
         self.d.clickup()
@@ -241,7 +306,14 @@ class Test_1:
     @pytest.mark.parametrize('type1,type2,type3', data_test01.worker_job)
     @pytest.mark.skipif(1 == 2, reason='跳过')
     def test_007(self, type1, type2, type3):
-        allure.attach('返显校验', '确保上传信息都有效')
+        """
+        返显校验:
+        确保上传信息都有效
+        :param type1:
+        :param type2:
+        :param type3:
+        :return:
+        """
         time.sleep(3)
         self.d.selects_Political(type=type1)
         self.d.job(text=type2)
@@ -249,7 +321,7 @@ class Test_1:
         time.sleep(3)
         self.d.clickup()
         dict1 = {}
-        time.sleep(10)
+        time.sleep(12)
         els = self.d.find_elements(Scripts.element19)
         for i in els:
             text = i.text
@@ -266,7 +338,15 @@ class Test_1:
     @pytest.mark.parametrize('type,devse,num1,num2', data_test01.Issue_permissions)
     @pytest.mark.skipif(1 == 2, reason='跳过')
     def test_008(self, type, devse, num1, num2):
-        allure.attach('点击权限', '核验是否选择')
+        """
+        点击权限:
+        核验是否选择
+        :param type:
+        :param devse:
+        :param num1:
+        :param num2:
+        :return:
+        """
         self.d.Issue_permissions(type=type, devse=devse, num1=num1, num2=num2)
         els = self.d.find_elements(Scripts.element21)
         list = [i.text for i in els]
@@ -284,7 +364,11 @@ class Test_1:
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.skipif(1 == 2, reason='跳过')
     def test_009(self):
-        allure.attach('点击授权检测页面跳转', '确保成功点击授权')
+        """
+        点击授权检测页面跳转:
+        确保成功点击授权
+        :return:
+        """
         self.d.up_issue()
         time.sleep(3)
         try:
@@ -301,7 +385,10 @@ class Test_1:
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.skipif(1 == 2, reason='跳过')
     def test_010(self):
-        allure.attach('核对', '确保上传信息都正确')
+        """
+        核对', '确保上传信息都正确'
+        :return:
+        """
         time.sleep(3)
         s = self.d.page(fun='driver.page_source')
         x = 0
@@ -317,7 +404,11 @@ class Test_1:
     @allure.step(title='在工作人员列表中门禁里检测上次填入信息是否成功带入')
     @pytest.allure.severity('CRITTCAL')
     def test_011(self):
-        allure.attach('返显校验', '权限带入正常')
+        """
+        返显校验:
+         权限带入正常
+        :return:
+        """
         self.d.Verify_permissions(text=data_test01.list[-1])
         els = self.d.find_elements(Scripts.element21)
         list = [i.text for i in els]

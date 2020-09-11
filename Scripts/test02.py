@@ -11,25 +11,24 @@ from Scripts import test02
 Scripts = test02()
 curr_time = datetime.datetime.now()
 
+
 @pytest.fixture(scope='function', params=data_test02.list)
 def param(request):
     return request.param
 
 
-@pytest.fixture(scope='class',autouse=True)
+@pytest.fixture(scope='class', autouse=True)
 def fix(conf_initdriver):
-        global d
-        global driver
-        driver=conf_initdriver
-        d = Page(driver).Resident()
-
+    global d
+    global driver
+    driver = conf_initdriver
+    d = Page(driver).Resident()
 
 
 class Test_2:
     def setup_class(self):
-        self.d=d
-        self.driver=driver
-
+        self.d = d
+        self.driver = driver
 
     @allure.step(title='登录测试')
     @pytest.allure.severity('CRITTCAL')
@@ -42,47 +41,58 @@ class Test_2:
         """
         self.d.login(name, password)
         try:
-            s = self.d.find_element(Scripts.element1,time=4).text
+            s = self.d.find_element(Scripts.element1, time=4).text
 
         except:
             s = self.driver.page_source
 
         if name == data_test02.login[0][0]:
             with allure.step('输入错误的账号登录'):
-                allure.attach('参数',"账号：{0}  ；密码：{1}".format(name,password))
+                allure.attach('参数', "账号：{0}  ；密码：{1}".format(name, password))
 
             with allure.step('断言:{0}'.format(s)):
 
-                  assert s in '该用户不存在!'
+                assert s in '该用户不存在!'
 
 
         elif name == data_test02.login[1][0]:
             with allure.step('输入错误的密码登录'):
-                allure.attach('参数',"账号：{0}  ；密码：{1}".format(name, password))
+                allure.attach('参数', "账号：{0}  ；密码：{1}".format(name, password))
 
             with  allure.step('断言：{0}'.format(s)):
                 assert s == '用户名密码不正确!'
 
         elif name == data_test02.login[2][0]:
-            with allure.step('输入正确的账号密码登录{0}{1}'.format(name, password)):
-                allure.attach( '参数',"账号：{0}  ；密码：{1}".format(name, password))
+            with allure.step('输入正确的账号密码登录'):
+                allure.attach('参数', "账号：{0}  ；密码：{1}".format(name, password))
                 p = re.findall(Scripts.find, s)
-
             with  allure.step('断言：{0}'.format(p)):
                 assert '数据看板首页' in p
-
-
 
     @allure.step(title='进入居民登记前的社区选择测试')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.skipif(1 == 2, reason='跳过')
     @pytest.mark.parametrize('parent_Community,Community,Floor,unit,Fl,room', data_test02.select)
     def test_init(self, parent_Community, Community, Floor, unit, Fl, room):
-        allure.attach('选择不同的社区', '不同的社区不同的楼栋房间')
-
+        """
+        选择登记房间
+        选择不同的社区
+        不同的社区不同的楼栋房间
+        :param parent_Community:
+        :param Community:
+        :param Floor:
+        :param unit:
+        :param Fl:
+        :param room:
+        :return:
+        """
         self.d.int(parent_Community, Community, Floor, unit, Fl, room)
 
         f = self.d.find_element(Scripts.element2).text
+        with allure.step('输入错误的手机号'):
+            allure.attach('参数',
+                          "地址：社区：{0},小区：{1},楼栋：{2},单元：{3},楼层：{4},房间号：{5}".format(parent_Community, Community, Floor,
+                                                                                 unit, Fl, room))
 
         assert Floor in f and unit in f and Fl in f and room in f
 
@@ -96,7 +106,8 @@ class Test_2:
     @pytest.mark.parametrize('file1,file2,file3,x', data_test02.file_path)
     @pytest.mark.parametrize('name, idcard, number, num', data_test02.owner_message)
     def test_01(self, name, idcard, number, num, file1, file2, file3, x):
-        allure.attach('图片校验', '对图片能否上传成功做断言')
+        """图片校验:
+        对图片能否上传成功做断言"""
 
         self.d.owner(name, idcard, number, num)
 
@@ -109,7 +120,10 @@ class Test_2:
     @allure.step(title='手机号核验测试')
     @pytest.allure.severity('CRITTCAL')
     def test_02(self, param):
-        allure.attach('校验手机号', '参数中加入了正确和错误的手机号，对不同情况做了断言')
+        """
+              校验手机号:
+              参数中加入了正确和错误的手机号，对不同情况做了断言
+              """
 
         self.d.cd_worker(number=param)
 
@@ -133,7 +147,10 @@ class Test_2:
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.skipif(1 == 2, reason='跳过')
     def test_002(self):
-        allure.attach('空提交', '校验不能为空提交！！！')
+        """
+              '空提交',
+              '校验不能为空提交！！！
+              """
 
         time.sleep(1)
 
@@ -150,7 +167,14 @@ class Test_2:
     @pytest.mark.skipif(1 == 2, reason='跳过')
     @pytest.mark.parametrize('file_Path1,file_Path2,type_c', data_test02.file_path2)
     def test_003(self, file_Path1, file_Path2, type_c):
-        allure.attach('身份证图片校验', '确保身份证合法有效')
+        """
+               '身份证图片校验',
+               '确保身份证合法有效
+               :param file_Path1:
+               :param file_Path2:
+               :param type_c:
+               :return:
+               """
 
         type = self.d.shengfz(file_path1=file_Path1, file_path2=file_Path2, type_cl=type_c)
 
@@ -197,7 +221,13 @@ class Test_2:
     @pytest.mark.parametrize('file_path', data_test02.file_path1)
     @pytest.mark.skipif(1 == 2, reason='跳过')
     def test_004(self, file_path):
+        """
+             上传头像:
+             判断了头像是否上传成功了
 
+             :param file_path:
+             :return:
+             """
         self.d.up_worker(file_path)
 
         time.sleep(3)
@@ -206,17 +236,19 @@ class Test_2:
 
         x = 0
         z = 1
+        if file_path == data_test02.file_path1[3]:
+            for el in els:
+                s = el.get_attribute('src')
+                if file_path[-9:] in s:
+                    z -= 1
+
         for el in els:
             s = el.get_attribute('src')
             if file_path[-9:] in s:
                 x += 1
                 break
 
-        if file_path == data_test02.file_path1[3]:
-            for el in els:
-                s = el.get_attribute('src')
-                if file_path[-9:] in s:
-                    z -= 1
+
 
         if x == 1 or z == 1:
             assert True
@@ -227,10 +259,14 @@ class Test_2:
     @pytest.mark.parametrize('idcard,name', data_test02.user)
     @pytest.mark.skipif(1 == 2, reason='跳过')
     def test_005(self, idcard, name):
+        """
+                    身份证号码校验:
+                     确保身份证号码合法有效
+                    :param idcard:
+                    :param name:
+                    :return:
+                    """
         self.d.setup_idcard(text=idcard, name=name)
-
-        allure.attach('上传头像', '判断了头像是否上传成功了')
-
         time.sleep(1)
 
         if data_test02.file_path == '身份证':
@@ -255,6 +291,13 @@ class Test_2:
     @pytest.mark.skipif(data_test02.file_path2[-1][-1] == '身份证' or 1 == 2, reason='跳过')
     @pytest.mark.parametrize('day,year,mount', data_test02.Brithday)
     def test_006(self, day, year, mount):
+        """
+              工作人员年龄是否选中
+              :param day:
+              :param year:
+              :param mount:
+              :return
+              """
 
         time.sleep(2)
 
@@ -278,6 +321,14 @@ class Test_2:
     @pytest.mark.parametrize('type, text, bt', data_test02.Relationship_type)
     @pytest.mark.parametrize('parent_Community, Community, Floor, unit,Fl, roomId', [data_test02.select[-1]])
     def test_007(self, type, text, file_path, bt, parent_Community, Community, Floor, unit, Fl, roomId):
+        """
+               返显校验:
+               确保上传信息都有效
+               :param type1:
+               :param type2:
+               :param type3:
+               :return:
+               """
         try:
             els = self.d.find_elements(Scripts.element15)
 
@@ -318,7 +369,8 @@ class Test_2:
                 print(dict1)
                 assert data_test02.user[-1][0] in dict1['证件号码'] and data_test02.file_path2[-1][-1] in dict1['证件类型'] and \
                        data_test02.worker_job[-1][0] in dict1['政治面貌'] \
-                       and data_test02.worker_job[-1][1] in dict1['职业'] and text in dict1['登记角色'] and  data_test02.user[-1][-1] in el
+                       and data_test02.worker_job[-1][1] in dict1['职业'] and text in dict1['登记角色'] and \
+                       data_test02.user[-1][-1] in el
 
 
 if __name__ == '__main__':

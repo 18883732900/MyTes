@@ -37,7 +37,7 @@ def pytest_runtest_makereport(item, call):
         # pic_info = adb_screen_shot()
         with allure.step('添加失败截图...'):
             jpg = driver.get_screenshot_as_png()
-            allure.attach('参数.png', jpg, allure.pytest_plugin.AttachmentType.PNG)
+            allure.attach('截图.png', jpg, allure.pytest_plugin.AttachmentType.PNG)
 
 
 
@@ -45,7 +45,7 @@ def pytest_runtest_makereport(item, call):
 @pytest.fixture(scope = "class")
 def conf_initdriver():
     global driver
-    driver = inidriver('http://test.bjhontai.com:180/#/login')
+    driver = inidriver('http://172.16.13.105/#/login')
     driver.maximize_window()
     yield driver
     time.sleep(3)
