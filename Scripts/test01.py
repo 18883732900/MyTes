@@ -32,9 +32,6 @@ class Test_1:
         self.d = d
         self.driver = driver
 
-
-
-
     """
       方法：@pytest.allure.severity(Severity)
     参数：
@@ -43,6 +40,7 @@ class Test_1:
         @pytest.allure.severity(pytest.allure.severity_level.CRITICAL）
         
         """
+
     @allure.step(title='登录测试')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.parametrize('name,password', data_test01.login)
@@ -76,6 +74,7 @@ class Test_1:
 
                 assert s in '用户名密码不正确!'
 
+
         elif name == data_test01.login[2][0]:
             with allure.step('输入正确的账号密码登录'):
                 allure.attach('参数', "账号：{0}  ；密码：{1}".format(name, password))
@@ -83,9 +82,6 @@ class Test_1:
 
             with  allure.step('断言：{0}'.format(p)):
                 assert '数据看板首页' in p
-
-
-
 
     @allure.step(title='进入工作人员登记前的社区选择测试')
     @pytest.allure.severity('CRITTCAL')
@@ -99,19 +95,14 @@ class Test_1:
         self.d.int(parent_Community, Community, Floor, unit)
         f = self.d.find_element(Scripts.element6).text
         with allure.step('输入错误的手机号'):
-            allure.attach('参数', "地址：社区：{0},小区：{1},楼栋：{2},单元：{3}".format(parent_Community,Community,Floor,unit))
+            allure.attach('参数', "地址：社区：{0},小区：{1},楼栋：{2},单元：{3}".format(parent_Community, Community, Floor, unit))
         assert f in '工作人员类别列表'
-
-
 
     def teardown_class(self):
 
         # self.d.page('get_screenshot_as_file', filepath='./结果图.png')
         del self.d
         del self.driver
-
-
-
 
     @allure.step(title='手机号核验测试')
     @pytest.allure.severity('CRITTCAL')
@@ -145,9 +136,6 @@ class Test_1:
             with  allure.step('断言：{0}in 户口簿'.format(f)):
                 assert f in '户口簿'
 
-
-
-
     @allure.step(title='对提交为空的测试')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.skipif(1 == 2, reason='跳过')
@@ -163,10 +151,7 @@ class Test_1:
 
         s = el.text
         with  allure.step('断言：{0} in  请选择证件类型'.format(s)):
-           assert s in '请选择证件类型'
-
-
-
+            assert s in '请选择证件类型'
 
     @allure.step(title='身份证图片校验测试')
     @pytest.allure.severity('CRITTCAL')
@@ -191,7 +176,7 @@ class Test_1:
                 time.sleep(1)
                 el = self.d.find_element(Scripts.element16).get_attribute('disabled')
                 with allure.step('输入错的身份证正面照片'):
-                    allure.attach('参数', "照片：{0}{1},类型：{2}".format(file_Path1,file_Path2,type_c))
+                    allure.attach('参数', "照片：{0}{1},类型：{2}".format(file_Path1, file_Path2, type_c))
                 assert s in '请上传正确、清晰的身份证正面照片' and el == 'true'
 
             elif '身份证正面照片' in file_Path1 and '身份证反面照片' not in file_Path2 and type == '身份证':
@@ -207,7 +192,7 @@ class Test_1:
                 time.sleep(1)
                 el = self.d.find_element(Scripts.element18).get_attribute('disabled')
                 with allure.step('输入错的身份证反面照片'):
-                    allure.attach('参数', "照片：{0}{1},类型：{2}".format(file_Path1,file_Path2,type_c))
+                    allure.attach('参数', "照片：{0}{1},类型：{2}".format(file_Path1, file_Path2, type_c))
 
                 assert s in '请上传正确、清晰的身份证反面照片' or '请上传正确、清晰的身份证正面照片' and el == None
 
@@ -217,18 +202,16 @@ class Test_1:
                 el2 = self.d.find_element(Scripts.element17).get_attribute('disabled')
                 time.sleep(1)
                 with allure.step('输入正确的身份证照片'):
-                    allure.attach('参数', "照片：{0}{1},类型：{2}".format(file_Path1,file_Path2,type_c))
+                    allure.attach('参数', "照片：{0}{1},类型：{2}".format(file_Path1, file_Path2, type_c))
 
                 assert el1 == 'true' and el2 == 'true'
 
             else:
                 s = self.d.find_element(Scripts.element12).get_attribute('src')
                 with allure.step('输入其他证件照片'):
-                    allure.attach('参数', "照片：{0}{1},类型：{2}".format(file_Path1,file_Path2,type_c))
+                    allure.attach('参数', "照片：{0}{1},类型：{2}".format(file_Path1, file_Path2, type_c))
 
                 assert 'https://taijiashequ.oss-cn-beijing.aliyunc' in s
-
-
 
     @allure.step(title='上传头像验证')
     @pytest.allure.severity('CRITTCAL')
@@ -268,8 +251,6 @@ class Test_1:
         else:
             assert False
 
-
-
     @allure.step(title='身份证号码输入验证')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.parametrize('idcard,name', data_test01.user)
@@ -296,9 +277,6 @@ class Test_1:
                     el = self.d.find_element(Scripts.element15).text
                     assert el in '请输入正确的身份证号'
 
-
-
-
     @allure.step(title='工作人员年龄输入校验')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.skipif(data_test01.file_path[-1][-1] == '身份证' or 1 == 2, reason='跳过')
@@ -319,8 +297,6 @@ class Test_1:
             assert a in '工作人员年龄不能小于16岁'
         else:
             assert True
-
-
 
     @allure.step(title='提交后反显校验')
     @pytest.allure.severity('CRITTCAL')
@@ -353,15 +329,12 @@ class Test_1:
             time.sleep(1)
             assert data_test01.user[-1][0] in dict1['证件号码'] and data_test01.file_path[-1][-1] in dict1[
                 '证件类型'] and type1 in \
-                   dict1['政治面貌'] and type2 in dict1['职业'] and type3 in dict1['登记角色'] and data_test01.user[-1][-1] in el
+                   dict1['政治面貌'] and type2 in dict1['职业'] and type3 in dict1['登记角色'] and data_test01.user[-1][
+                       -1] in el
 
         except:
             print("出现故障，无法跳转")
             assert False
-
-
-
-
 
     @allure.step(title='权限下发选择校验')
     @pytest.allure.severity('CRITTCAL')
@@ -395,9 +368,6 @@ class Test_1:
             print('由于上一条的错误,程序无法执行')
             assert False
 
-
-
-
     @allure.step(title='检查提交按钮是否自动进行页面跳转')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.skipif(1 == 2, reason='跳过')
@@ -408,22 +378,20 @@ class Test_1:
         :return:
         """
         try:
-           self.d.up_issue()
-           time.sleep(3)
-           try:
-               s3 = self.d.find_elements(Scripts.element22)
-               for i in s3:
-                   if i.text == '工作人员列表':
-                       i.click()
-                       Mysqldbbackup().backup_worker()
-                       assert True
-           except:
-               assert False
+            self.d.up_issue()
+            time.sleep(3)
+            try:
+                s3 = self.d.find_elements(Scripts.element22)
+                for i in s3:
+                    if i.text == '工作人员列表':
+                        i.click()
+                        Mysqldbbackup().backup_worker()
+                        assert True
+            except:
+                assert False
         except:
             print('由于上一条的错误,程序无法执行')
             assert False
-
-
 
     @allure.step(title='在工作人员列表中核对基本数据')
     @pytest.allure.severity('CRITTCAL')
@@ -448,9 +416,6 @@ class Test_1:
         except:
             print('由于上一条的错误,程序无法执行')
             assert False
-
-
-
 
     @allure.step(title='在工作人员列表中门禁里检测上次填入信息是否成功带入')
     @pytest.allure.severity('CRITTCAL')
@@ -486,7 +451,6 @@ class Test_1:
         except:
             print('由于上一条的错误,程序无法执行')
             assert False
-
 
 if __name__ == '__main__':
     pytest.main('-s -html=./Report/report.html test01.py')
