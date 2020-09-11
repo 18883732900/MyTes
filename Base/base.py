@@ -63,6 +63,8 @@ class Base:
                  i.send_keys(text)
              break
 
+
+
     def page(self, fun, x=None, y=None, filepath=None):
         '''最大化窗口'''
         if fun == 'maximize_window':

@@ -277,8 +277,7 @@ class Test_2:
         else:
             assert False
 
-
-
+    @allure.step(title='身份证输入校验')
     @pytest.mark.parametrize('idcard,name', data_test02.user)
     @pytest.mark.skipif(1 == 2, reason='跳过')
     def test_005(self, idcard, name):
@@ -352,55 +351,62 @@ class Test_2:
     @pytest.mark.parametrize('parent_Community, Community, Floor, unit,Fl, roomId', [data_test02.select[-1]])
     def test_007(self, type, text, file_path, bt, parent_Community, Community, Floor, unit, Fl, roomId):
         """
-               返显校验:
-               确保上传信息都有效
-               :param type1:
-               :param type2:
-               :param type3:
-               :return:
-               """
+                    上传一或两张租客照片，判断能否提交成功
+                    :param type1:
+                    :param type2:
+                    :param type3:
+                    :return:
+                """
         try:
             els = self.d.find_elements(Scripts.element15)
-
             for i in els:
                 time.sleep(1)
-
                 self.d.Operation(*Scripts.element16)
-
                 time.sleep(2)
-
                 self.d.Operation(*Scripts.element17)
         except:
-
             pass
-
         time.sleep(2)
+
         self.d.Relationship_type(type=type, text=text, file_path=file_path, bt=bt, parent_Community=parent_Community,
                                  Community=Community, Floor=Floor, unit=unit, Fl=Fl, roomId=roomId)
         if len(file_path) < 2:
-            el = self.d.find_element(Scripts.element18).text
+            try:
+                el = self.d.find_element(Scripts.element18).text
+            except :
+                el=None
+                print('这个用例在这里出错了。。。。。但是没关系继续走吧。。。。。')
+                time.sleep(2)
+                t = self.d.find_elements(Scripts.element24)
+                time.sleep(1)
+                for i in t:
+                    if i.text == "取消":
+                        i.click()
             assert el == '请上传两张或两张以上的租借合同'
         else:
             if bt == '确定':
+                try:
+                    dict1 = {}
+                    time.sleep(20)
+                    el = self.d.find_element(Scripts.element22).text
+                    els = self.d.find_elements(Scripts.element23)
+
+                    for i in els:
+                        text = i.text
+
+                        list = text.split('：')
+
+                        dict1[list[0]] = list[-1]
+                        print(dict1)
+                        assert data_test02.user[-1][0] in dict1['证件号码'] and data_test02.file_path2[-1][-1] in dict1[
+                            '证件类型'] and \
+                               data_test02.worker_job[-1][0] in dict1['政治面貌'] \
+                               and data_test02.worker_job[-1][1] in dict1['职业'] and text in dict1['登记角色'] and \
+                               data_test02.user[-1][-1] in el
+                except:
+                    assert False
                 Mysqldbbackup().backup_uesr()
-                dict1 = {}
-                time.sleep(20)
 
-                els = self.d.find_elements(Scripts.element23)
-
-                for i in els:
-                    text = i.text
-
-                    list = text.split('：')
-
-                    dict1[list[0]] = list[-1]
-
-                el = self.d.find_element(Scripts.element22).text
-                print(dict1)
-                assert data_test02.user[-1][0] in dict1['证件号码'] and data_test02.file_path2[-1][-1] in dict1['证件类型'] and \
-                       data_test02.worker_job[-1][0] in dict1['政治面貌'] \
-                       and data_test02.worker_job[-1][1] in dict1['职业'] and text in dict1['登记角色'] and \
-                       data_test02.user[-1][-1] in el
 
 
 

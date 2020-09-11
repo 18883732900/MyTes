@@ -182,4 +182,5 @@ class Resident_check_in_data():
     element52 = ((By.CSS_SELECTOR, '[placeholder="身份证编号(必填)"]'), 'send_keys')
     element53 = ((By.CSS_SELECTOR, '[placeholder="请输入职业"]'), 'send_keys')
     element54 = (By.XPATH, '/html/body/div[6]/div/div[2]/div/div[5]/div[2]/div/label/span[2]')
-    element55=((By.CSS_SELECTOR,'.el-message-box__btns > button > span:nth-child(1)'),'click')
+    element55=(By.CSS_SELECTOR,'.el-message-box__btns > button > span:nth-child(1)')
+

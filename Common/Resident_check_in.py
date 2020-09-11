@@ -83,9 +83,13 @@ class Resident_check(Base):
         '''上传身份证头像'''
         self.Operation(*Common.element28, file_path)
 
+
+
     def clickup(self):
         '''点击提交'''
         self.Operation(*Common.element29)
+
+
 
     def shengfz(self, file_path1=None, file_path2=None, type_cl='身份证'):
         time.sleep(1)
@@ -109,18 +113,26 @@ class Resident_check(Base):
                 self.Operation(*Common.element32, file_path1)
         return type_cl
 
+
+
     def selects_Political(self, type):
         self.Operation(*Common.element35)
         self.for_find_OP(Common.element36, type, 'click')
 
+
+
     def job(self, text):
         self.Operation(*Common.element37, text)
+
+
 
     def setup_idcard(self, text, name):
         self.find_element(Common.element38[0]).clear()
         self.Operation(*Common.element38, text)
         self.find_element(Common.element39[0]).clear()
         self.Operation(*Common.element39, name)
+
+
 
     def select_Birthday(self, type_cl=None, year=None, mount=None, day=None):
         time.sleep(3)
@@ -151,25 +163,35 @@ class Resident_check(Base):
         return years
 
     def Relationship_type(self, type, text,parent_Community, Community, Floor, unit, Fl , roomId, file_path=None, bt='确定'):
-        time.sleep(4)
+        time.sleep(3)
+        """选择居住类型和居住关系"""
 
         self.for_find_OP(Common.element48,type, 'click')
         self.for_find_OP(Common.element49,text, 'click')
+
         if text == '租客':
+            """当选择类型是租客的时候"""
             time.sleep(2)
             for c in file_path:
                 if c :
+                   """上传照片"""
                    self.Operation(*Common.element50, c)
                    self.find_element(Common.element50[0]).clear()
                 else:
                     pass
         s = Mysqldb_test().mysqldn_01(parent_Community, Community, Floor, unit,Fl,roomId)
+
         time.sleep(10)
+
         self.clickup()
+
         if text == '租客' :
-            if s[1] != 0 or s[0] == 0 and len(file_path) >= 2:
-                t = self.find_elements(Common.element55[0])
+            """如果是租客，并且该房间超员，上传照片也大于等与两张，我就点击确定/取消"""
+            if len(file_path) >= 2 and (s[1] != 0 or s[0] == 0):
+
+                t = self.find_elements(Common.element55)
                 time.sleep(1)
+
                 for i in t:
                     if i.text == bt:
                         i.click()
