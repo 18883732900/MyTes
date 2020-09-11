@@ -32,6 +32,9 @@ class Test_1:
         self.d = d
         self.driver = driver
 
+
+
+
     """
       方法：@pytest.allure.severity(Severity)
     参数：
@@ -40,7 +43,6 @@ class Test_1:
         @pytest.allure.severity(pytest.allure.severity_level.CRITICAL）
         
         """
-
     @allure.step(title='登录测试')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.parametrize('name,password', data_test01.login)
@@ -99,6 +101,8 @@ class Test_1:
         with allure.step('输入错误的手机号'):
             allure.attach('参数', "地址：社区：{0},小区：{1},楼栋：{2},单元：{3}".format(parent_Community,Community,Floor,unit))
         assert f in '工作人员类别列表'
+
+
 
     def teardown_class(self):
 
@@ -292,6 +296,9 @@ class Test_1:
                     el = self.d.find_element(Scripts.element15).text
                     assert el in '请输入正确的身份证号'
 
+
+
+
     @allure.step(title='工作人员年龄输入校验')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.skipif(data_test01.file_path[-1][-1] == '身份证' or 1 == 2, reason='跳过')
@@ -312,6 +319,8 @@ class Test_1:
             assert a in '工作人员年龄不能小于16岁'
         else:
             assert True
+
+
 
     @allure.step(title='提交后反显校验')
     @pytest.allure.severity('CRITTCAL')
@@ -345,6 +354,9 @@ class Test_1:
                dict1['政治面貌'] \
                and type2 in dict1['职业'] and type3 in dict1['登记角色'] and data_test01.user[-1][-1] in el
 
+
+
+
     @allure.step(title='权限下发选择校验')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.parametrize('type,devse,num1,num2', data_test01.Issue_permissions)
@@ -372,6 +384,9 @@ class Test_1:
                 y += 1
         assert x + y == len(type) + len(devse)
 
+
+
+
     @allure.step(title='检查提交按钮是否自动进行页面跳转')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.skipif(1 == 2, reason='跳过')
@@ -393,6 +408,8 @@ class Test_1:
         except:
             assert False
 
+
+
     @allure.step(title='在工作人员列表中核对基本数据')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.skipif(1 == 2, reason='跳过')
@@ -412,6 +429,8 @@ class Test_1:
                 x += 1
 
         assert x == len(list)
+
+
 
     @allure.step(title='在工作人员列表中门禁里检测上次填入信息是否成功带入')
     @pytest.allure.severity('CRITTCAL')

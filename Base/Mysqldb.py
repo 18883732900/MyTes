@@ -9,6 +9,8 @@ class Mysqldb():
         self.con = MySQLdb.connect(host='127.0.0.1', user='root', passwd='123456', db='test', charset='utf8')
         self.cursor = self.con.cursor()
 
+
+
     def mysqldb(self, type, table='data_test01'):
         sql = "select date_01 from {0} where type={1} ;"
         self.cursor.execute(sql.format(table, type))
@@ -19,6 +21,9 @@ class Mysqldb():
             list.append(tuple(s))
         self.cursor.close()
         return list
+
+
+
 
     def mysqldb_02(self, type, number, title, table="data_test01"):
         if type == 4:
@@ -43,6 +48,9 @@ class Mysqldb():
                 list.append(s)
         self.cursor.close()
         return list
+
+
+
 
     def mysqldb_03(self, type, table='data_test01'):
         sql3 = 'select substring_index(date_01,"|",-2 ) from {0} where type ={1}'

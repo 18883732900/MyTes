@@ -30,6 +30,9 @@ class Test_2:
         self.d = d
         self.driver = driver
 
+
+
+
     @allure.step(title='登录测试')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.parametrize('name,password', data_test02.login)
@@ -69,6 +72,9 @@ class Test_2:
             with  allure.step('断言：{0}'.format(p)):
                 assert '数据看板首页' in p
 
+
+
+
     @allure.step(title='进入居民登记前的社区选择测试')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.skipif(1 == 2, reason='跳过')
@@ -96,10 +102,14 @@ class Test_2:
 
         assert Floor in f and unit in f and Fl in f and room in f
 
+
+
     def teardown_class(self):
         # self.d.page('get_screenshot_as_file', filepath='./结果图.png')
         del self.d
         del self.driver
+
+
 
     @allure.step(title='产权人信息填写')
     @pytest.allure.severity('CRITTCAL')
@@ -116,6 +126,8 @@ class Test_2:
         els = self.d.find_elements(Scripts.element21)
 
         assert len(els) == 2 + len(file3) - x
+
+
 
     @allure.step(title='手机号核验测试')
     @pytest.allure.severity('CRITTCAL')
@@ -143,6 +155,9 @@ class Test_2:
 
             assert f in '户口簿'
 
+
+
+
     @allure.step(title='对提交为空的测试')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.skipif(1 == 2, reason='跳过')
@@ -161,6 +176,9 @@ class Test_2:
         s = el.text
 
         assert s in '请选择证件类型'
+
+
+
 
     @allure.step(title='身份证图片校验测试')
     @pytest.allure.severity('CRITTCAL')
@@ -216,6 +234,9 @@ class Test_2:
 
                 assert 'https://taijiashequ.oss-cn-beijing.aliyunc' in s
 
+
+
+
     @allure.step(title='上传头像验证')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.parametrize('file_path', data_test02.file_path1)
@@ -256,6 +277,8 @@ class Test_2:
         else:
             assert False
 
+
+
     @pytest.mark.parametrize('idcard,name', data_test02.user)
     @pytest.mark.skipif(1 == 2, reason='跳过')
     def test_005(self, idcard, name):
@@ -286,6 +309,8 @@ class Test_2:
                     el = self.d.find_element(Scripts.element13).text
                     assert el in '请输入正确的身份证号'
 
+
+
     @allure.step(title='年龄输入校验')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.skipif(data_test02.file_path2[-1][-1] == '身份证' or 1 == 2, reason='跳过')
@@ -312,10 +337,15 @@ class Test_2:
         else:
             assert False
 
+
+
     @pytest.mark.parametrize('type, text', data_test02.worker_job)
     def test_008(self, type, text):
         self.d.selects_Political(type)
         self.d.job(text)
+
+
+
 
     @pytest.mark.parametrize('file_path', data_test02.file_list4)
     @pytest.mark.parametrize('type, text, bt', data_test02.Relationship_type)
@@ -371,6 +401,10 @@ class Test_2:
                        data_test02.worker_job[-1][0] in dict1['政治面貌'] \
                        and data_test02.worker_job[-1][1] in dict1['职业'] and text in dict1['登记角色'] and \
                        data_test02.user[-1][-1] in el
+
+
+
+
 
 
 if __name__ == '__main__':

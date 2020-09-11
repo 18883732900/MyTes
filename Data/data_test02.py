@@ -5,12 +5,13 @@ from Base.Mysqldb import Mysqldb
 import os
 
 # path__1 = os.path.join(os.getcwd(),'image')
-path__1=r"C:\Users\26765\Desktop\python测试\Ui自动化\Image"
+path__1 = r"C:\Users\26765\Desktop\python测试\Ui自动化\Image"
 
 
 def path(file_name):
     path1 = os.path.join(path__1, file_name)
     return path1
+
 
 s = os.walk(path__1)
 for a, b, c in s:
@@ -19,6 +20,7 @@ for a, b, c in s:
 file = path(listt[0])
 
 shenfzz = path(listt[2])
+
 shenfzf = path(listt[1])
 
 file_list = [file, file]
@@ -36,6 +38,7 @@ login = Mysqldb().mysqldb(table='data_test02', type=1)
 select = Mysqldb().mysqldb(table='data_test02', type=2)
 
 lists = Mysqldb().mysqldb_02(type=4, number=number(), title='%正确%', table='data_test02')
+
 owner_message = Mysqldb().mysqldb_04(type=8, table='data_test02', name=name(), id=IdNumber.generate_myid(),
                                      number=number(), cnumber=number()[-1:-5:-1])
 
@@ -53,5 +56,4 @@ Relationship_type = Mysqldb().mysqldb(table='data_test02', type=9)
 worker_job = Mysqldb().mysqldb(type=3, table='data_test02')
 
 if __name__ == '__main__':
-
     print(Relationship_type)

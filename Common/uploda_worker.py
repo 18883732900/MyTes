@@ -12,6 +12,8 @@ class uploda(Base):
     def __init__(self, driver):
         Base.__init__(self, driver)
 
+
+
     def login(self, name=None, password=None):
         self.find_element(Common.user_name[0]).clear()
         self.find_element(Common.user_password[0]).clear()
@@ -19,6 +21,8 @@ class uploda(Base):
         self.Operation(*Common.user_password, password)
         self.Operation(*Common.login)
         time.sleep(3)
+
+
 
     def int(self, parent_Community, Community, Floor, unit):
         '''
@@ -51,18 +55,26 @@ class uploda(Base):
         self.for_find_OP(Common.element11, unit, 'click')
         self.Operation(*Common.element12)
 
+
+
     def cd_worker(self, number):
         '''输入手机号进行校验'''
         self.Operation(*Common.element13, number)
         self.Operation(*Common.element14)
 
+
+
     def up_worker(self, file_path):
         '''上传身份证头像'''
         self.Operation(*Common.element15, file_path)
 
+
+
     def clickup(self):
         '''点击提交'''
         self.Operation(*Common.element16)
+
+
 
     def shengfz(self, file_path1=None, file_path2=None, type_cl='身份证'):
         time.sleep(1)
@@ -85,14 +97,20 @@ class uploda(Base):
                 self.Operation(*Common.element20, file_path1)
         return type_cl
 
+
+
     def selects_Political(self, type):
         '''选择政治类型'''
         self.Operation(*Common.element29)
         self.for_find_OP(Common.element30, type, 'click')
 
+
+
     def job(self, text):
         '''写入职业'''
         self.Operation(*Common.element31, text)
+
+
 
     def setup_idcard(self, text, name):
         '''插入证件图片'''
@@ -100,6 +118,8 @@ class uploda(Base):
         self.Operation(*Common.element32, text)
         self.find_element(Common.element33[0]).clear()
         self.Operation(*Common.element33, name)
+
+
 
     def select_Birthday(self, type_cl=None, year=None, mount=None, day=None):
         time.sleep(3)
@@ -130,9 +150,13 @@ class uploda(Base):
         self.for_find_OP(Common.element24, day, 'click')
         return years
 
+
+
     def work_type(self, text):
         '''选择于户主的工作关系'''
         self.for_find_OP(Common.element34,text,'click')
+
+
 
     def Issue_permissions(self, type, devse, num1=None, num2=None):
         s = self.find_elements(Common.element35)
@@ -149,9 +173,15 @@ class uploda(Base):
         for c in devse:
             self.for_find_OP(Common.element40,c,'click')
 
+
+
+
     def up_issue(self):
         '''点击提交授权'''
         self.Operation(*Common.element39)
+
+
+
 
     def Verify_permissions(self, text=None, type='手机号'):
         '''搜索工作人员'''
