@@ -139,21 +139,17 @@ class Test_2:
               """
 
         self.d.cd_worker(number=param)
-
         try:
             self.d.find_element(Scripts.element3).clear()
-
         except:
             pass
 
         if param == data_test02.list[0]:
             f = self.d.find_element(Scripts.element4).text
-
             assert f in '请输入正确的手机号'
 
         elif param == data_test02.list[1]:
             f = self.d.find_element(Scripts.element5).text
-
             assert f in '户口簿'
 
 
@@ -323,13 +319,9 @@ class Test_2:
               :param mount:
               :return
               """
-
         time.sleep(2)
-
         self.d.select_Birthday(type_cl=data_test02.file_path2[-1][-1], day=day, year=year, mount=mount)
-
         self.d.Operation(*Scripts.element14)
-
         s = self.d.find_elements(Scripts.element20)
 
         if s:
