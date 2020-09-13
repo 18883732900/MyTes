@@ -112,6 +112,7 @@ class Test_2:
 
 
 
+
     @allure.step(title='产权人信息填写')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.parametrize('file1,file2,file3,x', data_test02.file_path)
@@ -163,15 +164,10 @@ class Test_2:
               '空提交',
               '校验不能为空提交！！！
               """
-
         time.sleep(1)
-
         self.d.clickup()
-
         el = self.d.find_element(Scripts.element6)
-
         s = el.text
-
         assert s in '请选择证件类型'
 
 

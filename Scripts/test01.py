@@ -6,6 +6,10 @@ from Common.common import Page
 from Data import data_test01
 from Base.Make_date.idCard import IdNumber
 
+
+
+
+
 curr_time = datetime.datetime.now()
 Scripts = test01()
 
@@ -23,9 +27,11 @@ def fix(conf_initdriver):
     d = Page(driver).uploda()
 
 
-class Test_1:
 
+class Test_1:
+    driver_test=None
     def setup_class(self):
+
         self.d = d
         self.driver = driver
 
@@ -48,7 +54,6 @@ class Test_1:
               描述：模拟了正确用户名错误用户名，
               正确/错误密码之间的组合加入校验
               """
-
         self.d.login(name, password)
         try:
             s = self.d.find_element(Scripts.element1, time=3).text
@@ -80,6 +85,8 @@ class Test_1:
             with  allure.step('断言：{0}'.format(p)):
                 assert '数据看板首页' in p
 
+
+
     @allure.step(title='进入工作人员登记前的社区选择测试')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.skipif(1 == 2, reason='跳过')
@@ -100,6 +107,8 @@ class Test_1:
         # self.d.page('get_screenshot_as_file', filepath='./结果图.png')
         del self.d
         del self.driver
+
+
 
     @allure.step(title='手机号核验测试')
     @pytest.allure.severity('CRITTCAL')
@@ -448,6 +457,7 @@ class Test_1:
         except:
             print('由于上一条的错误,程序无法执行')
             assert False
+
 
 if __name__ == '__main__':
     pytest.main('-s -html=./Report/report.html test01.py')

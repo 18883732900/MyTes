@@ -4,10 +4,13 @@ from Base.Make_date.name import name
 from Base.Make_date.number import number
 
 
-class Mysqldb():
+class Mysqldb(object):
+
+
     def __init__(self):
         self.con = MySQLdb.connect(host='127.0.0.1', user='root', passwd='123456', db='test', charset='utf8')
         self.cursor = self.con.cursor()
+
 
 
 
