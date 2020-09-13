@@ -1,6 +1,5 @@
 import os
 import time
-
 import allure
 import pytest
 # 添加报错截图到allure报告里

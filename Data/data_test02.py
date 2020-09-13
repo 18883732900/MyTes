@@ -44,8 +44,7 @@ owner_message = Mysqldb().mysqldb_04(type=8, table='data_test02', name=name(), i
 
 list = Mysqldb().mysqldb_02(type=4, number=number(), title='%正确%', table='data_test02')
 
-user = Mysqldb().mysqldb_02(type=5, number="{0},{1}".format(IdNumber.generate_myid(), name()), title='%正确%',
-                            table='data_test02')
+user = Mysqldb().mysqldb_02(type=5, number="{0},{1}".format(IdNumber.generate_myid(), name()), title='%正确%',table='data_test02')
 
 Brithday = Mysqldb().mysqldb(type=6, table='data_test02')
 
@@ -55,5 +54,8 @@ Relationship_type = Mysqldb().mysqldb(table='data_test02', type=9)
 
 worker_job = Mysqldb().mysqldb(type=3, table='data_test02')
 
+
+
+
 if __name__ == '__main__':
-    print(Relationship_type)
+    print(user)

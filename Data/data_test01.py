@@ -36,4 +36,4 @@ Issue_permissions = Mysqldb().mysqldb_03(type=7)
 
 
 if __name__ == '__main__':
-    print(login[-1][0])
+    print(user)

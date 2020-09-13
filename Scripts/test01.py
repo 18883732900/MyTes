@@ -6,13 +6,13 @@ from Common.common import Page
 from Data import data_test01
 from Base.Make_date.idCard import IdNumber
 
-
-
-
-
 curr_time = datetime.datetime.now()
 Scripts = test01()
 
+# 完成后打开注释
+d = None
+driver = None
+stuts=None
 
 @pytest.fixture(scope='function', params=data_test01.list)
 def param(request):
@@ -23,13 +23,13 @@ def param(request):
 def fix(conf_initdriver):
     global d
     global driver
-    driver = conf_initdriver
-    d = Page(driver).uploda()
-
+    if not d and not driver:
+        driver = conf_initdriver
+        d = Page(driver).uploda()
 
 
 class Test_1:
-    driver_test=None
+
     def setup_class(self):
 
         self.d = d
@@ -84,8 +84,6 @@ class Test_1:
 
             with  allure.step('断言：{0}'.format(p)):
                 assert '数据看板首页' in p
-
-
 
     @allure.step(title='进入工作人员登记前的社区选择测试')
     @pytest.allure.severity('CRITTCAL')
@@ -219,6 +217,8 @@ class Test_1:
 
                 assert 'https://taijiashequ.oss-cn-beijing.aliyunc' in s
 
+
+
     @allure.step(title='上传头像验证')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.parametrize('file_path', data_test01.file_path1)
@@ -325,6 +325,7 @@ class Test_1:
         self.d.clickup()
         dict1 = {}
         time.sleep(12)
+        Mysqldbbackup().backup_worker()
         try:
             els = self.d.find_elements(Scripts.element19)
             for i in els:
@@ -342,10 +343,11 @@ class Test_1:
             print("出现故障，无法跳转")
             assert False
 
+
     @allure.step(title='权限下发选择校验')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.parametrize('type,devse,num1,num2', data_test01.Issue_permissions)
-    @pytest.mark.skipif(1 == 2, reason='跳过')
+    @pytest.mark.skipif(1 == 2, reason='因为 test007 在执行时的bug导致后续程序无法进行')
     def test_008(self, type, devse, num1, num2):
         """
         点击权限:
@@ -356,107 +358,95 @@ class Test_1:
         :param num2:
         :return:
         """
-        try:
-            self.d.Issue_permissions(type=type, devse=devse, num1=num1, num2=num2)
-            els = self.d.find_elements(Scripts.element21)
-            list = [i.text for i in els]
-            x = 0
-            for i in type:
-                if i in list:
-                    x += 1
-            y = 0
-            for i in devse:
-                if i in list:
-                    y += 1
-            assert x + y == len(type) + len(devse)
+        self.d.Issue_permissions(type=type, devse=devse, num1=num1, num2=num2)
+        els = self.d.find_elements(Scripts.element21)
+        list = [i.text for i in els]
+        x = 0
+        for i in type:
+            if i in list:
+                x += 1
+        y = 0
+        for i in devse:
+            if i in list:
+                y += 1
+        assert x + y == len(type) + len(devse)
 
-        except:
-            print('由于上一条的错误,程序无法执行')
-            assert False
+
+
 
     @allure.step(title='检查提交按钮是否自动进行页面跳转')
     @pytest.allure.severity('CRITTCAL')
-    @pytest.mark.skipif(1 == 2, reason='跳过')
+    @pytest.mark.skipif(1== 2, reason='因为 test007 在执行时的bug导致后续程序无法进行')
     def test_009(self):
         """
         点击授权检测页面跳转:
         确保成功点击授权
         :return:
         """
+        self.d.up_issue()
+        time.sleep(3)
         try:
-            self.d.up_issue()
-            time.sleep(3)
-            try:
-                s3 = self.d.find_elements(Scripts.element22)
-                for i in s3:
-                    if i.text == '工作人员列表':
-                        i.click()
-                        Mysqldbbackup().backup_worker()
-                        assert True
-            except:
-                assert False
+            s3 = self.d.find_elements(Scripts.element22)
+            for i in s3:
+                if i.text == '工作人员列表':
+                    i.click()
+                    assert True
         except:
-            print('由于上一条的错误,程序无法执行')
             assert False
+
 
     @allure.step(title='在工作人员列表中核对基本数据')
     @pytest.allure.severity('CRITTCAL')
-    @pytest.mark.skipif(1 == 2, reason='跳过')
+    @pytest.mark.skipif(1 == 2, reason='因为 test007 在执行时的bug导致后续程序无法进行')
     def test_010(self):
         """
         核对', '确保上传信息都正确'
         :return:
         """
-        try:
-            time.sleep(3)
-            s = self.d.page(fun='driver.page_source')
-            x = 0
-            list = [i for i in data_test01.select[-1]]
 
-            list.insert(0, data_test01.user[-1][-1])
-            for i in list:
-                if i in s:
-                    x += 1
+        time.sleep(3)
+        s = self.d.page(fun='driver.page_source')
+        x = 0
+        list = [i for i in data_test01.select[-1]]
 
-            assert x == len(list)
-        except:
-            print('由于上一条的错误,程序无法执行')
-            assert False
+        list.insert(0, data_test01.user[-1][-1])
+        for i in list:
+            if i in s:
+                x += 1
+
+        assert x == len(list)
 
     @allure.step(title='在工作人员列表中门禁里检测上次填入信息是否成功带入')
     @pytest.allure.severity('CRITTCAL')
+    @pytest.mark.skipif(1 == 2, reason='因为 test007 在执行时的bug导致后续程序无法进行')
     def test_011(self):
         """
         返显校验:
          权限带入正常
         :return:
         """
-        try:
-            self.d.Verify_permissions(text=data_test01.list[-1])
-            els = self.d.find_elements(Scripts.element21)
-            list = [i.text for i in els]
-            self.d.implicitly_wait(30)
-            x = 0
-            y = 0
-            z = 0
-            type = data_test01.Issue_permissions[-1][0]
-            for i in type:
-                if i in list:
-                    x += 1
-            deves = data_test01.Issue_permissions[-1][1]
-            for i in deves:
-                if i in list:
-                    y += 1
-            text = self.d.find_elements(Scripts.element24)
-            for i in text:
-                text1 = i.get_attribute('value')
-                if text1 in data_test01.Issue_permissions[-1][2] or data_test01.Issue_permissions[-1][3]:
-                    z += 1
-            assert x + y + z == len(type) + len(deves) + 2
 
-        except:
-            print('由于上一条的错误,程序无法执行')
-            assert False
+        self.d.Verify_permissions(text=data_test01.list[-1])
+        els = self.d.find_elements(Scripts.element21)
+        list = [i.text for i in els]
+        self.d.implicitly_wait(30)
+        x = 0
+        y = 0
+        z = 0
+        type = data_test01.Issue_permissions[-1][0]
+        for i in type:
+            if i in list:
+                x += 1
+        deves = data_test01.Issue_permissions[-1][1]
+        for i in deves:
+            if i in list:
+                y += 1
+        text = self.d.find_elements(Scripts.element24)
+        for i in text:
+            text1 = i.get_attribute('value')
+            if text1 in data_test01.Issue_permissions[-1][2] or data_test01.Issue_permissions[-1][3]:
+                z += 1
+        assert x + y + z == len(type) + len(deves) + 2
 
 
 if __name__ == '__main__':

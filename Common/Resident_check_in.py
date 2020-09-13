@@ -1,14 +1,17 @@
 import time
 from Base.Base_InitDriver.base import Base
+from Base.Base_InitDriver.initdriver import inidriver
 from Common import Resident_check_in_data
-from Base.MYSQL import Mysqldb_test
+from Base.MYSQL.Mysqldb_test import Mysqldb_test
+
 
 Common = Resident_check_in_data()
 
-
 class Resident_check(Base):
-    def __init__(self, driver):
-        Base.__init__(self, driver)
+
+
+    def  __init__ (self, driver):
+         Base.__init__(self, driver)
 
 
     def login(self, name=None, password=None):
@@ -184,7 +187,7 @@ class Resident_check(Base):
                    self.find_element(Common.element50[0]).clear()
                 else:
                     pass
-        s = Mysqldb_test().mysqldn_01(parent_Community, Community, Floor, unit,Fl,roomId)
+        s = Mysqldb_test().mysqldn_01(parent_Community, Community, Floor, unit, Fl , roomId)
 
         time.sleep(10)
 
@@ -219,6 +222,8 @@ class Resident_check(Base):
             self.for_find_OP(Common.element54, c, 'click')
 
 
-if __name__ == '__main__':
-    pass
-    print(1 << 3)
+
+
+
+
+

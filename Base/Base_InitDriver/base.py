@@ -8,12 +8,13 @@ from selenium.webdriver.support.wait import WebDriverWait
 class Base:
 
     __addr=None
+
     def __init__(self, driver):
         self.driver = driver
 
     def __new__(cls, *args, **kwargs):
         if cls.__addr==None:
-            cls.addr=object.__new__(cls)
+            cls.__addr=object.__new__(cls)
         return cls.__addr
 
     def windows_handles(self):
