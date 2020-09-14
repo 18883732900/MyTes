@@ -1,5 +1,7 @@
+import os
 import re, pytest, time, datetime
 import allure
+
 from Scripts import test01
 from Base.MYSQL.Mysql_Backup import Mysqldbbackup
 from Common.common import Page
@@ -12,7 +14,8 @@ Scripts = test01()
 # 完成后打开注释
 d = None
 driver = None
-stuts=None
+stuts = None
+
 
 @pytest.fixture(scope='function', params=data_test01.list)
 def param(request):
@@ -32,8 +35,9 @@ class Test_1:
 
     def setup_class(self):
 
-        self.d = d
-        self.driver = driver
+            self.d = d
+            self.driver = driver
+
 
     """
       方法：@pytest.allure.severity(Severity)
@@ -99,12 +103,6 @@ class Test_1:
         with allure.step('输入错误的手机号'):
             allure.attach('参数', "地址：社区：{0},小区：{1},楼栋：{2},单元：{3}".format(parent_Community, Community, Floor, unit))
         assert f in '工作人员类别列表'
-
-    def teardown_class(self):
-
-        # self.d.page('get_screenshot_as_file', filepath='./结果图.png')
-        del self.d
-        del self.driver
 
 
 
@@ -216,8 +214,6 @@ class Test_1:
                     allure.attach('参数', "照片：{0}{1},类型：{2}".format(file_Path1, file_Path2, type_c))
 
                 assert 'https://taijiashequ.oss-cn-beijing.aliyunc' in s
-
-
 
     @allure.step(title='上传头像验证')
     @pytest.allure.severity('CRITTCAL')
@@ -343,7 +339,6 @@ class Test_1:
             print("出现故障，无法跳转")
             assert False
 
-
     @allure.step(title='权限下发选择校验')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.parametrize('type,devse,num1,num2', data_test01.Issue_permissions)
@@ -371,12 +366,9 @@ class Test_1:
                 y += 1
         assert x + y == len(type) + len(devse)
 
-
-
-
     @allure.step(title='检查提交按钮是否自动进行页面跳转')
     @pytest.allure.severity('CRITTCAL')
-    @pytest.mark.skipif(1== 2, reason='因为 test007 在执行时的bug导致后续程序无法进行')
+    @pytest.mark.skipif(1 == 2, reason='因为 test007 在执行时的bug导致后续程序无法进行')
     def test_009(self):
         """
         点击授权检测页面跳转:
@@ -384,16 +376,16 @@ class Test_1:
         :return:
         """
         self.d.up_issue()
-        time.sleep(3)
+        time.sleep(4)
         try:
             s3 = self.d.find_elements(Scripts.element22)
             for i in s3:
                 if i.text == '工作人员列表':
                     i.click()
                     assert True
+
         except:
             assert False
-
 
     @allure.step(title='在工作人员列表中核对基本数据')
     @pytest.allure.severity('CRITTCAL')
@@ -448,6 +440,14 @@ class Test_1:
                 z += 1
         assert x + y + z == len(type) + len(deves) + 2
 
+
+    def teardown_class(self):
+        path=os.path.join(os.getcwd(),"Report\结果图")
+        filename=os.path.join(path,'test01.png')
+        self.d.page('get_screenshot_as_file', filepath=filename)
+        # self.d.page('get_screenshot_as_file', filepath='./结果图.png')
+        del self.d
+        del self.driver
 
 if __name__ == '__main__':
     pytest.main('-s -html=./Report/report.html test01.py')

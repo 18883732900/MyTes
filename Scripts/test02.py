@@ -1,3 +1,4 @@
+import os
 import re, time, datetime
 from Base.MYSQL.Mysql_Backup import Mysqldbbackup
 import allure
@@ -101,10 +102,7 @@ class Test_2:
 
         assert Floor in f and unit in f and Fl in f and room in f
 
-    def teardown_class(self):
-        # self.d.page('get_screenshot_as_file', filepath='./结果图.png')
-        del self.d
-        del self.driver
+
 
     @allure.step(title='产权人信息填写')
     @pytest.allure.severity('CRITTCAL')
@@ -396,6 +394,14 @@ class Test_2:
             if i in list:
                 y += 1
         assert x + y == len(type) + len(devse)
+
+    def teardown_class(self):
+        path = os .path.join(os.getcwd(), "Report\结果图")
+        filename = os.path.join(path, 'test01.png')
+        self.d.page('get_screenshot_as_file', filepath=filename)
+        # self.d.page('get_screenshot_as_file', filepath='./test01结果图.png')
+        del self.d
+        del self.driver
 
 
 if __name__ == '__main__':
