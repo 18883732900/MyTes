@@ -8,6 +8,7 @@ from Common.common import Page
 from Data import data_test01
 from Base.Make_date.idCard import IdNumber
 
+
 curr_time = datetime.datetime.now()
 Scripts = test01()
 
@@ -353,18 +354,23 @@ class Test_1:
         :param num2:
         :return:
         """
-        self.d.Issue_permissions(type=type, devse=devse, num1=num1, num2=num2)
-        els = self.d.find_elements(Scripts.element21)
-        list = [i.text for i in els]
-        x = 0
-        for i in type:
-            if i in list:
-                x += 1
-        y = 0
-        for i in devse:
-            if i in list:
-                y += 1
-        assert x + y == len(type) + len(devse)
+        try:
+            self.d.Issue_permissions(type=type, devse=devse, num1=num1, num2=num2)
+            els = self.d.find_elements(Scripts.element21)
+            list = [i.text for i in els]
+            x = 0
+            for i in type:
+                if i in list:
+                    x += 1
+            y = 0
+            for i in devse:
+                if i in list:
+                    y += 1
+            assert x + y == len(type) + len(devse)
+        except:
+            raise RuntimeError('由于之前的用例执行失败，导致该条用例无法继续操作')
+
+
 
     @allure.step(title='检查提交按钮是否自动进行页面跳转')
     @pytest.allure.severity('CRITTCAL')
@@ -375,17 +381,17 @@ class Test_1:
         确保成功点击授权
         :return:
         """
-        self.d.up_issue()
-        time.sleep(4)
         try:
-            s3 = self.d.find_elements(Scripts.element22)
-            for i in s3:
-                if i.text == '工作人员列表':
-                    i.click()
-                    assert True
+           self.d.up_issue()
+           time.sleep(4)
+           s3 = self.d.find_elements(Scripts.element22)
+           for i in s3:
+              if i.text == '工作人员列表':
+                 i.click()
+                 assert True
 
         except:
-            assert False
+            raise RuntimeError('由于之前的用例执行失败，导致该条用例无法继续操作')
 
     @allure.step(title='在工作人员列表中核对基本数据')
     @pytest.allure.severity('CRITTCAL')
@@ -395,18 +401,22 @@ class Test_1:
         核对', '确保上传信息都正确'
         :return:
         """
+        try:
+            time.sleep(3)
+            s = self.d.page(fun='driver.page_source')
+            x = 0
+            list = [i for i in data_test01.select[-1]]
 
-        time.sleep(3)
-        s = self.d.page(fun='driver.page_source')
-        x = 0
-        list = [i for i in data_test01.select[-1]]
+            list.insert(0, data_test01.user[-1][-1])
+            for i in list:
+                if i in s:
+                    x += 1
 
-        list.insert(0, data_test01.user[-1][-1])
-        for i in list:
-            if i in s:
-                x += 1
+            assert x == len(list)
 
-        assert x == len(list)
+        except:
+           raise RuntimeError('由于之前的用例执行失败，导致该条用例无法继续操作')
+
 
     @allure.step(title='在工作人员列表中门禁里检测上次填入信息是否成功带入')
     @pytest.allure.severity('CRITTCAL')
@@ -417,28 +427,32 @@ class Test_1:
          权限带入正常
         :return:
         """
+        try:
+            self.d.Verify_permissions(text=data_test01.list[-1])
+            els = self.d.find_elements(Scripts.element21)
+            list = [i.text for i in els]
+            self.d.implicitly_wait(30)
+            x = 0
+            y = 0
+            z = 0
+            type = data_test01.Issue_permissions[-1][0]
+            for i in type:
+                if i in list:
+                    x += 1
+            deves = data_test01.Issue_permissions[-1][1]
+            for i in deves:
+                if i in list:
+                    y += 1
+            text = self.d.find_elements(Scripts.element24)
+            for i in text:
+                text1 = i.get_attribute('value')
+                if text1 in data_test01.Issue_permissions[-1][2] or data_test01.Issue_permissions[-1][3]:
+                    z += 1
+            assert x + y + z == len(type) + len(deves) + 2
+        except:
+            raise RuntimeError('由于之前的用例执行失败，导致该条用例无法继续操作')
 
-        self.d.Verify_permissions(text=data_test01.list[-1])
-        els = self.d.find_elements(Scripts.element21)
-        list = [i.text for i in els]
-        self.d.implicitly_wait(30)
-        x = 0
-        y = 0
-        z = 0
-        type = data_test01.Issue_permissions[-1][0]
-        for i in type:
-            if i in list:
-                x += 1
-        deves = data_test01.Issue_permissions[-1][1]
-        for i in deves:
-            if i in list:
-                y += 1
-        text = self.d.find_elements(Scripts.element24)
-        for i in text:
-            text1 = i.get_attribute('value')
-            if text1 in data_test01.Issue_permissions[-1][2] or data_test01.Issue_permissions[-1][3]:
-                z += 1
-        assert x + y + z == len(type) + len(deves) + 2
+
 
 
     def teardown_class(self):
