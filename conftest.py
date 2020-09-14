@@ -36,23 +36,6 @@ def pytest_runtest_makereport(item, call):
             jpg = driver.get_screenshot_as_png()
             allure.attach('截图.png', jpg, allure.pytest_plugin.AttachmentType.PNG)
 
-@pytest.hookimpl(tryfirst=True, hookwrapper=True)
-def pytest_runtest_makereport(item, call):
-    '''
-    hook pytest失败
-    :param item:
-    :param call:
-    :return:
-    '''
-    # execute all other hooks to obtain the report object
-    out= yield
-    rep = out.get_result()
-    print(rep)
-    print(out)
-    print(rep.when)
-    print(rep.nodeid)
-    print(rep.outcome)
-
 
 
 
