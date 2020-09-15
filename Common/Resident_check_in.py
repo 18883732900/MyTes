@@ -188,7 +188,8 @@ class Resident_check(Base):
                    self.find_element(Common.element50[0]).clear()
                 else:
                     pass
-        s = Mysqldb_test().mysqldn_01(parent_Community, Community, Floor, unit, Fl , roomId)
+        s = Mysqldb_test(parent_Community, Community, Floor, unit, Fl , roomId).mysqldn_01()
+        # s=[0,123,1]
 
         time.sleep(10)
 
@@ -196,7 +197,7 @@ class Resident_check(Base):
 
         if text == '租客' :
             """如果是租客，并且该房间超员，上传照片也大于等与两张，我就点击确定/取消"""
-            if len(file_path) >= 2 and (s[1] != 0 or s[0] == 0):
+            if len(file_path) >= 2 and (s[2] != 0 or s[0] == 0):
 
                 t = self.find_elements(Common.element55)
                 time.sleep(1)
@@ -204,9 +205,22 @@ class Resident_check(Base):
                 for i in t:
                     if i.text == bt:
                         i.click()
+                        if bt == "确定":
+                            self.c = Mysqldb_test.mysqldn_02(parent_Community, Community, Floor, unit, Fl , roomId)
             else:
                 pass
 
+
+
+    def  devics(self,device):
+        print( self.c)
+        self.c.append(i for i in device)
+        el= self.find_elements(("label.el-checkbox.is-checked > span:nth - child(2)"))
+        for i in el:
+            if i not in self.c:
+               return False
+
+        return True
 
     def Issue_permissions(self, type, devse, num1=None, num2=None):
         s = self.find_elements(Common.element51)
@@ -215,8 +229,10 @@ class Resident_check(Base):
                 if i == t.text:
                     t.click()
                     if i in '身份证绑定':
+                        time.sleep(2)
                         self.Operation(*Common.element52, num1)
                     elif i in 'IC卡绑定':
+                        time.sleep(2)
                         self.Operation(*Common.element53, num2)
                     break
         for c in devse:

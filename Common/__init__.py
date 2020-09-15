@@ -180,7 +180,7 @@ class Resident_check_in_data():
     (By.CSS_SELECTOR, 'div.item:nth-child(15) > div:nth-child(2) > div:nth-child(1) > input:nth-child(2)'), 'send_keys')
     element51 = (By.CSS_SELECTOR, 'div.item> label > span:nth-child(2) > span:nth-child(2)')
     element52 = ((By.CSS_SELECTOR, '[placeholder="身份证编号(必填)"]'), 'send_keys')
-    element53 = ((By.CSS_SELECTOR, '[placeholder="请输入职业"]'), 'send_keys')
-    element54 = (By.XPATH, '/html/body/div[6]/div/div[2]/div/div[5]/div[2]/div/label/span[2]')
+    element53 = ((By.CSS_SELECTOR, '[placeholder="Ic卡(必选)"]'), 'send_keys')
+    element54 = (By.CSS_SELECTOR, 'label.el-checkbox > span:nth-child(2)')
     element55=(By.CSS_SELECTOR,'.el-message-box__btns > button > span:nth-child(1)')
 

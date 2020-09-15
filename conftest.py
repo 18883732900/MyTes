@@ -46,7 +46,7 @@ def conf_initdriver():
     driver.maximize_window()
     yield driver
     time.sleep(3)
-    driver.quit()
+    # driver.quit()
     del driver
 
 

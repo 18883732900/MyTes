@@ -408,6 +408,7 @@ class Test_2:
         :return:
         """
         self.d.Issue_permissions(type=type, devse=devse, num1=num1, num2=num2)
+        device=self.d.devics(device=devse)
         els = self.d.find_elements(Scripts.element21)
         list = [i.text for i in els]
         x = 0
@@ -418,7 +419,8 @@ class Test_2:
         for i in devse:
             if i in list:
                 y += 1
-        assert x + y == len(type) + len(devse)
+
+        assert x + y == len(type) + len(devse) and device
 
 
 
