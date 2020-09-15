@@ -218,7 +218,6 @@ class Test_2:
 
             else:
                 s = self.d.find_element(Scripts.element11).get_attribute('src')
-
                 assert 'https://taijiashequ.oss-cn-beijing.aliyunc' in s
 
 
