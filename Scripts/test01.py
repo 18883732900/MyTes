@@ -64,6 +64,7 @@ class Test_1:
             s = self.d.find_element(Scripts.element1, time=3).text
 
         except:
+            time.sleep(3)
             s = self.driver.page_source
 
         if name == data_test01.login[0][0]:

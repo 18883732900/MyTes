@@ -37,6 +37,7 @@ class Test_2:
         self.d = d
         self.driver = driver
 
+    # -------------------------------------------------------------------------------------------------------------------------------------
     @allure.step(title='登录测试')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.parametrize('name,password', data_test02.login)
@@ -48,7 +49,7 @@ class Test_2:
         """
         self.d.login(name, password)
         try:
-            s = self.d.find_element(Scripts.element1, time=4).text
+            s = self.d.find_element(Scripts.element1, time=2).text
 
         except:
             s = self.driver.page_source
@@ -62,6 +63,8 @@ class Test_2:
                 assert s in '该用户不存在!'
 
 
+
+        # -------------------------------------------------------------------------------------------------------------------------------------
         elif name == data_test02.login[1][0]:
             with allure.step('输入错误的密码登录'):
                 allure.attach('参数', "账号：{0}  ；密码：{1}".format(name, password))
@@ -76,6 +79,9 @@ class Test_2:
             with  allure.step('断言：{0}'.format(p)):
                 assert '数据看板首页' in p
 
+
+
+    # -------------------------------------------------------------------------------------------------------------------------------------
     @allure.step(title='进入居民登记前的社区选择测试')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.skipif(1 == 2, reason='跳过')
@@ -104,6 +110,7 @@ class Test_2:
 
 
 
+    # -------------------------------------------------------------------------------------------------------------------------------------
     @allure.step(title='产权人信息填写')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.parametrize('file1,file2,file3,x', data_test02.file_path)
@@ -120,6 +127,8 @@ class Test_2:
 
         assert len(els) == 2 + len(file3) - x
 
+
+    # -------------------------------------------------------------------------------------------------------------------------------------
     @allure.step(title='手机号核验测试')
     @pytest.allure.severity('CRITTCAL')
     def test_02(self, param):
@@ -156,6 +165,8 @@ class Test_2:
         s = el.text
         assert s in '请选择证件类型'
 
+
+    # -------------------------------------------------------------------------------------------------------------------------------------
     @allure.step(title='身份证图片校验测试')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.skipif(1 == 2, reason='跳过')
@@ -210,6 +221,8 @@ class Test_2:
 
                 assert 'https://taijiashequ.oss-cn-beijing.aliyunc' in s
 
+
+    # -------------------------------------------------------------------------------------------------------------------------------------
     @allure.step(title='上传头像验证')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.parametrize('file_path', data_test02.file_path1)
@@ -248,6 +261,8 @@ class Test_2:
         else:
             assert False
 
+
+    # -------------------------------------------------------------------------------------------------------------------------------------
     @allure.step(title='身份证输入校验')
     @pytest.mark.parametrize('idcard,name', data_test02.user)
     @pytest.mark.skipif(1 == 2, reason='跳过')
@@ -279,6 +294,9 @@ class Test_2:
                     el = self.d.find_element(Scripts.element13).text
                     assert el in '请输入正确的身份证号'
 
+
+
+    # -------------------------------------------------------------------------------------------------------------------------------------
     @allure.step(title='年龄输入校验')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.skipif(data_test02.file_path2[-1][-1] == '身份证' or 1 == 2, reason='跳过')
@@ -301,15 +319,22 @@ class Test_2:
         else:
             assert False
 
+
+
+
+    # -------------------------------------------------------------------------------------------------------------------------------------
     @pytest.mark.parametrize('type, text', data_test02.worker_job)
-    def test_008(self, type, text):
+    def test_007(self, type, text):
         self.d.selects_Political(type)
         self.d.job(text)
 
+
+
+    # -------------------------------------------------------------------------------------------------------------------------------------
     @pytest.mark.parametrize('file_path', data_test02.file_list4)
     @pytest.mark.parametrize('type, text, bt', data_test02.Relationship_type)
     @pytest.mark.parametrize('parent_Community, Community, Floor, unit,Fl, roomId', [data_test02.select[-1]])
-    def test_007(self, type, text, file_path, bt, parent_Community, Community, Floor, unit, Fl, roomId):
+    def test_008(self, type, text, file_path, bt, parent_Community, Community, Floor, unit, Fl, roomId):
         """
                     上传一或两张租客照片，判断能否提交成功
                     :param type1:
@@ -347,32 +372,33 @@ class Test_2:
             if bt == '确定':
                 try:
                     dict1 = {}
-                    time.sleep(20)
+                    time.sleep(30)
                     el = self.d.find_element(Scripts.element22).text
                     els = self.d.find_elements(Scripts.element23)
 
                     for i in els:
-                        text = i.text
-
-                        list = text.split('：')
-
+                        tex = i.text
+                        list = tex.split('：')
                         dict1[list[0]] = list[-1]
-                        print(dict1)
-                        assert data_test02.user[-1][0] in dict1['证件号码'] and data_test02.file_path2[-1][-1] in dict1[
-                            '证件类型'] and \
-                               data_test02.worker_job[-1][0] in dict1['政治面貌'] \
-                               and data_test02.worker_job[-1][1] in dict1['职业'] and text in dict1['登记角色'] and \
-                               data_test02.user[-1][-1] in el
+                    dict1['姓名']=el
+                    print(dict1)
+                    assert data_test02.user[-1][0] in dict1['证件号码'] and data_test02.file_path2[-1][-1] in dict1['证件类型'] and \
+                               data_test02.worker_job[-1][0] in dict1['政治面貌'] and data_test02.worker_job[-1][1] in dict1['职业'] and \
+                           text in dict1['登记角色'] and data_test02.user[-1][-1] in dict1['姓名']
                 except:
-                    print("出现故障，无法跳转")
-                    assert False
+                      print("出现故障，无法跳转")
+                      assert False
                 Mysqldbbackup().backup_uesr()
 
+
+
+
+    # -------------------------------------------------------------------------------------------------------------------------------------
     @allure.step(title='权限下发选择校验')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.parametrize('type,devse,num1,num2', data_test02.Issue_permissions)
     @pytest.mark.skipif(1 == 2, reason='因为 test007 在执行时的bug导致后续程序无法进行')
-    def test_008(self, type, devse, num1, num2):
+    def test_009(self, type, devse, num1, num2):
         """
         点击权限:
         核验是否选择
@@ -395,6 +421,12 @@ class Test_2:
                 y += 1
         assert x + y == len(type) + len(devse)
 
+
+
+
+
+
+  # -------------------------------------------------------------------------------------------------------------------------------------
     def teardown_class(self):
         path = os .path.join(os.getcwd(), "Report\结果图")
         filename = os.path.join(path, 'test01.png')

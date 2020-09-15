@@ -27,7 +27,7 @@ class Resident_check(Base):
         self.for_find_OP(Common.element1, '人房信息','click')
         self.for_find_OP(Common.element2,'居民信息管理','click')
         self.for_find_OP(Common.element3,'居民入住登记','click')
-        time.sleep(2)
+        time.sleep(3)
         self.Operation(*Common.element4)
         self.for_find_OP(Common.element5,parent_Community,'click')
         self.Operation(*Common.element6)
@@ -146,6 +146,7 @@ class Resident_check(Base):
         self.for_find_OP(Common.element31, type_cl, 'click')
         time.sleep(3)
         self.Operation(*Common.element40)
+        time.sleep(1)
         years = int(self.find_element(Common.element41).text[0:-2])
         mounts = int(self.find_element(Common.element42).text[0:-2])
         if int(year) is not None:

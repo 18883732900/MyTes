@@ -62,6 +62,7 @@ test01测试的
 class test02():
     find= r'<div id="tab-/index" aria-controls="pane-/index" role="tab" aria-selected="true" tabindex="0" class="el-tabs__item is-top is-active">(.+?)</div>'
     element1 = (By.CSS_SELECTOR, '.el-message__content')
+
     element2= (By.XPATH,'//*[@id="indexContent"]/section/main/div/div[2]/div/div/div[2]/h2')
     element3=(By.CSS_SELECTOR, '[placeholder="请输入手机号"]')
     element4=(By.CSS_SELECTOR,
