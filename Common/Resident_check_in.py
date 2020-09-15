@@ -190,9 +190,7 @@ class Resident_check(Base):
                     pass
         s = Mysqldb_test(parent_Community, Community, Floor, unit, Fl , roomId).mysqldn_01()
         # s=[0,123,1]
-
         time.sleep(10)
-
         self.clickup()
 
         if text == '租客' :
