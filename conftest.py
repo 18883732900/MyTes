@@ -1,7 +1,6 @@
-import os
-import time
-import allure
-import pytest
+import os,pytest,allure,time
+
+
 # 添加报错截图到allure报告里
 from Base.Base_InitDriver.initdriver import inidriver
 
@@ -23,6 +22,7 @@ def pytest_runtest_makereport(item, call):
     rep = outcome.get_result()
     # 我们只看错误的用例，不包括setup和teardown
     if rep.when == "call" and rep.failed:
+
         mode = "a" if os.path.exists("failures") else "w"
         with open("failures", mode) as f:
             # 访问一个固定装置
