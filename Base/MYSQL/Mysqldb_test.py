@@ -16,7 +16,7 @@ class Mysqldb_test():
 
     def  mysqldn_01(self):
         sql = "select uh.house_id,uh.user_id,uh.confirmation_status,uh.leave_status,uh.role,h.type,count(uh.house_id) c from user_house uh  LEFT JOIN house h on uh.house_id=h.id   where h.community_name like '%{0}%' and h.garden_name like '%{1}%' and h.building_name LIKE '%{2}%' and  h.unit_name like '%{3}%' and h.floor_name  like '%{4}%' and h.room_name like '%{5}%'  and uh.leave_status=0 AND uh.role=27 and uh.confirmation_status =2 GROUP BY uh.house_id  HAVING  c>type*2"
-        # s是我的超员数据1表示有
+        # s是 超员数据1表示有
         s=self.cursor.execute(sql.format(self.c,self.g,self.b,self.u,self.f,self.r))
         sql2="select h.type,h.garden_id from house h where h.community_name like '%{0}%' and h.garden_name like '%{1}%' and h.building_name LIKE '%{2}%' and h.unit_name like '%{3}%' and h.floor_name like '%{4}%'  and h.room_name like '%{5}%'"
         self.cursor.execute(sql2.format(self.c,self.g,self.b,self.u,self.f,self.r))

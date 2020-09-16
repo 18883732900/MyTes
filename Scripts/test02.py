@@ -16,8 +16,8 @@ curr_time = datetime.datetime.now()
 
 
 # 完成后打开注释
-# d = None
-# driver = None
+d = None
+driver = None
 
 @pytest.fixture(scope='function', params=data_test02.list)
 def param(request):
@@ -419,13 +419,24 @@ class Test_2:
         else:
             assert False
 
-    def test010(self):
+    @allure.step(title='权限下发选择校验')
+    @pytest.allure.severity('CRITTCAL')
+    def test_010(self):
         self.d.up_issue()
-        text=self.d.find_element((By.XPATH,'/html/body/div[3]/p')).text
+        time.sleep(2)
+        text=self.d.find_element((By.CSS_SELECTOR,'.el-message__content')).text
         assert "授权成功" in text
 
 
 
+    @allure.step(title='权限下发选择校验')
+    @pytest.allure.severity('CRITTCAL')
+    def test_011(self):
+        a=self.d.Verify_permissions(text=data_test02.list[-1])
+        if a:
+            assert True
+        else:
+            assert Falsedata_test01
 
 
 

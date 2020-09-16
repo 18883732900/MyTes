@@ -244,9 +244,16 @@ class Resident_check(Base):
         for i in s3:
             if i.text == '居民列表':
                 i.click()
-                assert True
         self.Operation(*Common.element58)
         self.for_find_OP(Common.element59, type, 'click')
         self.Operation(*Common.element60, text)
         self.Operation(*Common.element61)
         self.Operation(*Common.element62)
+        time.sleep(1)
+        self.for_find_OP((By.CSS_SELECTOR,'button.inlineBlock> span:nth-child(1)'),p='门禁授权',type='click')
+        el = self.find_elements(Common.element56)
+        list = [i.text for i in el]
+        for i in self.c:
+            if i not in list:
+                return False
+        return True

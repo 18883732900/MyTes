@@ -121,6 +121,7 @@ class Base:
         el = WebDriverWait(self.driver, time, Frequency).until(lambda x: x.find_element(*type_text))
         return el
 
+
     '''显示等待定位元素组'''
 
     def find_elements(self, type_text, time=10, Frequency=0.5):

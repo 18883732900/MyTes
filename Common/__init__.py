@@ -191,7 +191,7 @@ class Resident_check_in_data():
     element60 = ((By.CSS_SELECTOR, '[placeholder="请输入内容"]'), 'send_keys')
     element61 = ((By.CSS_SELECTOR, 'span.searchBtn:nth-child(1)'), 'click')
     element62 = ((By.CSS_SELECTOR,
-                  '.el-table__fixed-body-wrapper > table:nth-child(1) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(7) > div:nth-child(1) > button:nth-child(3)'),
+                  '.el-table__fixed-body-wrapper > table:nth-child(1) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(11) > div:nth-child(1) > button:nth-child(1)'),
                  'click')
     element63=(By.CSS_SELECTOR,
                  '.el-menu-vertical-demo > div:nth-child(1) > div:nth-child(1) > li:nth-child(1) > ul:nth-child(2) > div:nth-child(1) > div:nth-child(1) > li:nth-child(1) > ul:nth-child(2) > div:nth-child(1) > div:nth-child(2) > li:nth-child(1) > span:nth-child(2)')
