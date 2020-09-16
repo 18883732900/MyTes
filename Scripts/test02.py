@@ -1,5 +1,8 @@
 import os
 import re, time, datetime
+
+from selenium.webdriver.common.by import By
+
 from Base.MYSQL.Mysql_Backup import Mysqldbbackup
 import allure
 import pytest
@@ -13,8 +16,8 @@ curr_time = datetime.datetime.now()
 
 
 # 完成后打开注释
-d = None
-driver = None
+# d = None
+# driver = None
 
 @pytest.fixture(scope='function', params=data_test02.list)
 def param(request):
@@ -387,7 +390,9 @@ class Test_2:
                 except:
                       print("出现故障，无法跳转")
                       assert False
-                Mysqldbbackup().backup_uesr()
+
+                finally:
+                    Mysqldbbackup().backup_uesr()
 
 
 
@@ -408,19 +413,18 @@ class Test_2:
         :return:
         """
         self.d.Issue_permissions(type=type, devse=devse, num1=num1, num2=num2)
-        device=self.d.devics(device=devse)
-        els = self.d.find_elements(Scripts.element21)
-        list = [i.text for i in els]
-        x = 0
-        for i in type:
-            if i in list:
-                x += 1
-        y = 0
-        for i in devse:
-            if i in list:
-                y += 1
+        device=self.d.devics(device=devse,type=type)
+        if device:
+             assert True
+        else:
+            assert False
 
-        assert x + y == len(type) + len(devse) and device
+    def test010(self):
+        self.d.up_issue()
+        text=self.d.find_element((By.XPATH,'/html/body/div[3]/p')).text
+        assert "授权成功" in text
+
+
 
 
 

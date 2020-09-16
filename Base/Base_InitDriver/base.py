@@ -209,7 +209,7 @@ class Base:
         elif type == 'visible_text':
             '''按照选项值进行查找'''
             Select(el).select_by_visible_text(value)
-
+    #
     # def __del__(self):
     #     sleep(10)
     #     try:

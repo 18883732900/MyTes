@@ -456,6 +456,8 @@ class Test_1:
 
 
 
+
+
     def teardown_class(self):
         path=os.path.join(os.getcwd(),"Report\结果图")
         filename=os.path.join(path,'test01.png')
@@ -463,6 +465,9 @@ class Test_1:
         # self.d.page('get_screenshot_as_file', filepath='./结果图.png')
         del self.d
         del self.driver
+
+
+
 
 if __name__ == '__main__':
     pytest.main('-s -html=./Report/report.html test01.py')

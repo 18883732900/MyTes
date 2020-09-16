@@ -159,6 +159,7 @@ class Resident_check_in_data():
     element32 = ((By.CSS_SELECTOR,
                   'body > div.el-dialog__wrapper > div > div.el-dialog__body > div > div:nth-child(3) > div.uploadInfo.clearfix.ml-30 > div.upload.fl.mt-20 > input'),
                  'send_keys')
+
     element33 = ((By.CSS_SELECTOR, 'div.uploadInfo:nth-child(1) > div:nth-child(1) > input:nth-child(2)'), 'send_keys')
     element34 = ((By.CSS_SELECTOR, 'div.uploadInfo:nth-child(2) > div:nth-child(1) > input:nth-child(2)'), 'send_keys')
     element35 = ((By.CSS_SELECTOR, '[placeholder="请选择政治面貌"]'), 'click')
@@ -183,4 +184,15 @@ class Resident_check_in_data():
     element53 = ((By.CSS_SELECTOR, '[placeholder="Ic卡(必选)"]'), 'send_keys')
     element54 = (By.CSS_SELECTOR, 'label.el-checkbox > span:nth-child(2)')
     element55=(By.CSS_SELECTOR,'.el-message-box__btns > button > span:nth-child(1)')
+    element56=(By.CSS_SELECTOR, "label.el-checkbox.is-checked > span:nth-child(2)")
+    element57=((By.CSS_SELECTOR, 'span.historyBtn:nth-child(1)'), 'click')
+    element58 = ((By.CSS_SELECTOR, '[placeholder="姓名"]'), 'click')
+    element59 = (By.XPATH, ' /html/body/div/div[1]/div[1]/ul/li/span')
+    element60 = ((By.CSS_SELECTOR, '[placeholder="请输入内容"]'), 'send_keys')
+    element61 = ((By.CSS_SELECTOR, 'span.searchBtn:nth-child(1)'), 'click')
+    element62 = ((By.CSS_SELECTOR,
+                  '.el-table__fixed-body-wrapper > table:nth-child(1) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(7) > div:nth-child(1) > button:nth-child(3)'),
+                 'click')
+    element63=(By.CSS_SELECTOR,
+                 '.el-menu-vertical-demo > div:nth-child(1) > div:nth-child(1) > li:nth-child(1) > ul:nth-child(2) > div:nth-child(1) > div:nth-child(1) > li:nth-child(1) > ul:nth-child(2) > div:nth-child(1) > div:nth-child(2) > li:nth-child(1) > span:nth-child(2)')
 
