@@ -1,7 +1,7 @@
 from Base.Make_date.name import name
 from Base.Make_date.number import number
 from Base.Make_date.idCard import IdNumber
-from Base.MYSQL.Mysqldb import Mysqldb
+from MYSQL.Mysqldb import Mysqldb
 import os
 
 path__1 = os.path.join(os.getcwd(),'Image')

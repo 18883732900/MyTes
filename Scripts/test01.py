@@ -3,7 +3,7 @@ import re, pytest, time, datetime
 import allure
 
 from Scripts import test01
-from Base.MYSQL.Mysql_Backup import Mysqldbbackup
+from MYSQL.Mysql_Backup import Mysqldbbackup
 from Common.common import Page
 from Data import data_test01
 from Base.Make_date.idCard import IdNumber
@@ -217,6 +217,8 @@ class Test_1:
 
                 assert 'https://taijiashequ.oss-cn-beijing.aliyunc' in s
 
+
+
     @allure.step(title='上传头像验证')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.parametrize('file_path', data_test01.file_path1)
@@ -255,6 +257,8 @@ class Test_1:
         else:
             assert False
 
+
+
     @allure.step(title='身份证号码输入验证')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.parametrize('idcard,name', data_test01.user)
@@ -281,6 +285,9 @@ class Test_1:
                     el = self.d.find_element(Scripts.element15).text
                     assert el in '请输入正确的身份证号'
 
+
+
+
     @allure.step(title='工作人员年龄输入校验')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.skipif(data_test01.file_path[-1][-1] == '身份证' or 1 == 2, reason='跳过')
@@ -301,6 +308,9 @@ class Test_1:
             assert a in '工作人员年龄不能小于16岁'
         else:
             assert True
+
+
+
 
     @allure.step(title='提交后反显校验')
     @pytest.allure.severity('CRITTCAL')
@@ -341,6 +351,10 @@ class Test_1:
             print("出现故障，无法跳转")
             assert False
 
+
+
+
+
     @allure.step(title='权限下发选择校验')
     @pytest.allure.severity('CRITTCAL')
     @pytest.mark.parametrize('type,devse,num1,num2', data_test01.Issue_permissions)
@@ -370,6 +384,9 @@ class Test_1:
             assert x + y == len(type) + len(devse)
         except:
             raise RuntimeError('由于之前的用例执行失败，导致该条用例无法继续操作')
+
+
+
 
 
 
