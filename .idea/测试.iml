@@ -4,9 +4,6 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="接口" />
-    <orderEntry type="module" module-name="身份证算法" />
-    <orderEntry type="module" module-name="Rep" />
   </component>
   <component name="TestRunnerService">
     <option name="projectConfiguration" value="pytest" />

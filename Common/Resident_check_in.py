@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 from Base.Base_InitDriver.base import Base
 from Base.Base_InitDriver.initdriver import inidriver
 from Common import Resident_check_in_data
-from Base.MYSQL.Mysqldb_test import Mysqldb_test
+from MYSQL.Mysqldb_test import Mysqldb_test
 
 Common = Resident_check_in_data()
 
